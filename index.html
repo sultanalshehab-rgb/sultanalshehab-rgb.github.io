@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="سلطان الشهاب: مستشار قيادي وكوتش تنفيذي ومدرب معتمد. كوتشنج وظيفي وقيادي وكوتشنج الحياة، برامج تدريبية، ورحلات تعليمية للجهات.">
+<title>سلطان الشهاب | كوتشنج وتدريب</title>
+
+<style>
+@font-face{font-family:'Dubai';font-weight:300;font-style:normal;font-display:swap;src:url('fonts/Dubai-Light.woff2') format('woff2'),url('fonts/Dubai-Light.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/Dubai-Regular.woff2') format('woff2'),url('fonts/Dubai-Regular.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/Dubai-Medium.woff2') format('woff2'),url('fonts/Dubai-Medium.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:700;font-style:normal;font-display:swap;src:url('fonts/Dubai-Bold.woff2') format('woff2'),url('fonts/Dubai-Bold.woff') format('woff')}
+</style>
+<style>
+/* Layout: dark navy hero with an arch portrait and Sadu-woven borders; light body sections; a navy journey band; gold CTA */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --ink:#10283a; --muted:#56687a; --line:#dbe3ea;
+  --navy:#0d2436; --navy-2:#153650; --on-navy:#eef3f7; --on-navy-muted:#a9bccb;
+  --gold:#2dd4bf; --gold-soft:#d5f5f0; --gold-ink:#0f766e; --sadu:#a8402c; --teal:#2f7f86;
+  --display:"Dubai","Segoe UI",Tahoma,sans-serif;
+  --body:"Dubai","Segoe UI",Tahoma,sans-serif;
+  --script:"Dubai","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
+  --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
+  --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.8}
+h1,h2,h3{font-family:var(--display);line-height:1.3;text-wrap:balance;margin:0;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.in{max-width:1120px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-size:.85rem;font-weight:600;color:var(--gold-ink);letter-spacing:.02em;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Sadu weave strip: the Saudi tent-weaving triangles */
+.wave{display:block;width:100%;height:clamp(46px,7vw,90px);color:var(--navy);background:var(--below,var(--bg));margin-top:-1px}
+.wave.up{transform:scaleY(-1);margin-top:0;margin-bottom:-1px}
+.wave svg{display:block;width:100%;height:100%}
+.wave .w2{fill:var(--gold);opacity:.35}
+.wave .ln{fill:none;stroke:var(--gold);stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-linecap:round}
+
+/* NAV */
+.top{background:var(--navy);color:var(--on-navy);position:sticky;top:env(safe-area-inset-top,0px);z-index:20;border-bottom:1px solid #ffffff14}
+.top .in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:14px}
+.brand{font-family:var(--display);font-size:1.2rem;font-weight:700;display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand i{width:30px;height:30px;border-radius:50% 50% 6px 6px;background:var(--gold);display:inline-block}
+.top ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 22px;font-size:.95rem;color:var(--on-navy-muted)}
+.top ul a{text-decoration:none}
+.top ul a:hover{color:var(--gold)}
+.top .book{background:var(--gold);color:#0d2436;padding:8px 18px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.92rem}
+
+/* HERO */
+.hero{background:radial-gradient(1200px 500px at 85% 0%,var(--navy-2),transparent 60%),var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;padding-block:64px 72px;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);margin-top:14px}
+.rot{color:var(--gold);display:inline-block;transition:opacity .35s,transform .35s}
+.rot.out{opacity:0;transform:translateY(10px)}
+.hero .lead{margin-top:20px;color:var(--on-navy-muted);max-width:33em;font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:#0d2436;box-shadow:0 10px 30px #2dd4bf40}
+.btn.ghost{border:1.5px solid #ffffff55;color:var(--on-navy)}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.creds span{font-size:.8rem;border:1px solid #ffffff26;border-radius:999px;padding:3px 12px;color:var(--on-navy-muted)}
+
+.portrait{position:relative;justify-self:center;width:min(100%,380px);animation:rise .9s ease-out both}
+.arch{aspect-ratio:4/5.4;border-radius:999px 999px 18px 18px;overflow:hidden;background:#fff;border:6px solid var(--gold);position:relative;z-index:1}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.ring{position:absolute;inset:-26px -26px auto auto;width:150px;height:150px;border-radius:50%;border:2px dashed var(--gold);opacity:.6;animation:spin 40s linear infinite}
+.dots{position:absolute;bottom:-18px;inset-inline-start:-34px;width:130px;height:130px;background:radial-gradient(var(--teal) 2px,transparent 2.5px) 0 0/16px 16px;opacity:.7}
+.badge{position:absolute;z-index:2;background:var(--surface);color:var(--ink);border-radius:14px;padding:10px 16px;box-shadow:0 14px 34px #0005;font-size:.82rem;line-height:1.45;animation:float 6s ease-in-out infinite}
+.badge b{font-family:var(--display);font-size:1.45rem;color:var(--gold);display:block}
+.b1{inset-inline-end:-30px;top:22%}
+.b2{inset-inline-start:-34px;bottom:16%;animation-delay:-3s}
+.shape{position:absolute;border-radius:50%;filter:blur(2px);opacity:.18}
+.s1{width:420px;height:420px;background:var(--gold);inset-inline-start:-160px;bottom:-220px}
+.s2{width:160px;height:160px;background:var(--teal);inset-inline-end:42%;top:-60px}
+
+@keyframes rise{from{transform:translateY(30px)}to{transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* LOGO MARQUEE */
+.trust{background:var(--surface);border-bottom:1px solid var(--line);padding-block:26px;overflow:hidden}
+.trust p{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.marquee{direction:ltr;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:18px;width:max-content;animation:slide 45s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.logo{background:#fff;border:1px solid var(--line);border-radius:12px;height:84px;width:170px;display:grid;place-items:center;padding:10px 14px;flex:none}
+.logo img{max-height:60px;max-width:100%;object-fit:contain}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-block:56px 8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;inset-inline-end:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:var(--gold-soft)}
+.stat b{font-family:var(--display);font-size:clamp(2rem,4vw,2.8rem);display:block;color:var(--ink);position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:.95rem;position:relative;z-index:1}
+
+section{padding-block:72px}
+.head{display:grid;gap:10px;margin-bottom:34px;max-width:42em}
+.head h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+.head p{color:var(--muted)}
+
+/* SERVICES */
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.svc{--c:var(--gold);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px 26px;display:grid;gap:12px;align-content:start;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 22px 50px #10283a1f}
+.svc::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--c)}
+.svc.c2{--c:var(--teal)} .svc.c3{--c:var(--sadu)}
+.ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
+.ico svg{width:30px;height:30px}
+.svc h3{font-size:1.35rem}
+.svc .for{font-size:.86rem;color:var(--c);font-weight:600}
+.svc ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;color:var(--muted);font-size:.95rem}
+.svc li{display:flex;gap:8px}
+.svc li::before{content:"✓";color:var(--c);font-weight:700}
+.svc a{margin-top:8px;font-weight:600;color:var(--c);text-decoration:none}
+
+/* QUOTE BANNER */
+.quote{background:linear-gradient(120deg,var(--gold-soft),var(--surface));border-block:1px solid var(--line);padding-block:56px;text-align:center;position:relative;overflow:hidden}
+.quote blockquote{margin:0 auto;max-width:28em;font-family:var(--script);font-weight:700;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.6;color:var(--ink)}
+.quote cite{display:block;margin-top:10px;font-style:normal;color:var(--muted);font-size:.95rem}
+.quote::before,.quote::after{content:"";position:absolute;width:180px;height:180px;border:2px solid var(--gold);border-radius:50%;opacity:.35}
+.quote::before{inset-inline-start:-60px;top:-60px}
+.quote::after{inset-inline-end:-50px;bottom:-80px}
+
+/* PROGRAMS */
+.progs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:8px;align-content:start;transition:border-color .2s}
+.prog:hover{border-color:var(--gold)}
+.prog .tag{justify-self:start;font-size:.78rem;padding:2px 12px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.prog h3{font-size:1.1rem}
+.prog p{color:var(--muted);font-size:.94rem}
+.prog .n{font-family:var(--display);color:var(--gold-ink);font-size:.9rem;font-weight:600}
+
+/* JOURNEY BAND */
+.journey{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.journey .head p{color:var(--on-navy-muted)}
+.path{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative}
+.path::before{content:"";position:absolute;top:34px;inset-inline:12% 12%;border-top:2px dashed #2dd4bf88}
+.path li{position:relative;display:grid;gap:8px;justify-items:center;text-align:center}
+.pin{width:68px;height:68px;border-radius:50%;background:var(--navy-2);border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);position:relative;z-index:1}
+.pin svg{width:30px;height:30px}
+.path strong{font-family:var(--display);font-size:1.1rem}
+.path span{color:var(--on-navy-muted);font-size:.92rem;max-width:16em}
+.orgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:48px}
+.org{border:1px solid #ffffff22;border-radius:16px;padding:22px;background:#ffffff08}
+.org h3{font-size:1.1rem;color:var(--gold)}
+.org p{color:var(--on-navy-muted);font-size:.94rem;margin-top:6px}
+.journey .btn{margin-top:34px}
+.license{margin-top:40px;display:flex;gap:16px;align-items:center;background:#ffffff0d;border:1px solid #2dd4bf66;border-radius:16px;padding:18px 22px}
+.lic-ico{flex:none;width:52px;height:52px;border-radius:14px;background:var(--gold);color:#0d2436;display:grid;place-items:center}
+.lic-ico svg{width:28px;height:28px}
+.license b{display:block;font-family:var(--display);font-size:1.05rem;color:var(--on-navy)}
+.license span{color:var(--on-navy-muted);font-size:.92rem}
+.license bdi{direction:ltr;unicode-bidi:isolate;color:var(--gold-ink);font-weight:600}
+.creds .lic{border-color:var(--gold-ink);color:var(--gold-ink)}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:start}
+.about p+p{margin-top:14px}
+.timeline{list-style:none;margin:0;padding:0;border-inline-start:2px solid var(--line);display:grid;gap:18px}
+.timeline li{padding-inline-start:20px;position:relative}
+.timeline li::before{content:"";position:absolute;inset-inline-start:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.timeline small{color:var(--gold-ink);font-weight:600;font-variant-numeric:tabular-nums}
+.timeline b{display:block;font-family:var(--display);font-weight:600}
+.timeline span{color:var(--muted);font-size:.92rem}
+.certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.certs span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:.85rem}
+
+/* CTA */
+.final{background:linear-gradient(135deg,var(--gold),#14a395);color:#0d2436;border-radius:28px;padding:48px clamp(22px,5vw,60px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:30px;align-items:center;position:relative;overflow:hidden}
+.final::after{content:"";position:absolute;inset-inline-start:-40px;bottom:-90px;width:260px;height:260px;border-radius:50%;border:30px solid #ffffff22}
+.final h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
+.final p{margin-top:10px;opacity:.85}
+.book-final{margin-top:22px;background:#10283a;color:#fff}
+.contacts{display:grid;gap:10px;position:relative;z-index:1}
+.ct{background:#ffffffd9;border-radius:14px;padding:12px 16px;display:grid;gap:2px;color:#10283a}
+.ct small{opacity:.7}
+.ct bdi{font-weight:600;direction:ltr;unicode-bidi:isolate;user-select:all;overflow-wrap:anywhere}
+.ct a{text-decoration:none}
+
+footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:center}
+
+.wa{position:fixed;inset-inline-start:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px #0004;transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+@media (max-width:900px){
+  .hero .in,.about,.final{grid-template-columns:1fr}
+  .portrait{width:min(78%,320px);margin-top:12px}
+  .svcs,.progs,.orgs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .path{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
+  .path::before{display:none}
+  .top ul{display:none}
+}
+@media (max-width:600px){
+  .svcs,.progs,.orgs{grid-template-columns:1fr}
+  .b1{inset-inline-end:-12px}.b2{inset-inline-start:-12px}
+  .ring{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+
+<div dir="rtl" lang="ar">
+<header class="top">
+  <div class="in">
+    <a class="brand" href="#home"><i></i>سلطان الشهاب</a>
+    <ul>
+      <li><a href="#coaching">الكوتشنج</a></li>
+      <li><a href="#programs">البرامج</a></li>
+      <li><a href="#trips">الرحلات التعليمية</a></li>
+      <li><a href="#about">نبذة</a></li>
+    </ul>
+    <a class="book" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلسة</a>
+  </div>
+</header>
+
+<div class="hero" id="home">
+  <div class="shape s1"></div><div class="shape s2"></div>
+  <div class="in">
+    <div>
+      <span class="eyebrow">مستشار قيادي · كوتش تنفيذي · مدرب معتمد</span>
+      <h1>معاً نصنع<br><span class="rot" id="rot">مسارك المهني</span><br>بثقة ووضوح</h1>
+      <p class="lead">أكثر من ٢٥ سنة في تطوير القيادات والتعلّم المؤسسي، منها سنوات في أكاديمية STC. أرافق الأفراد بالكوتشنج الوظيفي والقيادي وكوتشنج الحياة، وأصمم للجهات برامج تدريبية ورحلات تعليمية تصنع أثراً يُقاس.</p>
+      <div class="cta">
+        <a class="btn gold" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلسة كوتشنج</a>
+        <a class="btn ghost" href="#trips">عروض الجهات</a>
+      </div>
+      <div class="creds"><span class="lic">✓ ممارس حر مرخّص</span><span>عضو ICF</span><span>Dale Carnegie</span><span>Hogan</span><span>Celemi</span><span>ATD</span></div>
+    </div>
+    <div class="portrait">
+      <div class="ring"></div><div class="dots"></div>
+      <div class="arch"><img src="sultan.jpg" alt="سلطان الشهاب" width="400" height="600"></div>
+      <div class="badge b1"><b>+٢٥</b>سنة خبرة</div>
+      <div class="badge b2"><b>+٢٠٠</b>ساعة كوتشنج</div>
+    </div>
+  </div>
+</div>
+<div class="wave" style="--below:var(--surface)"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 0H1440V58C1250 98 1080 30 880 52S470 104 260 70 60 40 0 52Z"/><path fill="currentColor" d="M0 0H1440V40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38Z"/><path class="ln" d="M1440 40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38"/></svg></div>
+
+<div class="trust">
+  <p>جهات وثقت بي</p>
+  <div class="marquee"><div class="track"><div class="logo"><img src="logos/financial-academy.png" alt="الأكاديمية المالية" title="الأكاديمية المالية"></div><div class="logo"><img src="logos/stc-academy.png" alt="أكاديمية STC" title="أكاديمية STC"></div><div class="logo"><img src="logos/sec.png" alt="الشركة السعودية للكهرباء" title="الشركة السعودية للكهرباء"></div><div class="logo"><img src="logos/saib.png" alt="البنك السعودي للاستثمار" title="البنك السعودي للاستثمار"></div><div class="logo"><img src="logos/alrajhi-capital.png" alt="الراجحي المالية" title="الراجحي المالية"></div><div class="logo"><img src="logos/bank-albilad.png" alt="بنك البلاد" title="بنك البلاد"></div><div class="logo"><img src="logos/zatca.png" alt="هيئة الزكاة والضريبة والجمارك" title="هيئة الزكاة والضريبة والجمارك"></div><div class="logo"><img src="logos/moh.png" alt="وزارة الصحة" title="وزارة الصحة"></div><div class="logo"><img src="logos/tawakkalna.png" alt="توكلنا" title="توكلنا"></div><div class="logo"><img src="logos/gig.png" alt="مجموعة الخليج للتأمين" title="مجموعة الخليج للتأمين"></div><div class="logo" aria-hidden="true"><img src="logos/financial-academy.png" alt="" title="الأكاديمية المالية"></div><div class="logo" aria-hidden="true"><img src="logos/stc-academy.png" alt="" title="أكاديمية STC"></div><div class="logo" aria-hidden="true"><img src="logos/sec.png" alt="" title="الشركة السعودية للكهرباء"></div><div class="logo" aria-hidden="true"><img src="logos/saib.png" alt="" title="البنك السعودي للاستثمار"></div><div class="logo" aria-hidden="true"><img src="logos/alrajhi-capital.png" alt="" title="الراجحي المالية"></div><div class="logo" aria-hidden="true"><img src="logos/bank-albilad.png" alt="" title="بنك البلاد"></div><div class="logo" aria-hidden="true"><img src="logos/zatca.png" alt="" title="هيئة الزكاة والضريبة والجمارك"></div><div class="logo" aria-hidden="true"><img src="logos/moh.png" alt="" title="وزارة الصحة"></div><div class="logo" aria-hidden="true"><img src="logos/tawakkalna.png" alt="" title="توكلنا"></div><div class="logo" aria-hidden="true"><img src="logos/gig.png" alt="" title="مجموعة الخليج للتأمين"></div></div></div>
+</div>
+
+<div class="in">
+  <div class="stats">
+    <div class="stat"><b>+٢٥</b><span>سنة خبرة</span></div>
+    <div class="stat"><b>+٩٠</b><span>برنامجاً تدريبياً منفذاً</span></div>
+    <div class="stat"><b>+٢٠٠</b><span>ساعة كوتشنج</span></div>
+    <div class="stat"><b>٧</b><span>اعتمادات مهنية</span></div>
+  </div>
+</div>
+
+<section id="coaching">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">الخدمات الفردية</span>
+      <h2>كوتشنج يأخذك من الحيرة إلى الخطوة التالية</h2>
+      <p>جلسات منظّمة بأهداف واضحة، حضورياً في الرياض أو عن بُعد.</p>
+    </div>
+    <div class="svcs">
+      <article class="svc">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div>
+        <span class="for">للخريجين والموظفين ومن يمر بمرحلة انتقال</span>
+        <h3>الكوتشنج الوظيفي</h3>
+        <ul><li>اكتشاف نقاط القوة والقيم المهنية</li><li>خطة مسار وظيفي بأهداف قابلة للقياس</li><li>السيرة الذاتية وLinkedIn والمقابلات</li></ul>
+        <a href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلستك ←</a>
+      </article>
+      <article class="svc c2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-10 4 6 3-4 5 8z"/><path d="M14 4v5"/><path d="M14 4h4l-1 1.5 1 1.5h-4"/></svg></div>
+        <span class="for">للقادة الجدد والمدراء والتنفيذيين</span>
+        <h3>الكوتشنج القيادي والتنفيذي</h3>
+        <ul><li>الوعي الذاتي وأسلوبك القيادي (تقييمات Hogan)</li><li>قيادة الفرق والتفويض والحوارات الصعبة</li><li>اتخاذ القرار وإدارة التغيير</li></ul>
+        <a href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلستك ←</a>
+      </article>
+      <article class="svc c3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+        <span class="for">لكل من يبحث عن توازن ووضوح في حياته</span>
+        <h3>كوتشنج الحياة</h3>
+        <ul><li>تحديد القيم والأهداف الشخصية</li><li>التوازن بين العمل والحياة</li><li>بناء العادات وتجاوز العوائق</li></ul>
+        <a href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلستك ←</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <blockquote>التطوير الحقيقي يبدأ بسؤال صحيح، وينتهي بخطوة عملية واضحة</blockquote>
+  <cite>سلطان الشهاب</cite>
+</div>
+
+<section id="programs">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">التدريب المؤسسي</span>
+      <h2>برامج تدريبية تُطبَّق من اليوم التالي</h2>
+      <p>نفذتها مع الأكاديمية المالية وإرتياد وصندوق هدف وشركاء STC، وتُخصص لاحتياج كل جهة.</p>
+    </div>
+    <div class="progs">
+      <div class="prog"><span class="tag">للقادة</span><h3>تطوير القيادات وورش التنفيذيين</h3><p>برامج قيادية مرتبطة بأولويات الجهة للقادة الجدد والصف الثاني.</p></div>
+      <div class="prog"><span class="tag">للجميع</span><h3>العروض التقديمية عالية التأثير</h3><p>رسالة واضحة وإلقاء واثق أمام الإدارة والعملاء.</p><span class="n">نُفذ ١١ مرة</span></div>
+      <div class="prog"><span class="tag">لفرق المبيعات</span><h3>التميز في المبيعات</h3><p>مهارات البيع الاستشاري وبناء العلاقة مع العميل.</p><span class="n">نُفذ ١٣ مرة لشركاء STC</span></div>
+      <div class="prog"><span class="tag">للفرق والمدراء</span><h3>محاكاة الأعمال Celemi Cayenne</h3><p>محاكاة تفاعلية تفهم بها الفرق كيف تُدار الشركة وتُصنع الأرباح.</p></div>
+      <div class="prog"><span class="tag">للمدراء</span><h3>مؤشرات الأداء KPI</h3><p>تصميم مؤشرات قابلة للقياس وربطها بأهداف الجهة.</p></div>
+      <div class="prog"><span class="tag">صندوق هدف</span><h3>برامج معتمدة من هدف</h3><p>برامج تطوير مهني ضمن مبادرات صندوق تنمية الموارد البشرية.</p><span class="n">نُفذ ١١ برنامجاً</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wave up" style="--below:var(--bg)"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 0H1440V58C1250 98 1080 30 880 52S470 104 260 70 60 40 0 52Z"/><path fill="currentColor" d="M0 0H1440V40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38Z"/><path class="ln" d="M1440 40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38"/></svg></div>
+<section class="journey" id="trips">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">للجهات والمؤسسات</span>
+      <h2>رحلات تعليمية بعقد واضح ومخرجات تُقاس</h2>
+      <p>أصمم وأنفذ رحلات تعليمية متكاملة لفرق القيادة والموظفين، من تشخيص الاحتياج حتى تقرير الأثر.</p>
+    </div>
+    <ol class="path">
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div><strong>التشخيص</strong><span>نفهم احتياج الجهة والفئة المستهدفة</span></li>
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 16l8-8 3 3-8 8H6z"/></svg></div><strong>التصميم</strong><span>عرض فني ومالي مخصص وأهداف واضحة</span></li>
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><strong>الرحلة</strong><span>ورش ومحاكاة وكوتشنج وتطبيق عملي</span></li>
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><strong>قياس الأثر</strong><span>متابعة النتائج وتقرير ختامي</span></li>
+    </ol>
+    <div class="orgs">
+      <div class="org"><h3>رحلات تطوير القيادات</h3><p>برنامج ممتد يجمع الورش والكوتشنج والتقييمات لصف قيادي كامل.</p></div>
+      <div class="org"><h3>برامج بناء القدرات</h3><p>تدريب فرق المبيعات والخدمة وإدارة الأداء مع محاكاة وتطبيق.</p></div>
+      <div class="org"><h3>التيسير والكوتشنج الجماعي</h3><p>ورش الاستراتيجية وجلسات الكوتشنج الجماعي لفرق الإدارة.</p></div>
+    </div>
+    <div class="license">
+      <div class="lic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+      <div><b>تعاقد نظامي عبر وثيقة العمل الحر</b><span>مسجّل كممارس حر لدى وزارة الموارد البشرية والتنمية الاجتماعية في الاستشارات الإدارية · رقم الوثيقة <bdi>FL-120132852</bdi> · سارية حتى يونيو ٢٠٢٧</span></div>
+    </div>
+    <a class="btn gold" href="#contact">اطلب عرضاً لجهتك</a>
+  </div>
+</section>
+<div class="wave" style="--below:var(--bg)"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 0H1440V58C1250 98 1080 30 880 52S470 104 260 70 60 40 0 52Z"/><path fill="currentColor" d="M0 0H1440V40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38Z"/><path class="ln" d="M1440 40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38"/></svg></div>
+
+<section id="about">
+  <div class="in about">
+    <div>
+      <div class="head" style="margin-bottom:20px">
+        <span class="eyebrow">نبذة</span>
+        <h2>من المبيعات إلى صناعة القادة</h2>
+      </div>
+      <p>أنا سلطان الشهاب، مستشار قيادي وكوتش تنفيذي ومدرب معتمد من الرياض. بدأت مسيرتي في المبيعات والتسويق، ثم أمضيت ١٧ سنة في STC في التقارير والتنبؤ وتحسين الخدمة، قبل أن أنتقل إلى أكاديمية STC لأقود مبادرات إدارة المعرفة وتطوير الأعمال والتعلّم، ثم خبيراً في تقديم البرامج القيادية.</p>
+      <p>منذ ٢٠٢٥ أعمل مستقلاً مع جهات القطاعين العام والخاص. عضو الاتحاد الدولي للكوتشنج (ICF)، وعضو مجلس إدارة الجمعية السعودية لتقنيات التعليم ودار تأثير للنشر، وحاصل على بكالوريوس إدارة الأعمال (تسويق) من جامعة الملك سعود.</p>
+      <div class="certs"><span>مدرب معتمد من التدريب التقني والمهني</span><span>Dale Carnegie</span><span>Hogan Assessments</span><span>Celemi</span><span>ATD</span><span>Certified KPI Professional</span><span>شهادة متقدمة في الكوتشنج</span></div>
+    </div>
+    <ol class="timeline">
+      <li><small>٢٠٢٥ – الآن</small><b>مستشار وكوتش ومدرب مستقل</b><span>القيادة والكوتشنج والتيسير وبناء القدرات</span></li>
+      <li><small>٢٠٢٣ – ٢٠٢٤</small><b>خبير تقديم البرامج القيادية</b><span>أكاديمية STC</span></li>
+      <li><small>٢٠١٨ – ٢٠٢٣</small><b>إدارة المعرفة وتطوير الأعمال والتعلّم</b><span>أكاديمية STC</span></li>
+      <li><small>٢٠٠١ – ٢٠١٨</small><b>التقارير والتنبؤ وإدارة الخدمة</b><span>STC</span></li>
+      <li><small>٢٠٢٥</small><b>شهادة تقدير</b><span>برنامج القادة القانونيين الشباب، الدفعة الخامسة</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="in">
+    <div class="final">
+      <div>
+        <h2>لنبدأ الحديث</h2>
+        <p>سواء كنت فرداً يبحث عن خطوته القادمة، أو جهة تبحث عن شريك تدريب وتعلّم، يسعدني أسمع منك.</p>
+        <a class="btn book-final" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز موعدك الآن ←</a>
+      </div>
+      <div class="contacts">
+        <div class="ct"><small>جوال / واتساب</small><bdi>+966 50 299 0020</bdi></div>
+        <div class="ct"><small>البريد الإلكتروني</small><bdi>sultan.alshehab@gmail.com</bdi></div>
+        <div class="ct"><small>لينكدإن</small><a href="https://linkedin.com/in/sultanalshehab"><bdi>linkedin.com/in/sultanalshehab</bdi></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© ٢٠٢٦ سلطان الشهاب · الرياض، المملكة العربية السعودية<br>ممارس حر مرخّص، وثيقة العمل الحر رقم <bdi>FL-120132852</bdi></footer>
+
+<a class="wa" href="https://wa.me/966502990020" aria-label="تواصل عبر واتساب"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+</div>
+
+<script>
+(function(){
+  var words=["مسارك المهني","قيادتك المؤثرة","حياة متوازنة","فريقاً أقوى"],i=0,el=document.getElementById("rot");
+  if(!el||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  setInterval(function(){
+    el.classList.add("out");
+    setTimeout(function(){i=(i+1)%words.length;el.textContent=words[i];el.classList.remove("out")},350);
+  },2600);
+})();
+</script>
+
+</body>
+</html>
