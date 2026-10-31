@@ -201,7 +201,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
     <div class="partners"><img src="logos/ertyad-white.png" alt="ارتياد" width="227" height="136" style="height:44px"><span class="sep"></span><img src="logos/dale-carnegie-white.png" alt="Dale Carnegie" width="334" height="117"></div>
     <span class="eyebrow">اختبارات الوعي الذاتي</span>
     <h1>اعرف نفسك أكثر،<br>وابدأ خطوتك التالية</h1>
-    <p>تقييمات برنامج (الوعي الذاتي) من ديل كارنيجي: لياقتك العاطفية، ونمط شخصيتك، ومنظورك تجاه التوتر. تكتب اسمك، تجاوب بصدق، وتطلع لك نتيجتك باسمك فوراً وتقدر تحفظها أو ترسلها.</p>
+    <p>تقييمات برنامج (الوعي الذاتي) من ديل كارنيجي: لياقتك العاطفية، ونمط شخصيتك، ومنظورك تجاه التوتر. تكتب اسمك، تجاوب بصدق، وتطلع لك نتيجتك باسمك فوراً وتقدر تحفظها.</p>
     <div class="steps"><span><b>١</b>اختر الاختبار</span><span><b>٢</b>اكتب اسمك</span><span><b>٣</b>أجب بصدق</span><span><b>٤</b>احفظ نتيجتك</span></div>
   </div>
 </div>
@@ -356,7 +356,7 @@ function renderCatalog(){
     });
     h+='</div></section>';
   });
-  h+='<p class="note">هذه التقييمات من دليل المشارك لبرنامج (الوعي الذاتي) من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان إلا إذا اخترت إرسالها. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد).</p>';
+  h+='<p class="note">هذه التقييمات من دليل المشارك لبرنامج (الوعي الذاتي) من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد).</p>';
   cat.innerHTML=h;
 }
 
@@ -458,7 +458,6 @@ function ring(p,label,color){return '<div class="ring" style="--p:'+p+(color?';-
 function actions(summary){
   var msg="السلام عليكم أ. سلطان،\nهذه نتيجتي في ("+S.t.title+") من موقعك:\nالاسم: "+S.name+(S.org?"\nالجهة/البرنامج: "+S.org:"")+"\n"+summary;
   return '<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
-    '<a class="btn wa" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">أرسل النتيجة لسلطان</a>'+
     '<button class="btn line" data-act="home">اختبار آخر</button></div>'+
     '<p class="disclaimer">من دليل المشارك لبرنامج (الوعي الذاتي) © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.</p>';
 }
