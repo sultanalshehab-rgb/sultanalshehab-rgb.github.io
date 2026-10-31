@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="تقييمات برنامج الوعي الذاتي (ديل كارنيجي وارتياد) مع سلطان الشهاب: اللياقة العاطفية، نمط الشخصية، والمنظور تجاه التوتر. نتيجة فورية باسمك.">
-<title>الاختبارات الشخصية | سلطان الشهاب</title>
+<meta name="description" content="تقييمات برنامج الوعي الذاتي (ديل كارنيجي وارتياد): اللياقة العاطفية، نمط الشخصية، والمنظور تجاه التوتر. نتيجة فورية باسمك.">
+<title>الاختبارات الشخصية | الوعي الذاتي</title>
 <style>
 @font-face{font-family:'Dubai';font-weight:300;font-display:swap;src:url('fonts/Dubai-Light.woff2') format('woff2'),url('fonts/Dubai-Light.woff') format('woff')}
 @font-face{font-family:'Dubai';font-weight:400;font-display:swap;src:url('fonts/Dubai-Regular.woff2') format('woff2'),url('fonts/Dubai-Regular.woff') format('woff')}
@@ -186,12 +186,11 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
 <body>
 <header class="top">
   <div class="in">
-    <a class="brand" href="index.html"><i></i>سلطان الشهاب</a>
+    <a class="brand" href="index.html" aria-label="الصفحة الرئيسية"><i></i></a>
     <nav>
       <a href="index.html#coaching">الكوتشنج</a>
       <a href="index.html#programs">البرامج</a>
       <a href="tests.html" aria-current="page" style="color:var(--gold)">الاختبارات</a>
-      <a class="book" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلسة</a>
     </nav>
   </div>
 </header>
@@ -212,7 +211,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
   <div id="runner" hidden></div>
 </main>
 
-<footer>© ٢٠٢٦ سلطان الشهاب · الرياض، المملكة العربية السعودية<br>التقييمات من برنامج (الوعي الذاتي) © Dale Carnegie &amp; Associates، تُستخدم بإذن.</footer>
+<footer>التقييمات من برنامج (الوعي الذاتي) © Dale Carnegie &amp; Associates، تُستخدم بإذن.</footer>
 
 <script>
 (function(){
@@ -452,7 +451,7 @@ function chkCtl(){var b=document.getElementById("cr");if(b)b.disabled=validSits(
 function today(){try{return new Date().toLocaleDateString("ar-SA-u-ca-gregory-nu-arab",{year:"numeric",month:"long",day:"numeric"})}catch(e){return new Date().toISOString().slice(0,10)}}
 
 function head(){
-  return '<div class="rhead"><div class="who">نتيجة: <b>'+esc(S.name)+'</b>'+(S.org?'<br>'+esc(S.org):'')+'<br>'+S.t.title+' · '+today()+'</div><div class="logo-mini"><i></i>سلطان الشهاب</div></div>';
+  return '<div class="rhead"><div class="who">نتيجة: <b>'+esc(S.name)+'</b>'+(S.org?'<br>'+esc(S.org):'')+'<br>'+S.t.title+' · '+today()+'</div></div>';
 }
 function ring(p,label,color){return '<div class="ring" style="--p:'+p+(color?';--rc:'+color:'')+'"><div><span><b>'+ar(p)+'٪</b><br><small>'+label+'</small></span></div></div>'}
 function actions(summary){
