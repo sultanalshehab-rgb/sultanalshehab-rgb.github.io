@@ -252,7 +252,7 @@ var TESTS=[
 },
 {
   id:"style",cat:"style",title:"ما نمط شخصيتك؟",
-  intro:"١٠ صفوف، كل صف فيه أربع كلمات أو عبارات. اختر الكلمة أو العبارة التي تصفك أفضل من غيرها؛ واحدة فقط من كل صف.",
+  intro:"١٠ صفوف، كل صف فيه أربع كلمات أو عبارات. رتّبها في كل صف: اضغط أولاً على الأقرب لك (٤ نقاط)، ثم التي تليها (٣)، ثم (٢)، والأخيرة تأخذ (١).",
   mins:3,type:"choice",
   styles:{
     D:{n:"محرك",c:"var(--c-d)",s:"مسيطر، طموح، ومهتم بالنتائج",
@@ -391,7 +391,7 @@ function begin(){
     S.order=S.t.items.map(function(){var k=["D","E","A","T"];for(var i=3;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=k[i];k[i]=k[j];k[j]=x}return k});
   }
   if(S.t.type==="control"){if(!S.sits.length)S.sits=[{t:"",v:""},{t:"",v:""},{t:"",v:""}];controlScreen()}
-  else{S.i=0;question()}
+  else{S.i=0;if(S.t.type==="choice")loadRank();question()}
 }
 
 function question(){
@@ -402,15 +402,28 @@ function question(){
     h+='<p class="qtext">'+(typeof it==="string"?it:it[1])+'</p><div class="opts '+(t.scale.length===5?"scale":"three")+'" role="group">';
     t.scale.forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+ar(k+1)+'</span>'+lab+'</button>'});
   }else{
-    h+='<p class="qtext">الصف '+"أبجدهوزحطي"[i]+': اختر الكلمة أو العبارة التي تصفك أفضل من غيرها</p><div class="opts" role="group">';
-    var L="أبجد";
-    S.order[i].forEach(function(st,k){h+='<button class="opt" data-act="pick" data-v="'+st+'" aria-pressed="'+(sel===st)+'"><span class="k">'+L[k]+'</span>'+it[st]+'</button>'});
+    var R=S.rank,nr=Object.keys(R).length;
+    h+='<p class="qtext">الصف '+"أبجدهوزحطي"[i]+': رتّب الكلمات من الأقرب لك إلى الأبعد</p><p class="sub" style="margin-top:6px">اضغط على الأقرب لك أولاً (٤)، ثم التالية (٣)، ثم (٢)، والأخيرة تأخذ (١) تلقائياً.</p><div class="opts" role="group">';
+    S.order[i].forEach(function(st){h+='<button class="opt" data-act="pick" data-v="'+st+'" aria-pressed="'+(R[st]?"true":"false")+'"><span class="k">'+(R[st]?ar(R[st]):"")+'</span>'+it[st]+'</button>'});
+    h+='</div><div class="actions" style="margin-top:16px">'+(nr?'<button class="btn line" data-act="reset">إعادة ترتيب الصف</button>':'')+(nr===4?'<button class="btn" data-act="next">التالي</button>':'')+'</div>';
+    h+='</div>';run.innerHTML=h;return;
   }
   h+='</div></div>';
   run.innerHTML=h;
 }
 
+function loadRank(){S.rank=S.ans[S.i]?JSON.parse(JSON.stringify(S.ans[S.i])):{}}
+function advance(){if(S.i<S.t.items.length-1){S.i++;loadRank();question()}else{result()}}
 function pick(v){
+  if(S.t.type==="choice"){
+    var R=S.rank;if(R[v]||Object.keys(R).length===4)return;
+    R[v]=4-Object.keys(R).length;
+    var left=S.order[S.i].filter(function(k){return !R[k]});
+    if(left.length===1)R[left[0]]=1;
+    if(Object.keys(R).length===4){S.ans[S.i]=JSON.parse(JSON.stringify(R));question();setTimeout(advance,450);}
+    else question();
+    return;
+  }
   if(S.t.type==="likert")v=+v;
   S.ans[S.i]=v;
   [].forEach.call(run.querySelectorAll(".opt"),function(b){b.setAttribute("aria-pressed",String(b.dataset.v==String(v)))});
@@ -484,12 +497,12 @@ function result(){
     sum="الدرجة الكلية: "+P+"% ("+L.t+")\n"+rows.map(function(r){return r.d.n+": "+r.p+"%"}).join("\n");
   }
   else if(t.type==="choice"){
-    var cnt={D:0,E:0,A:0,T:0};S.ans.forEach(function(v){cnt[v]++});
+    var cnt={D:0,E:0,A:0,T:0};S.ans.forEach(function(r){for(var k in r)cnt[k]+=r[k]});
     var ks=["E","D","A","T"].sort(function(a,b){return cnt[b]-cnt[a]});
     var n=t.items.length,p1=ks[0],st=t.styles[p1],tie=cnt[ks[1]]===cnt[p1];
-    h+='<div class="score">'+ring(Math.round(cnt[p1]/n*100),"نمطك الأول",st.c)+'<div><span class="lvl">نمطك الأساسي</span><h3 style="color:'+st.c+'">'+st.n+(tie?' و'+t.styles[ks[1]].n:'')+'</h3><p>'+st.s+'. '+(tie?'نتيجتك متساوية بين نمطين، فاقرأ وصف الاثنين.':'نمطك الثاني هو <b>'+t.styles[ks[1]].n+'</b>.')+'</p></div></div>';
+    h+='<div class="score">'+ring(cnt[p1],"من مجموع النقاط",st.c)+'<div><span class="lvl">نمطك الأساسي</span><h3 style="color:'+st.c+'">'+st.n+(tie?' و'+t.styles[ks[1]].n:'')+'</h3><p>'+st.s+'. '+(tie?'نتيجتك متساوية بين نمطين، فاقرأ وصف الاثنين.':'نمطك الثاني هو <b>'+t.styles[ks[1]].n+'</b>.')+'</p></div></div>';
     h+='<div class="dims">';
-    ks.forEach(function(k,r){h+='<div class="dim-row" style="--dc:'+t.styles[k].c+'"><span>'+ar(r+1)+'. '+t.styles[k].n+'</span><div class="bar"><i style="width:'+Math.max(cnt[k]*10,3)+'%"></i></div><b>'+ar(cnt[k])+'/١٠</b></div>'});
+    ks.forEach(function(k,r){h+='<div class="dim-row" style="--dc:'+t.styles[k].c+'"><span>'+ar(r+1)+'. '+t.styles[k].n+'</span><div class="bar"><i style="width:'+Math.max(Math.round((cnt[k]-10)/30*100),3)+'%"></i></div><b>'+ar(cnt[k])+'/٤٠</b></div>'});
     h+='</div>';
     var show2=tie?[p1,ks[1]]:[p1];
     show2.forEach(function(k){var x=t.styles[k];
@@ -523,7 +536,9 @@ run.addEventListener("click",function(e){
   if(a==="home"){S=null;location.hash="";show("cat");window.scrollTo({top:0});return}
   if(a==="start"){startScreen();return}
   if(a==="begin"){begin();top();return}
-  if(a==="prev"){S.i--;question();return}
+  if(a==="prev"){S.i--;if(S.t.type==="choice")loadRank();question();return}
+  if(a==="reset"){S.rank={};S.ans[S.i]=null;question();return}
+  if(a==="next"){advance();return}
   if(a==="pick"){pick(b.dataset.v);return}
   if(a==="print"){window.print();return}
   if(a==="add"){S.sits.push({t:"",v:""});controlScreen();var ins=run.querySelectorAll(".sit-top input");ins[ins.length-1].focus();return}
