@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="اختبارات الوعي الذاتي من سلطان الشهاب: الذكاء العاطفي، نمط الشخصية، والتعامل مع التوتر. نتيجة فورية باسمك.">
+<title>الاختبارات الشخصية | سلطان الشهاب</title>
+<style>
+@font-face{font-family:'Dubai';font-weight:300;font-display:swap;src:url('fonts/Dubai-Light.woff2') format('woff2'),url('fonts/Dubai-Light.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:400;font-display:swap;src:url('fonts/Dubai-Regular.woff2') format('woff2'),url('fonts/Dubai-Regular.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:500;font-display:swap;src:url('fonts/Dubai-Medium.woff2') format('woff2'),url('fonts/Dubai-Medium.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:700;font-display:swap;src:url('fonts/Dubai-Bold.woff2') format('woff2'),url('fonts/Dubai-Bold.woff') format('woff')}
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --ink:#10283a; --muted:#56687a; --line:#dbe3ea;
+  --navy:#0d2436; --navy-2:#153650; --on-navy:#eef3f7; --on-navy-muted:#a9bccb;
+  --gold:#2dd4bf; --gold-soft:#d5f5f0; --gold-ink:#0f766e; --teal:#2f7f86; --sadu:#a8402c;
+  --c-d:#c2410c; --c-e:#7c3aed; --c-a:#15803d; --c-t:#1d4ed8;
+  --font:"Dubai","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
+  --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf;
+  --c-d:#fb923c; --c-e:#a78bfa; --c-a:#4ade80; --c-t:#60a5fa; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
+  --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf;
+  --c-d:#fb923c; --c-e:#a78bfa; --c-a:#4ade80; --c-t:#60a5fa; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.8}
+h1,h2,h3{line-height:1.35;margin:0;font-weight:700;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+.in{max-width:1080px;margin-inline:auto;padding-inline:16px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+[hidden]{display:none!important}
+
+/* NAV */
+.top{background:var(--navy);color:var(--on-navy);position:sticky;top:0;z-index:20;border-bottom:1px solid #ffffff14}
+.top .in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{font-size:1.2rem;font-weight:700;display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand i{width:30px;height:30px;border-radius:50% 50% 6px 6px;background:var(--gold);display:inline-block}
+.top nav{display:flex;align-items:center;gap:18px;font-size:.95rem;color:var(--on-navy-muted)}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--gold)}
+.top .book{background:var(--gold);color:#0d2436;padding:8px 18px;border-radius:999px;font-weight:600}
+.top .book:hover{color:#0d2436}
+
+/* HERO */
+.hero{background:radial-gradient(900px 400px at 85% 0%,var(--navy-2),transparent 60%),var(--navy);color:var(--on-navy);padding-block:56px 30px}
+.eyebrow{font-size:.85rem;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+.hero h1{font-size:clamp(2rem,5vw,3.1rem);margin-top:10px}
+.hero p{color:var(--on-navy-muted);max-width:36em;margin-top:14px;font-size:1.08rem}
+.steps{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.steps span{border:1px solid #ffffff26;border-radius:999px;padding:4px 14px;font-size:.88rem;color:var(--on-navy-muted)}
+.steps b{color:var(--gold);margin-inline-end:6px}
+.wave{display:block;width:100%;height:clamp(40px,6vw,80px);color:var(--navy);margin-top:-1px}
+.wave svg{display:block;width:100%;height:100%}
+.wave .w2{fill:var(--gold);opacity:.35}
+.wave .ln{fill:none;stroke:var(--gold);stroke-width:2.5;vector-effect:non-scaling-stroke}
+
+/* CATALOG */
+main{padding-block:20px 80px;min-height:50vh}
+.cat{margin-top:36px}
+.cat:first-child{margin-top:8px}
+.cat-h{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.cat-h .dot{width:12px;height:12px;border-radius:4px;background:var(--c)}
+.cat-h h2{font-size:1.4rem}
+.cat-h p{color:var(--muted);font-size:.95rem}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{--c:var(--gold-ink);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:10px;align-content:start;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #10283a1a}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--c)}
+.card h3{font-size:1.25rem}
+.card p{color:var(--muted);font-size:.95rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.82rem}
+.meta span{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 12px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s;background:var(--gold);color:#0d2436}
+.btn:hover{transform:translateY(-1px)}
+.btn.line{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn.dark{background:var(--navy);color:var(--on-navy)}
+.btn.wa{background:#25d366;color:#08311a}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.card .btn{justify-self:start;margin-top:6px}
+.c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)}
+.note{margin-top:40px;padding:18px 20px;border-radius:16px;background:var(--gold-soft);color:var(--ink);font-size:.93rem}
+
+/* RUNNER */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,40px);max-width:760px;margin:8px auto 0}
+.back{background:none;border:0;color:var(--muted);cursor:pointer;padding:0;font-size:.95rem;margin-bottom:14px}
+.back:hover{color:var(--gold-ink)}
+.panel h2{font-size:clamp(1.4rem,3.4vw,1.9rem)}
+.panel .sub{color:var(--muted);margin-top:8px}
+.field{display:grid;gap:6px;margin-top:20px}
+.field label{font-weight:600;font-size:.95rem}
+.field small{color:var(--muted);font-weight:400}
+.field input,.field textarea{width:100%;padding:12px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg)}
+.field input:focus,.field textarea:focus{border-color:var(--gold);outline:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;align-items:center}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-block:6px 22px}
+.bar i{display:block;height:100%;background:var(--gold);border-radius:99px;transition:width .3s}
+.qnum{color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between}
+.qtext{font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;line-height:1.6;min-height:3.2em}
+.qdim{display:inline-block;font-size:.8rem;color:var(--gold-ink);background:var(--gold-soft);border-radius:999px;padding:1px 12px;margin-bottom:10px}
+.opts{display:grid;gap:10px;margin-top:20px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:start;padding:14px 18px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);cursor:pointer;transition:border-color .15s,background .15s}
+@media (hover:hover){.opt:hover{border-color:var(--gold)}}
+.opt[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-soft)}
+.opt .k{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);font-weight:700;font-size:.9rem;background:var(--surface)}
+.opt[aria-pressed="true"] .k{background:var(--gold);border-color:var(--gold);color:#0d2436}
+.opts.scale{grid-template-columns:repeat(5,minmax(0,1fr))}
+.opts.scale .opt{flex-direction:column;justify-content:center;text-align:center;gap:6px;padding:14px 6px;font-size:.82rem;line-height:1.4}
+.opts.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.opts.three .opt{justify-content:center}
+
+/* situations */
+.sit{border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px;background:var(--bg)}
+.sit-top{display:flex;gap:10px;align-items:center}
+.sit-top input{flex:1;min-width:0;padding:10px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface)}
+.sit-top button{flex:none;border:0;background:none;color:var(--muted);cursor:pointer;font-size:1.3rem;line-height:1;padding:6px}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.seg button{flex:1 1 120px;padding:8px 10px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-size:.88rem}
+.seg button[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-soft);font-weight:700}
+
+/* RESULT */
+.rhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:18px}
+.rhead .who{font-size:.92rem;color:var(--muted)}
+.rhead .who b{color:var(--ink);font-size:1.1rem}
+.logo-mini{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem}
+.logo-mini i{width:22px;height:22px;border-radius:50% 50% 5px 5px;background:var(--gold);display:inline-block}
+.score{display:flex;gap:22px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.ring{--p:0;--rc:var(--gold-ink);width:130px;height:130px;border-radius:50%;background:conic-gradient(var(--rc) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none}
+.ring div{width:100px;height:100px;border-radius:50%;background:var(--surface);display:grid;place-items:center;text-align:center;line-height:1.2}
+.ring b{font-size:1.9rem}
+.ring small{font-size:.75rem;color:var(--muted)}
+.score h3{font-size:1.5rem}
+.score p{color:var(--muted);margin-top:6px;max-width:30em}
+.lvl{display:inline-block;font-size:.85rem;font-weight:700;padding:2px 14px;border-radius:999px;background:var(--gold-soft);color:var(--gold-ink);margin-bottom:6px}
+.dims{display:grid;gap:14px;margin-top:28px}
+.dim-row{display:grid;grid-template-columns:9em 1fr 3.5em;gap:12px;align-items:center;font-size:.95rem}
+.dim-row .bar{margin:0;height:12px}
+.dim-row .bar i{background:var(--dc,var(--gold-ink))}
+.dim-row b{text-align:end;font-variant-numeric:tabular-nums}
+.box{margin-top:24px;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:var(--bg)}
+.box h4{margin:0 0 8px;font-size:1.05rem}
+.box ul{margin:0;padding-inline-start:20px;display:grid;gap:4px}
+.box p+p{margin-top:8px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid2 .box{margin-top:0}
+.sec-gap{margin-top:14px}
+.sit-res{display:grid;gap:10px;margin-top:20px}
+.sit-res div{padding:12px 16px;border-radius:14px;border-inline-start:5px solid var(--sc);background:var(--bg)}
+.sit-res b{display:block}
+.sit-res span{font-size:.9rem;color:var(--muted)}
+.disclaimer{margin-top:22px;font-size:.82rem;color:var(--muted)}
+.print-only{display:none}
+
+footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:center}
+
+@media (max-width:760px){
+  .cards,.grid2{grid-template-columns:1fr}
+  .top nav a:not(.book){display:none}
+  .opts.scale{grid-template-columns:1fr}
+  .opts.scale .opt{flex-direction:row;justify-content:flex-start;text-align:start;font-size:.95rem}
+  .dim-row{grid-template-columns:1fr 3em}
+  .dim-row span{grid-column:1/-1}
+  .dim-row .bar{grid-column:1}
+}
+@media print{
+  body{background:#fff;color:#000;font-size:14px}
+  .top,.hero,.wave,footer,.actions,.back,.no-print{display:none!important}
+  main{padding:0}
+  .panel{border:0;padding:0;max-width:none}
+  .box,.sit-res div{break-inside:avoid}
+  .print-only{display:block}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <a class="brand" href="index.html"><i></i>سلطان الشهاب</a>
+    <nav>
+      <a href="index.html#coaching">الكوتشنج</a>
+      <a href="index.html#programs">البرامج</a>
+      <a href="tests.html" aria-current="page" style="color:var(--gold)">الاختبارات</a>
+      <a class="book" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلسة</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="in">
+    <span class="eyebrow">اختبارات الوعي الذاتي</span>
+    <h1>اعرف نفسك أكثر،<br>وابدأ خطوتك التالية</h1>
+    <p>اختبارات قصيرة تكشف لك أسلوبك العاطفي ونمط شخصيتك وطريقة تعاملك مع التوتر. تكتب اسمك، تجاوب بصدق، وتطلع لك نتيجتك باسمك فوراً وتقدر تحفظها أو ترسلها.</p>
+    <div class="steps"><span><b>١</b>اختر الاختبار</span><span><b>٢</b>اكتب اسمك</span><span><b>٣</b>أجب بصدق</span><span><b>٤</b>احفظ نتيجتك</span></div>
+  </div>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 0H1440V58C1250 98 1080 30 880 52S470 104 260 70 60 40 0 52Z"/><path fill="currentColor" d="M0 0H1440V40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38Z"/><path class="ln" d="M1440 40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38"/></svg></div>
+
+<main class="in">
+  <div id="catalog"></div>
+  <div id="runner" hidden></div>
+</main>
+
+<footer>© ٢٠٢٦ سلطان الشهاب · الرياض، المملكة العربية السعودية<br>هذه الاختبارات أدوات للتأمل الذاتي والتطوير، وليست تشخيصاً نفسياً.</footer>
+
+<script>
+(function(){
+"use strict";
+var WA="966502990020";
+var BOOK="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk";
+var AR="٠١٢٣٤٥٦٧٨٩";
+function ar(n){return String(n).replace(/\d/g,function(d){return AR[d]})}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function pct(v,min,max){return Math.round((v-min)/(max-min)*100)}
+function level(p){
+  if(p>=75)return {t:"قوة واضحة",d:"هذا جانب مميز عندك، حافظ عليه واستثمره."};
+  if(p>=50)return {t:"مستوى جيد قابل للتطوير",d:"عندك أساس جيد، وفيه مساحة واضحة للتحسين."};
+  return {t:"أولوية للتطوير",d:"هذا الجانب يستحق تركيزك في الفترة القادمة."};
+}
+
+/* ================= CATEGORIES ================= */
+var CATS=[
+  {id:"eq",cls:"c-eq",name:"الذكاء العاطفي",desc:"كيف تفهم مشاعرك وتديرها وتتعامل مع مشاعر الآخرين"},
+  {id:"style",cls:"c-style",name:"أنماط الشخصية",desc:"أسلوبك الطبيعي في التفكير والتواصل والعمل مع الناس"},
+  {id:"stress",cls:"c-stress",name:"التوتر والضغوط",desc:"نظرتك للتوتر وقدرتك على التحكم فيه"}
+];
+
+/* ================= TESTS ================= */
+var F3=["نادراً","أحياناً","غالباً"];
+var F5=["لا ينطبق إطلاقاً","ينطبق قليلاً","ينطبق أحياناً","ينطبق غالباً","ينطبق تماماً"];
+
+var TESTS=[
+{
+  id:"eq",cat:"eq",title:"مقياس الذكاء العاطفي",
+  intro:"٢٠ عبارة تقيس خمسة أبعاد للذكاء العاطفي. اختر مدى تكرار كل سلوك عندك في الواقع، لا كما تتمنى أن تكون.",
+  mins:5,type:"likert",scale:F3,
+  dims:[
+    {k:"aw",n:"الوعي بالذات",tip:["خصص دقيقتين آخر اليوم تكتب فيها: ماذا شعرت؟ ومتى؟ ولماذا؟","سمِّ شعورك بكلمة دقيقة (قلق، إحباط، حماس) بدل (متضايق) أو (عادي).","اطلب من شخص تثق فيه أن يصف لك كيف تبدو عندما تتوتر."]},
+    {k:"sm",n:"إدارة الذات",tip:["طبّق قاعدة التوقف: خذ نفساً عميقاً وعدّ إلى خمسة قبل الرد في المواقف الحادة.","أجّل الرد المكتوب على الرسائل المستفزة ساعة على الأقل.","حدد مسبقاً كيف تريد أن تتصرف في المواقف التي تتكرر وتستفزك."]},
+    {k:"mo",n:"التحفيز الذاتي",tip:["قسّم هدفك الكبير إلى خطوات أسبوعية صغيرة واحتفل بإنجازها.","بعد أي إخفاق اسأل نفسك: ماذا تعلمت؟ وما الذي سأفعله بشكل مختلف؟","اربط مهامك اليومية بسبب أكبر يهمك شخصياً."]},
+    {k:"em",n:"التعاطف",tip:["في حوارك القادم لا تقاطع، ولخّص ما فهمته قبل أن تعطي رأيك.","لاحظ لغة الجسد ونبرة الصوت، لا الكلمات فقط.","اسأل سؤالاً واحداً إضافياً عن حال الشخص قبل أن تدخل في طلبك."]},
+    {k:"so",n:"المهارات الاجتماعية",tip:["تدرّب على قول (لا) مع تقديم بديل: لا أستطيع اليوم، لكن أقدر يوم الأحد.","امدح جهداً محدداً لزميل كل يوم بكلمات واضحة.","في الخلاف ركّز على المشكلة لا على الشخص، وابدأ بنقطة متفق عليها."]}
+  ],
+  items:[
+    ["aw","أستطيع تسمية ما أشعر به بدقة في اللحظة نفسها."],
+    ["sm","أتمالك نفسي عندما أتعرض لانتقاد حاد."],
+    ["mo","أستمر في العمل على هدفي حتى عندما تتأخر النتائج."],
+    ["em","ألاحظ مشاعر الآخرين حتى لو لم يصرّحوا بها."],
+    ["so","أعبّر عن رأيي بوضوح ولباقة."],
+    ["aw","أعرف المواقف التي تستفزني قبل أن تحدث."],
+    ["sm","أتوقف وأفكر قبل أن أرد في المواقف المتوترة."],
+    ["mo","أتعلم من الإخفاق بدل أن ألوم نفسي."],
+    ["em","أستمع لأفهم، لا لأرد."],
+    ["so","أستطيع أن أقول (لا) دون أن أخسر العلاقة."],
+    ["aw","أدرك كيف يؤثر مزاجي على قراراتي."],
+    ["sm","أتعامل مع التغيير المفاجئ بمرونة."],
+    ["mo","أبادر دون أن أنتظر من يطلب مني."],
+    ["em","أحترم وجهات النظر المختلفة عن رأيي."],
+    ["so","أحتوي الخلاف قبل أن يتصاعد."],
+    ["aw","أعرف نقاط قوتي وحدودي بوضوح."],
+    ["sm","أعتذر بسهولة عندما أخطئ."],
+    ["mo","أرى الجانب الممكن في الظروف الصعبة."],
+    ["em","أراعي ظروف الآخرين عندما أطلب منهم شيئاً."],
+    ["so","أبادر بتقدير جهود الآخرين والثناء عليها."]
+  ]
+},
+{
+  id:"style",cat:"style",title:"ما نمط شخصيتك؟",
+  intro:"١٢ موقفاً، في كل موقف أربع إجابات. اختر الإجابة الأقرب لك فعلاً. لا توجد إجابة صحيحة أو خاطئة، كل نمط له قوته.",
+  mins:4,type:"choice",
+  styles:{
+    D:{n:"المحرّك",c:"var(--c-d)",s:"حاسم، عملي، يركّز على النتائج",
+       desc:"تحب التحدي وتتحرك بسرعة نحو الهدف. تتخذ القرار بثقة، وتفضّل الحديث المختصر الذي يدخل في الموضوع مباشرة.",
+       str:["الحسم وسرعة الإنجاز","تحمّل المسؤولية وقيادة المواقف","وضوح الهدف والتركيز على النتيجة"],
+       press:"قد تصبح متسلطاً أو نافد الصبر، وتتجاوز مشاعر الآخرين لتصل إلى النتيجة.",
+       others:"كن مختصراً وواضحاً، اعرض عليه الخيارات والنتائج، واحترم وقته.",
+       grow:"خصص وقتاً للإصغاء، واسأل عن رأي الفريق قبل أن تحسم."},
+    E:{n:"المعبّر",c:"var(--c-e)",s:"متحمس، اجتماعي، صاحب أفكار",
+       desc:"تحب الناس والأفكار الجديدة، ولديك قدرة على الإقناع وبث الحماس. ترى الصورة الكبيرة وتنجذب للإبداع والتقدير.",
+       str:["الإلهام والإقناع","بناء العلاقات بسرعة","توليد الأفكار ورؤية المستقبل"],
+       press:"قد تنفعل أو تبالغ في الكلام، وتنتقل لفكرة جديدة قبل أن تُكمل السابقة.",
+       others:"أعطه مساحة للحديث، قدّر أفكاره علناً، وساعده في تحويلها إلى خطوات.",
+       grow:"دوّن التزاماتك وتابعها، واهتم بالتفاصيل التي تُكمل الفكرة."},
+    A:{n:"الودود",c:"var(--c-a)",s:"متعاون، صبور، يبني الثقة",
+       desc:"تهتم بالناس وتحرص على الانسجام في الفريق. أنت مستمع جيد وشريك يُعتمد عليه، وتفضّل الاستقرار والوضوح.",
+       str:["بناء الثقة والعلاقات العميقة","الإصغاء ودعم الآخرين","الصبر والولاء للفريق"],
+       press:"قد تتجنب المواجهة وتساير على حساب رأيك، أو تتردد في التغيير.",
+       others:"ابدأ بالجانب الإنساني، أعطه وقتاً، ووضّح له كيف سيؤثر القرار على الناس.",
+       grow:"عبّر عن رأيك بوضوح، وتدرّب على قول (لا) بلطف وحزم."},
+    T:{n:"التحليلي",c:"var(--c-t)",s:"دقيق، منظم، يعتمد على الحقائق",
+       desc:"تبحث عن الدقة والجودة، وتحب أن تفهم قبل أن تقرر. تعتمد على البيانات والمنطق وتخطط جيداً.",
+       str:["التحليل والتفكير المنطقي","الدقة والجودة العالية","التخطيط والتنظيم"],
+       press:"قد تنسحب أو تغرق في التفاصيل، ويتأخر قرارك بحثاً عن معلومة إضافية.",
+       others:"قدّم له المعلومات والأرقام مكتوبة، وأعطه وقتاً للتفكير قبل القرار.",
+       grow:"حدد موعداً للقرار والتزم به، وتقبّل أن (الجيد بما يكفي) أحياناً هو الأفضل."}
+  },
+  items:[
+    ["في الاجتماعات، أنا غالباً:",{D:"أدخل في الموضوع مباشرة وأدفع نحو القرار",E:"أطرح أفكاراً جديدة وأحمّس الحضور",A:"أحرص أن يشارك الجميع ويرتاحوا",T:"أسأل عن الأرقام والتفاصيل قبل أي قرار"}],
+    ["عندما أتخذ قراراً مهماً:",{D:"أقرر بسرعة وأتحمّل النتيجة",E:"أعتمد على حدسي ورؤيتي للصورة الكبيرة",A:"أستشير من حولي وأفكر في أثره عليهم",T:"أجمع المعلومات وأقارن البدائل بعناية"}],
+    ["تحت الضغط، غالباً:",{D:"أصبح أكثر حزماً وأتولى زمام الأمور",E:"أتكلم أكثر وقد أنفعل",A:"أتجنب المواجهة وأحاول التهدئة",T:"أنسحب قليلاً وأدقق أكثر"}],
+    ["أكثر ما يحفّزني في العمل:",{D:"التحدي والإنجاز",E:"التقدير والظهور",A:"الأمان والعلاقات الطيبة",T:"الدقة والجودة"}],
+    ["أسلوبي في الحديث:",{D:"مختصر ومباشر",E:"حماسي ومليء بالقصص",A:"هادئ ودافئ",T:"منظم ومدعوم بالحقائق"}],
+    ["أكثر ما يزعجني:",{D:"البطء والتردد",E:"الروتين والتجاهل",A:"الصراع والقسوة",T:"الفوضى والأخطاء"}],
+    ["عندما أعمل في فريق:",{D:"أقود وأوزع المهام",E:"أشجع وأبث الحماس",A:"أدعم وأساند الزملاء",T:"أنظم وأضع الخطة"}],
+    ["مساحة عملي عادةً:",{D:"عملية، فيها ما يخدم الهدف فقط",E:"ملونة وفيها لمسات شخصية",A:"مريحة وفيها صور وذكريات",T:"مرتبة وكل شيء في مكانه"}],
+    ["يصفني الآخرون بأني:",{D:"واثق وحاسم",E:"اجتماعي وملهم",A:"صبور ومتعاون",T:"دقيق ومتأنٍّ"}],
+    ["أمام التغيير:",{D:"أتبناه إذا خدم النتائج",E:"أتحمس له خاصة إذا كان جديداً",A:"أحتاج وقتاً وطمأنة",T:"أحتاج أسباباً ومنطقاً مقنعاً"}],
+    ["أكبر نقطة قوة عندي:",{D:"الإنجاز",E:"الإقناع والإلهام",A:"بناء الثقة",T:"التحليل والتخطيط"}],
+    ["أكثر ما أحتاج أن أطوّره:",{D:"الصبر والإصغاء",E:"المتابعة والتنظيم",A:"الحزم وقول لا",T:"سرعة الحسم"}]
+  ]
+},
+{
+  id:"perspective",cat:"stress",title:"مقياس المنظور تجاه التوتر",
+  intro:"١٢ عبارة تقيس ثلاث ركائز للتعامل مع التوتر: البدنية والعقلية والاجتماعية. قيّم كل عبارة من ١ إلى ٥ حسب انطباقها عليك.",
+  mins:4,type:"likert",scale:F5,
+  dims:[
+    {k:"bd",n:"الركيزة البدنية",tip:["ثبّت موعد نومك واستيقاظك ٧ أيام متتالية.","امشِ ٢٠ دقيقة يومياً، خصوصاً في الأيام المزدحمة.","جرّب تنفس ٤-٤-٦: شهيق ٤ ثوانٍ، حبس ٤، زفير ٦، لمدة دقيقتين."]},
+    {k:"ml",n:"الركيزة العقلية",tip:["عندما تقلق اسأل: هل هذا بيدي؟ إن كان نعم فما خطوتي؟ وإن كان لا فكيف أختار ردة فعلي؟","اكتب أسوأ احتمال وأكثر احتمال واقعي، وقارن بينهما.","حدد وقتاً قصيراً للتفكير في المشكلة، ثم انتقل لنشاط آخر."]},
+    {k:"sc",n:"الركيزة الاجتماعية",tip:["حدد شخصين تثق فيهما وتواصل معهما هذا الأسبوع.","اطلب مساعدة واحدة صغيرة في مهمة تضغطك.","لا تنعزل وقت الضغط: قهوة قصيرة مع زميل تفرق كثيراً."]}
+  ],
+  items:[
+    ["bd","أنام ساعات كافية وأستيقظ بنشاط."],
+    ["ml","أفكر في المواقف المزعجة مراراً بعد انتهائها.",1],
+    ["sc","لدي أشخاص أثق بهم وأتحدث معهم عندما أتضايق."],
+    ["bd","أمارس نشاطاً بدنياً يساعدني على تفريغ التوتر."],
+    ["ml","أفرّق بين ما أستطيع التأثير فيه وما لا أستطيع."],
+    ["sc","أطلب المساعدة عندما أحتاجها."],
+    ["bd","أهمل وجباتي وصحتي عندما يزدحم جدولي.",1],
+    ["ml","أضع لنفسي وللآخرين توقعات واقعية."],
+    ["sc","أحافظ على روح الدعابة في الأوقات الصعبة."],
+    ["bd","آخذ فترات قصيرة للتنفس أو الاسترخاء خلال يومي."],
+    ["ml","أهوّل الأخبار السيئة وأتخيل أسوأ الاحتمالات.",1],
+    ["sc","أعزل نفسي عن الناس عندما أكون تحت ضغط.",1]
+  ]
+},
+{
+  id:"control",cat:"stress",title:"خريطة السيطرة على التوتر",
+  intro:"اكتب المواقف التي تسبب لك التوتر هذه الفترة (من ٣ إلى ٨ مواقف)، ثم حدد لكل موقف: هل هو بيدك؟ النتيجة توضح لك أين تضع طاقتك.",
+  mins:5,type:"control"
+}
+];
+
+var CTRL={
+  y:{n:"بيدي",c:"var(--c-a)",a:"ضع له خطوة عملية واحدة تنفذها هذا الأسبوع."},
+  p:{n:"بيدي جزئياً",c:"var(--gold-ink)",a:"ركّز على الجزء الذي تستطيع التأثير فيه، واترك الباقي."},
+  n:{n:"ليس بيدي",c:"var(--sadu)",a:"لا تستنزف طاقتك فيه؛ اختر ردة فعلك وتقبّل ما لا يتغير."}
+};
+
+/* ================= STATE ================= */
+var cat=document.getElementById("catalog"),run=document.getElementById("runner");
+var S=null;
+
+function byId(id){for(var i=0;i<TESTS.length;i++)if(TESTS[i].id===id)return TESTS[i];return null}
+function count(t){return t.type==="control"?"٣ إلى ٨ مواقف":ar(t.items.length)+" سؤالاً"}
+
+function renderCatalog(){
+  var h="";
+  CATS.forEach(function(c){
+    h+='<section class="cat '+c.cls+'"><div class="cat-h"><span class="dot" style="background:var(--c)"></span><div><h2>'+c.name+'</h2><p>'+c.desc+'</p></div></div><div class="cards">';
+    TESTS.filter(function(t){return t.cat===c.id}).forEach(function(t){
+      h+='<article class="card '+c.cls+'"><div class="meta"><span>'+c.name+'</span><span>'+count(t)+'</span><span>'+ar(t.mins)+' دقائق</span></div><h3>'+t.title+'</h3><p>'+t.intro+'</p><a class="btn" href="#'+t.id+'">ابدأ الاختبار</a></article>';
+    });
+    h+='</div></section>';
+  });
+  h+='<p class="note">نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان إلا إذا اخترت إرسالها. هذه الاختبارات أدوات للتأمل الذاتي والتطوير، وليست تشخيصاً نفسياً. ولقراءة نتيجتك بعمق وتحويلها لخطة، <a href="'+BOOK+'" target="_blank" rel="noopener">احجز جلسة كوتشنج</a>.</p>';
+  cat.innerHTML=h;
+}
+
+function show(which){cat.hidden=which!=="cat";run.hidden=which==="cat"}
+function top(){var r=run.getBoundingClientRect();if(r.top<0||r.top>innerHeight*.5)window.scrollTo({top:Math.max(0,run.offsetTop-90)})}
+
+function route(){
+  var id=decodeURIComponent(location.hash.slice(1));
+  var t=byId(id);
+  if(!t){S=null;show("cat");return}
+  if(!S||S.t!==t){S={t:t,name:"",org:"",i:0,ans:[],sits:[]};}
+  show("run");startScreen();top();
+}
+
+function startScreen(){
+  var t=S.t,c=CATS.filter(function(x){return x.id===t.cat})[0];
+  run.innerHTML='<div class="panel"><button class="back" data-act="home">→ كل الاختبارات</button>'+
+    '<span class="qdim">'+c.name+'</span><h2>'+t.title+'</h2><p class="sub">'+t.intro+'</p>'+
+    '<div class="field"><label for="pn">اسمك</label><input id="pn" autocomplete="name" maxlength="60" value="'+esc(S.name)+'" placeholder="مثال: نورة العتيبي"></div>'+
+    '<div class="field"><label for="po">الجهة أو البرنامج التدريبي <small>(اختياري)</small></label><input id="po" maxlength="80" value="'+esc(S.org)+'" placeholder="مثال: برنامج الوعي الذاتي، أكاديمية ..."></div>'+
+    '<div class="actions"><button class="btn" data-act="begin" id="go">ابدأ</button><span class="sub" style="margin:0">'+count(t)+' · '+ar(t.mins)+' دقائق تقريباً</span></div></div>';
+  var pn=document.getElementById("pn"),go=document.getElementById("go");
+  function chk(){go.disabled=pn.value.trim().length<2}
+  pn.addEventListener("input",chk);chk();
+  pn.addEventListener("keydown",function(e){if(e.key==="Enter"&&!go.disabled)go.click()});
+}
+
+function begin(){
+  S.name=document.getElementById("pn").value.trim();
+  S.org=document.getElementById("po").value.trim();
+  if(S.t.type==="choice"&&!S.order){
+    S.order=S.t.items.map(function(){var k=["D","E","A","T"];for(var i=3;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=k[i];k[i]=k[j];k[j]=x}return k});
+  }
+  if(S.t.type==="control"){if(!S.sits.length)S.sits=[{t:"",v:""},{t:"",v:""},{t:"",v:""}];controlScreen()}
+  else{S.i=0;question()}
+}
+
+function question(){
+  var t=S.t,i=S.i,n=t.items.length,it=t.items[i],sel=S.ans[i];
+  var h='<div class="panel"><button class="back" data-act="'+(i?"prev":"start")+'">→ '+(i?"السؤال السابق":"رجوع")+'</button>'+
+    '<div class="qnum"><span>'+t.title+'</span><span>'+ar(i+1)+' من '+ar(n)+'</span></div><div class="bar"><i style="width:'+((i)/n*100)+'%"></i></div>';
+  if(t.type==="likert"){
+    h+='<p class="qtext">'+it[1]+'</p><div class="opts '+(t.scale.length===5?"scale":"three")+'" role="group">';
+    t.scale.forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+ar(k+1)+'</span>'+lab+'</button>'});
+  }else{
+    h+='<p class="qtext">'+it[0]+'</p><div class="opts" role="group">';
+    var L="أبجد";
+    S.order[i].forEach(function(st,k){h+='<button class="opt" data-act="pick" data-v="'+st+'" aria-pressed="'+(sel===st)+'"><span class="k">'+L[k]+'</span>'+it[1][st]+'</button>'});
+  }
+  h+='</div></div>';
+  run.innerHTML=h;
+}
+
+function pick(v){
+  if(S.t.type==="likert")v=+v;
+  S.ans[S.i]=v;
+  [].forEach.call(run.querySelectorAll(".opt"),function(b){b.setAttribute("aria-pressed",String(b.dataset.v==String(v)))});
+  setTimeout(function(){
+    if(S.i<S.t.items.length-1){S.i++;question()}else{result()}
+  },220);
+}
+
+/* ---- control map ---- */
+function controlScreen(){
+  var h='<div class="panel"><button class="back" data-act="start">→ رجوع</button><h2>'+S.t.title+'</h2><p class="sub">اكتب كل موقف باختصار، ثم حدد هل هو بيدك.</p><div id="sits">';
+  S.sits.forEach(function(s,i){
+    h+='<div class="sit"><div class="sit-top"><input data-i="'+i+'" maxlength="120" value="'+esc(s.t)+'" placeholder="الموقف '+ar(i+1)+': مثال، ضغط المواعيد النهائية" aria-label="الموقف '+ar(i+1)+'">'+(S.sits.length>3?'<button data-act="del" data-i="'+i+'" aria-label="حذف">×</button>':'')+'</div><div class="seg" role="group">';
+    ["y","p","n"].forEach(function(k){h+='<button data-act="ctl" data-i="'+i+'" data-v="'+k+'" aria-pressed="'+(s.v===k)+'">'+CTRL[k].n+'</button>'});
+    h+='</div></div>';
+  });
+  h+='</div><div class="actions">'+(S.sits.length<8?'<button class="btn line" data-act="add">+ أضف موقفاً</button>':'')+'<button class="btn" data-act="ctlres" id="cr">اعرض النتيجة</button></div></div>';
+  run.innerHTML=h;
+  [].forEach.call(run.querySelectorAll(".sit-top input"),function(inp){inp.addEventListener("input",function(){S.sits[+inp.dataset.i].t=inp.value;chkCtl()})});
+  chkCtl();
+}
+function validSits(){return S.sits.filter(function(s){return s.t.trim()&&s.v})}
+function chkCtl(){var b=document.getElementById("cr");if(b)b.disabled=validSits().length<3}
+
+/* ================= RESULTS ================= */
+function today(){try{return new Date().toLocaleDateString("ar-SA-u-ca-gregory-nu-arab",{year:"numeric",month:"long",day:"numeric"})}catch(e){return new Date().toISOString().slice(0,10)}}
+
+function head(){
+  return '<div class="rhead"><div class="who">نتيجة: <b>'+esc(S.name)+'</b>'+(S.org?'<br>'+esc(S.org):'')+'<br>'+S.t.title+' · '+today()+'</div><div class="logo-mini"><i></i>سلطان الشهاب</div></div>';
+}
+function ring(p,label,color){return '<div class="ring" style="--p:'+p+(color?';--rc:'+color:'')+'"><div><span><b>'+ar(p)+'٪</b><br><small>'+label+'</small></span></div></div>'}
+function actions(summary){
+  var msg="السلام عليكم أ. سلطان،\nهذه نتيجتي في ("+S.t.title+") من موقعك:\nالاسم: "+S.name+(S.org?"\nالجهة/البرنامج: "+S.org:"")+"\n"+summary;
+  return '<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
+    '<a class="btn wa" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">أرسل النتيجة لسلطان</a>'+
+    '<a class="btn line" href="'+BOOK+'" target="_blank" rel="noopener">احجز جلسة لمناقشتها</a>'+
+    '<button class="btn line" data-act="home">اختبار آخر</button></div>'+
+    '<p class="disclaimer">هذا الاختبار أداة للتأمل الذاتي والتطوير، وليس تشخيصاً نفسياً. © سلطان الشهاب</p>';
+}
+
+function result(){
+  var t=S.t,h='<div class="panel">'+head(),sum="";
+  if(t.type==="likert"){
+    var tot=0,max=t.scale.length,dimS={};
+    t.dims.forEach(function(d){dimS[d.k]={s:0,c:0}});
+    t.items.forEach(function(it,i){var v=S.ans[i];if(it[2])v=max+1-v;dimS[it[0]].s+=v;dimS[it[0]].c++;tot+=v});
+    var P=pct(tot,t.items.length,t.items.length*max),L=level(P);
+    var rows=t.dims.map(function(d){var x=dimS[d.k];return {d:d,p:pct(x.s,x.c,x.c*max)}});
+    var sorted=rows.slice().sort(function(a,b){return b.p-a.p});
+    var best=sorted[0],low=sorted[sorted.length-1];
+    h+='<div class="score">'+ring(P,"الدرجة الكلية")+'<div><span class="lvl">'+L.t+'</span><h3>'+(t.id==="eq"?"ذكاؤك العاطفي":"منظورك تجاه التوتر")+'</h3><p>'+L.d+' أقوى جانب عندك هو <b>'+best.d.n+'</b>، وأكثر جانب يستحق تركيزك هو <b>'+low.d.n+'</b>.</p></div></div>';
+    h+='<div class="dims">';
+    rows.forEach(function(r){h+='<div class="dim-row"><span>'+r.d.n+'</span><div class="bar"><i style="width:'+Math.max(r.p,3)+'%"></i></div><b>'+ar(r.p)+'٪</b></div>'});
+    h+='</div>';
+    h+='<div class="box"><h4>خطواتك لتطوير ('+low.d.n+')</h4><ul>'+low.d.tip.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></div>';
+    h+='<div class="box"><h4>كيف تقرأ النتيجة؟</h4><p>٧٥٪ فأكثر: قوة واضحة · من ٥٠٪ إلى ٧٤٪: مستوى جيد قابل للتطوير · أقل من ٥٠٪: أولوية للتطوير. النتيجة تعكس إجاباتك اليوم، وتتغير مع الممارسة؛ أعد الاختبار بعد ٣ أشهر وقارن.</p></div>';
+    sum="الدرجة الكلية: "+P+"% ("+L.t+")\n"+rows.map(function(r){return r.d.n+": "+r.p+"%"}).join("\n");
+  }
+  else if(t.type==="choice"){
+    var cnt={D:0,E:0,A:0,T:0};S.ans.forEach(function(v){cnt[v]++});
+    var ks=Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a]});
+    var n=t.items.length,p1=ks[0],st=t.styles[p1],tie=cnt[ks[1]]===cnt[p1];
+    var P=Math.round(cnt[p1]/n*100);
+    h+='<div class="score">'+ring(P,"نمطك الأول",st.c)+'<div><span class="lvl">نمطك الأساسي</span><h3 style="color:'+st.c+'">'+st.n+(tie?' و'+t.styles[ks[1]].n:'')+'</h3><p>'+st.s+'. '+(tie?'نتيجتك متقاربة بين نمطين، وهذا يعني أنك تتنقل بينهما حسب الموقف.':'نمطك الثاني هو <b>'+t.styles[ks[1]].n+'</b>.')+'</p></div></div>';
+    h+='<div class="dims">';
+    ks.forEach(function(k){var p=Math.round(cnt[k]/n*100);h+='<div class="dim-row" style="--dc:'+t.styles[k].c+'"><span>'+t.styles[k].n+'</span><div class="bar"><i style="width:'+Math.max(p,3)+'%"></i></div><b>'+ar(p)+'٪</b></div>'});
+    h+='</div>';
+    h+='<div class="box"><h4>نمط '+st.n+'</h4><p>'+st.desc+'</p></div>';
+    h+='<div class="grid2 sec-gap"><div class="box"><h4>نقاط قوتك</h4><ul>'+st.str.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></div>'+
+       '<div class="box"><h4>تحت الضغط</h4><p>'+st.press+'</p></div>'+
+       '<div class="box"><h4>كيف يتعامل معك الآخرون؟</h4><p>'+st.others+'</p></div>'+
+       '<div class="box"><h4>فرصتك للتطوير</h4><p>'+st.grow+'</p></div></div>';
+    h+='<div class="box"><h4>كيف تتعامل مع الأنماط الأخرى؟</h4><ul>'+["D","E","A","T"].filter(function(k){return k!==p1}).map(function(k){return '<li><b>'+t.styles[k].n+':</b> '+t.styles[k].others+'</li>'}).join("")+'</ul></div>';
+    sum="النمط الأساسي: "+st.n+(tie?" و"+t.styles[ks[1]].n:"")+"\n"+ks.map(function(k){return t.styles[k].n+": "+Math.round(cnt[k]/n*100)+"%"}).join("\n");
+  }
+  else{
+    var v=validSits(),c={y:0,p:0,n:0};v.forEach(function(s){c[s.v]++});
+    var P=Math.round((c.y+c.p)/v.length*100);
+    var msgTxt=c.n>v.length/2?"أغلب ما يوترك خارج سيطرتك، وهذا يستنزف طاقتك. الخطوة الأهم أن تحوّل تركيزك من الموقف نفسه إلى ردة فعلك تجاهه.":
+      P>=75?"أغلب ما يوترك فيه جزء بيدك، وهذا خبر جيد: كل خطوة صغيرة ستخفف التوتر فعلاً.":
+      "عندك مزيج من مواقف بيدك وأخرى ليست بيدك. ركّز طاقتك على ما تستطيع تغييره، واختر ردة فعلك تجاه الباقي.";
+    h+='<div class="score">'+ring(P,"في دائرة تأثيرك")+'<div><span class="lvl">'+ar(v.length)+' مواقف</span><h3>أين تضع طاقتك؟</h3><p>'+msgTxt+'</p></div></div>';
+    h+='<div class="dims">';
+    ["y","p","n"].forEach(function(k){var p=Math.round(c[k]/v.length*100);h+='<div class="dim-row" style="--dc:'+CTRL[k].c+'"><span>'+CTRL[k].n+'</span><div class="bar"><i style="width:'+Math.max(p,3)+'%"></i></div><b>'+ar(c[k])+'</b></div>'});
+    h+='</div><div class="sit-res">';
+    ["y","p","n"].forEach(function(k){v.filter(function(s){return s.v===k}).forEach(function(s){h+='<div style="--sc:'+CTRL[k].c+'"><b>'+esc(s.t)+'</b><span>'+CTRL[k].n+' · '+CTRL[k].a+'</span></div>'})});
+    h+='</div><div class="box"><h4>تذكّر</h4><p>حتى لو لم تستطع تغيير الموقف أو شخصية من حولك، تستطيع دائماً أن تغيّر ردة فعلك تجاهه. اختر موقفاً واحداً (بيدي) وابدأ به اليوم.</p></div>';
+    sum="مواقف بيدي: "+c.y+"، بيدي جزئياً: "+c.p+"، ليست بيدي: "+c.n+"\n"+v.map(function(s){return "- "+s.t+" ("+CTRL[s.v].n+")"}).join("\n");
+  }
+  h+=actions(sum)+'</div>';
+  run.innerHTML=h;top();
+}
+
+/* ================= EVENTS ================= */
+run.addEventListener("click",function(e){
+  var b=e.target.closest("[data-act]");if(!b)return;
+  var a=b.dataset.act;
+  if(a==="home"){S=null;location.hash="";show("cat");window.scrollTo({top:0});return}
+  if(a==="start"){startScreen();return}
+  if(a==="begin"){begin();top();return}
+  if(a==="prev"){S.i--;question();return}
+  if(a==="pick"){pick(b.dataset.v);return}
+  if(a==="print"){window.print();return}
+  if(a==="add"){S.sits.push({t:"",v:""});controlScreen();var ins=run.querySelectorAll(".sit-top input");ins[ins.length-1].focus();return}
+  if(a==="del"){S.sits.splice(+b.dataset.i,1);controlScreen();return}
+  if(a==="ctl"){S.sits[+b.dataset.i].v=b.dataset.v;[].forEach.call(b.parentNode.children,function(x){x.setAttribute("aria-pressed",String(x===b))});chkCtl();return}
+  if(a==="ctlres"){result();return}
+});
+addEventListener("hashchange",route);
+renderCatalog();route();
+})();
+</script>
+</body>
+</html>
