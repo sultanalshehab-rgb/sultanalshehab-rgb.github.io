@@ -446,7 +446,6 @@ function actions(summary){
   var msg="السلام عليكم أ. سلطان،\nهذه نتيجتي في ("+S.t.title+") من موقعك:\nالاسم: "+S.name+(S.org?"\nالجهة/البرنامج: "+S.org:"")+"\n"+summary;
   return '<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
     '<a class="btn wa" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">أرسل النتيجة لسلطان</a>'+
-    '<a class="btn line" href="'+BOOK+'" target="_blank" rel="noopener">احجز جلسة لمناقشتها</a>'+
     '<button class="btn line" data-act="home">اختبار آخر</button></div>'+
     '<p class="disclaimer">من دليل المشارك لبرنامج (الوعي الذاتي) © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.</p>';
 }
