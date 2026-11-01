@@ -208,7 +208,15 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .path{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
   .path::before{display:none}
-  .top ul{display:none}
+  .top ul li:not(.nav-tests){display:none}
+  .top ul{margin-inline-start:auto}
+  .top .in{flex-wrap:nowrap;gap:10px}
+}
+@media (max-width:420px){
+  .brand{font-size:1rem;gap:8px}.brand i{width:24px;height:24px}
+  .top .book{padding:7px 12px;font-size:.85rem;white-space:nowrap}
+  .top .nav-tests a{padding:5px 11px;font-size:.85rem}
+  .top .nav-tests a{display:inline-block;border:1.5px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
 }
 @media (max-width:600px){
   .svcs,.progs,.orgs{grid-template-columns:1fr}
@@ -232,7 +240,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
       <li><a href="#coaching">الكوتشنج</a></li>
       <li><a href="#programs">البرامج</a></li>
       <li><a href="#trips">الرحلات التعليمية</a></li>
-      <li><a href="tests.html">الاختبارات</a></li>
+      <li class="nav-tests"><a href="tests.html">الاختبارات</a></li>
       <li><a href="#about">نبذة</a></li>
     </ul>
     <a class="book" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">احجز جلسة</a>
