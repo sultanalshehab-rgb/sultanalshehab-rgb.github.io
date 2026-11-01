@@ -87,8 +87,17 @@ main{padding-block:20px 80px;min-height:50vh}
 .btn.wa{background:#25d366;color:#08311a}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .card .btn{justify-self:start;margin-top:6px}
-.c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)}
-.boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:8px}
+.c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)}
+.boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:8px}
+.boxes .box3 .art{aspect-ratio:5/2}
+.cmp{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:6px}
+.cmp th,.cmp td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:start}
+.cmp th{background:var(--bg)}
+.cmp th.me{background:var(--gold-soft);color:#0d2436}
+.cmp-wrap{overflow-x:auto}
+.better{display:grid;gap:10px}
+.better div{border:1px solid var(--line);border-inline-start:4px solid var(--c-a);border-radius:12px;padding:10px 14px}
+.better small{display:block;color:var(--muted);margin-bottom:4px}
 .box3{--c:var(--gold-ink);display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
 .box3:hover{transform:translateY(-5px);box-shadow:0 22px 46px #10283a22}
 .box3 .art{background:linear-gradient(160deg,var(--navy-2),var(--navy));aspect-ratio:2/1;display:grid;place-items:center;border-bottom:4px solid var(--c)}
@@ -106,7 +115,7 @@ main{padding-block:20px 80px;min-height:50vh}
 .cat-top h2{font-size:clamp(1.3rem,3vw,1.7rem)}
 .cat-top p{color:var(--muted)}
 a.back{text-decoration:none;display:inline-block}
-@media (max-width:900px){.boxes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.boxes{grid-template-columns:1fr}}
 @media (max-width:600px){.boxes{grid-template-columns:1fr}.cat-top .art{width:100%}}
 .note{margin-top:40px;padding:18px 20px;border-radius:16px;background:var(--gold-soft);color:var(--ink);font-size:.93rem}
 
@@ -220,7 +229,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
     <div class="partners"><img src="logos/ertyad-white.png" alt="ارتياد" width="227" height="136" style="height:44px"><span class="sep"></span><img src="logos/dale-carnegie-white.png" alt="Dale Carnegie" width="334" height="117"></div>
     <span class="eyebrow">اختبارات الوعي الذاتي</span>
     <h1>اعرف نفسك أكثر،<br>وابدأ خطوتك التالية</h1>
-    <p>تقييمات برنامج (الوعي الذاتي) من ديل كارنيجي: لياقتك العاطفية، ونمط شخصيتك، ومنظورك تجاه التوتر. تكتب اسمك، تجاوب بصدق، وتطلع لك نتيجتك باسمك فوراً وتقدر تحفظها.</p>
+    <p>تقييمات برنامجي (الوعي الذاتي) و(واثق) من ديل كارنيجي: لياقتك العاطفية، ونمط شخصيتك، وأسلوبك في التواصل، ومنظورك تجاه التوتر. تكتب اسمك، تجاوب بصدق، وتطلع لك نتيجتك باسمك فوراً وتقدر تحفظها.</p>
     <div class="steps"><span><b>١</b>اختر الاختبار</span><span><b>٢</b>اكتب اسمك</span><span><b>٣</b>أجب بصدق</span><span><b>٤</b>احفظ نتيجتك</span></div>
   </div>
 </div>
@@ -231,7 +240,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
   <div id="runner" hidden></div>
 </main>
 
-<footer>التقييمات من برنامج (الوعي الذاتي) © Dale Carnegie &amp; Associates، تُستخدم بإذن.</footer>
+<footer>التقييمات من برنامجي (الوعي الذاتي) و(واثق) © Dale Carnegie &amp; Associates، تُستخدم بإذن.</footer>
 
 <script>
 (function(){
@@ -253,6 +262,7 @@ function level(p){
 var CATS=[
   {id:"eq",cls:"c-eq",name:"التحكم العاطفي",desc:"الذكاء العاطفي: الوعي بعواطفنا وفهمها وإدارتها لتحقيق نتائج إيجابية"},
   {id:"style",cls:"c-style",name:"التواصل مع أنماط الشخصية المختلفة",desc:"حدد نمطك الشخصي وتعرّف على أنماط الشخصية المختلفة"},
+  {id:"diplo",cls:"c-diplo",name:"التواصل بدبلوماسية ولباقة",desc:"اعرف أسلوبك في التواصل في المواقف الصعبة: سلبي، واثق وحازم، أم عدواني"},
   {id:"stress",cls:"c-stress",name:"ضع التوتر والقلق في منظورهما الصحيح",desc:"قيّم منظورك عن القلق والتوتر وخطط لوضعهما في منظورهما الصحيح"}
 ];
 
@@ -349,6 +359,37 @@ var TESTS=[
   ]
 },
 {
+  id:"diplo",cat:"diplo",title:"التواصل بدبلوماسية",guide:"واثق",
+  intro:"١٠ مواقف من بيئة العمل. اختر ردة الفعل التي تتناسب إلى حد كبير مع الطريقة التي قد تستجيب بها للموقف.",
+  mins:4,type:"abc",
+  items:[
+    ["قام زميل لك، بطريقة مازحة، بإعطاء رئيسك انطباعاً بأنك تقضي الكثير من الوقت في الأمور الشخصية.",["لا تقول شيئاً لزميلك.","تخبر زميلك بأنك تعرف أنه كان يمزح، ولكنك ستقدّر له عدم تكرار ذلك مرة أخرى.","تنتهز الفرصة لتخبر رئيسك بأن هذا الزميل غادر مبكراً يوم الثلاثاء للقيام بمهام ترفيهية."]],
+    ["يخبرك أحد الزملاء بمدى شعوره بالإحباط نظراً لعدم ردك على رسالة تركها مع مساعدك، ولاحظت أنك لم تتسلم الرسالة من الأساس.",["تعتذر للزميل ولا تقول شيئاً لمساعدك.","تدع مساعدك يحفظ ماء وجهه من خلال إخباره بأنك تحدثت إلى الزميل، وأنك تتفهم أنه قد يكون نسي الرسالة بسبب انشغاله.","تخبر مساعدك بأن هذا غير مقبول ومن الأفضل ألا يحدث مرة ثانية."]],
+    ["يعطيك رئيسك تقييماً أقل من المتوسط، الأمر الذي يدهشك.",["تعود إلى البيت وتنفّس عما بداخلك لأسرتك أو لأصدقائك.","تناقش التقييم بهدوء وتطلب الإيضاح، وتبتكر خطة عمل وتفكر في مرات تقييم إضافية حتى لا تواجه ما هو غير متوقع مرة أخرى.","تندفع خارجاً من المكتب وتخبر زملاءك بمدى ظلم مديرك لك."]],
+    ["أحد أعضاء الفريق أتى إلى العمل مرتدياً زياً غير ملائم.",["لا تقول شيئاً، إلا في غيابه.","تتحدث مع هذا الشخص على انفراد وتشرح له سياسة الزي في العمل لتدارك ذلك في المستقبل، مؤكداً له علمك بأنه لا يتعمد ترك انطباع سيئ.","تخبر هذا الشخص، أمام الجميع، بأن مظهره غير مقبول."]],
+    ["عُنّفت بقسوة في أحد الاجتماعات نظراً لتأخرك، والسبب وراء تأخرك هو عدم مجيء السيارة التي تصطحبك إلى العمل في موعدها.",["تتقبل التأنيب.","تعتذر عن الإزعاج، وتشرح بإيجاز موقف السيارة التي تصطحبك إلى العمل، وتلتزم بإعادة التفكير في الحضور بهذه السيارة، خصوصاً في أيام الاجتماعات المهمة.","تصر على أنه ليس خطأك وتشرح أنك تحاول توفير مصاريف المواصلات فحسب."]],
+    ["قرر الزملاء في قسمك (وهم عشرة زملاء) طلب بيتزا للغداء. تعطي الشخص الذي يطلبها النقود، ولكنه لا يرد لك الباقي.",["تفترض أنها بيتزا باهظة الثمن وأنه ليس هناك باقٍ، أو أنه يعتقد أنك تتحمل دفع ثمن الغداء.","تسأله إن كان المبلغ كافياً أو أن هناك باقياً.","تتهم هذا الشخص بمحاولة سرقتك."]],
+    ["أعلنت جهة عملك أنه سيتم صرف علاوات في الرواتب اليوم، وفي وقت لاحق من هذا اليوم يسألك أحد الزملاء عن مقدار علاوتك.",["تخبره، على الرغم من علمك بأنه لا ينبغي لك الإجابة عن سؤاله.","تخبره بأنك تتضايق من مثل هذه الأمور؛ لأنه من المفترض أن تبقى سرية.","تخبره أن طرح هذا السؤال مخالف لأخلاق المهنة."]],
+    ["تلمح خطأً مطبعياً في خطاب أعدّه لك مساعدك.",["تتجاهله؛ إنه خطأ صغير فحسب وإن العميل لن يلاحظه على الأرجح.","تلفت انتباه مساعدك إلى الخطأ وتطلب منه أن يعيده مرة أخرى.","تخبر مساعدك بأنه ليس هناك عذر لمثل هذا النوع من الأخطاء."]],
+    ["على مدار الأسابيع الثلاثة الماضية، اتصل أحد الأعضاء الأساسيين بفريقك كل يوم خميس لإبلاغ العمل بعدم مجيئه بسبب مرضه.",["لا تقول شيئاً وتستمر في التماس الأعذار له.","تعقد معه اجتماعاً خاصاً يوم الأحد، مبدياً اهتمامك بحالات المرض التي مر بها مؤخراً، وتطلب المشاركة في إيجاد حل.","تخبره بأن هذا يبدو مثيراً للشك ومن الأفضل ألا يفعل ذلك مرة أخرى."]],
+    ["أطلق أحد الأشخاص مزحة غير مناسبة في مكان الاستراحة في العمل.",["تترك المكان.","تأخذ هذا الشخص جانباً وتخبره بأنك تعلم أنه لم يقصد الإساءة لأي شخص، إلا أنه يجب أن يتحلى بدقة الشعور والالتزام بأخلاق المهنة في بيئة العمل.","تخبر هذا الشخص، أمام الجميع، بأن المزحة ليست مناسبة على الإطلاق."]]
+  ],
+  styles:[
+    {n:"السلبية",c:"var(--sadu)",m:"ربما لديك ميل للتفاعل بخجل أو بسلبية مع الآخرين."},
+    {n:"الثقة والحزم",c:"var(--c-a)",m:"كلما زاد عدد إجاباتك بـ(ب) فهذه إشارة إلى أنك تتمتع عموماً بأسلوب تواصل مع الأفراد يتسم بالثقة والحزم."},
+    {n:"العدوانية",c:"var(--c-d)",m:"ربما لديك ميل لتكون عدوانياً أو حاد الطبع في التواصل مع الآخرين."}
+  ],
+  cmp:[
+    ["يتجنب المواجهة، وعادةً ما يعتذر أكثر من اللازم","لا يخاف المواجهة","يواجه بقوة ويرغم الآخرين على اتباعه"],
+    ["متوتر داخلياً ولكن عادةً لا يُظهر ذلك","يجيد التعامل مع المواقف الصعبة ويمضي قدماً","كثيراً ما يكون متوتراً ويوتّر الآخرين"],
+    ["تواصل غير مباشر وغير صادق مع نفسه","مباشر وصادق","مباشر بطريقة غير محترمة"],
+    ["عادةً ما يكون محبوباً ولكن غير محترم من الآخرين","غالباً ما يكون محترماً من الآخرين","عادةً لا يكون محبوباً أو محترماً من الآخرين"],
+    ["يبني الآخرين حتى لو كان على حساب نفسه","يساعد ويبني الآخرين","يُحبط الآخرين"],
+    ["محافظ، غير مباشر، يضبط نفسه ويتجنب التعبير عن المشاعر","متفتح، حساس، مهذب، ومباشر ومع ذلك مراعٍ لأفكار الآخرين ومشاعرهم","مباشر بشكل غير مراعٍ للآخرين، ويتكلم بغير أدب"],
+    ["يتمنى","يسأل","يطلب"]
+  ]
+},
+{
   id:"control",cat:"stress",title:"التوتر والقلق في حياتي: تقييم السيطرة",
   intro:"اكتب المواقف المثيرة للتوتر التي تواجهها في حياتك (حتى ١٠ مواقف)، وحدد لكل موقف: هل تتحكم فيه؟ نعم أو لا.",
   mins:5,type:"control"
@@ -365,11 +406,12 @@ var cat=document.getElementById("catalog"),run=document.getElementById("runner")
 var S=null;
 
 function byId(id){for(var i=0;i<TESTS.length;i++)if(TESTS[i].id===id)return TESTS[i];return null}
-function count(t){return t.type==="control"?"حتى ١٠ مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
+function count(t){return t.type==="control"?"حتى ١٠ مواقف":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
 
 var ART={
   eq:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="70" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="262" cy="118" r="4" fill="#2dd4bf" opacity=".5"/><circle cx="250" cy="34" r="2.5" fill="#fff" opacity=".5"/><path d="M160 136C112 104 92 82 92 60a30 30 0 0 1 68-18 30 30 0 0 1 68 18c0 22-20 44-68 76z" fill="#2dd4bf" opacity=".18" stroke="#2dd4bf" stroke-width="3"/><path d="M60 92h62l10-22 14 42 14-60 12 40h98" fill="none" stroke="#eef3f7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   style:'<svg viewBox="0 0 320 160" aria-hidden="true"><g><circle cx="125" cy="48" r="30" fill="#fb923c"/><circle cx="195" cy="48" r="30" fill="#a78bfa"/><circle cx="125" cy="116" r="30" fill="#4ade80"/><circle cx="195" cy="116" r="30" fill="#60a5fa"/></g><g fill="#0d2436"><circle cx="125" cy="42" r="9"/><path d="M109 66a16 13 0 0 1 32 0z"/><circle cx="195" cy="42" r="9"/><path d="M179 66a16 13 0 0 1 32 0z"/><circle cx="125" cy="110" r="9"/><path d="M109 134a16 13 0 0 1 32 0z"/><circle cx="195" cy="110" r="9"/><path d="M179 134a16 13 0 0 1 32 0z"/></g><path d="M160 10v144M60 82h200" stroke="#eef3f7" stroke-width="2" stroke-dasharray="4 6" opacity=".5"/></svg>',
+  diplo:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="58" cy="36" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="268" cy="126" r="4" fill="#2dd4bf" opacity=".5"/><rect x="62" y="30" width="118" height="62" rx="16" fill="#60a5fa"/><path d="M84 92l-6 22 26-22z" fill="#60a5fa"/><rect x="140" y="62" width="118" height="62" rx="16" fill="#2dd4bf" opacity=".9"/><path d="M236 124l6 22-26-22z" fill="#2dd4bf" opacity=".9"/><g fill="#0d2436"><circle cx="100" cy="61" r="6"/><circle cx="121" cy="61" r="6"/><circle cx="142" cy="61" r="6"/></g><path d="M170 93h58M170 105h40" stroke="#0d2436" stroke-width="5" stroke-linecap="round"/></svg>',
   stress:'<svg viewBox="0 0 320 160" aria-hidden="true"><path d="M90 50L160 18l70 32z" fill="#2dd4bf" opacity=".85"/><rect x="92" y="54" width="136" height="8" rx="2" fill="#eef3f7"/><g fill="#eef3f7" opacity=".9"><rect x="104" y="68" width="20" height="58" rx="3"/><rect x="150" y="68" width="20" height="58" rx="3"/><rect x="196" y="68" width="20" height="58" rx="3"/></g><rect x="86" y="130" width="148" height="10" rx="2" fill="#eef3f7"/><path d="M40 150c30-12 60 12 90 0s60-12 90 0 60 12 60 0" fill="none" stroke="#2dd4bf" stroke-width="3" opacity=".6"/></svg>'
 };
 function renderCatalog(){
@@ -379,7 +421,7 @@ function renderCatalog(){
     h+='<a class="box3 '+c.cls+'" href="#cat-'+c.id+'"><div class="art">'+ART[c.id]+'</div><div class="bd"><h2>'+c.name+'</h2><p>'+c.desc+'</p><ul>'+ts.map(function(t){return '<li>'+t.title+'</li>'}).join("")+'</ul><span class="go">'+(ts.length>1?'افتح '+ar(ts.length)+' اختبارات':'افتح الاختبار')+' ←</span></div></a>';
   });
   h+='</div>';
-  h+='<p class="note">تقييمات برنامج (الوعي الذاتي) من دليل المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد).</p>';
+  h+='<p class="note">تقييمات برنامجي (الوعي الذاتي) و(واثق) من أدلة المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد).</p>';
   cat.innerHTML=h;
 }
 function renderCategory(c){
@@ -432,6 +474,9 @@ function question(){
   if(t.type==="likert"){
     h+='<p class="qtext">'+(typeof it==="string"?it:it[1])+'</p><div class="opts '+(t.scale.length===5?"scale":"three")+'" role="group">';
     t.scale.forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+ar(k+1)+'</span>'+lab+'</button>'});
+  }else if(t.type==="abc"){
+    h+='<p class="qtext">'+it[0]+'</p><div class="opts" role="group">';
+    it[1].forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+"أبج"[k]+'</span>'+lab+'</button>'});
   }else{
     var R=S.rank,nr=Object.keys(R).length;
     h+='<p class="qtext">الصف '+"أبجدهوزحطي"[i]+': رتّب الكلمات من الأقرب لك إلى الأبعد</p><p class="sub" style="margin-top:6px">اضغط على الأقرب لك أولاً (٤)، ثم التالية (٣)، ثم (٢)، والأخيرة تأخذ (١) تلقائياً.</p><div class="opts" role="group">';
@@ -456,7 +501,7 @@ function pick(v){
     return;
   }
   if(S.busy)return;
-  if(S.t.type==="likert")v=+v;
+  if(S.t.type==="likert"||S.t.type==="abc")v=+v;
   S.ans[S.i]=v;S.busy=true;
   [].forEach.call(run.querySelectorAll(".opt"),function(b){b.setAttribute("aria-pressed",String(b.dataset.v==String(v)))});
   setTimeout(function(){
@@ -492,7 +537,7 @@ function actions(summary){
   var msg="السلام عليكم أ. سلطان،\nهذه نتيجتي في ("+S.t.title+") من موقعك:\nالاسم: "+S.name+(S.org?"\nالجهة/البرنامج: "+S.org:"")+"\n"+summary;
   return '<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
     '<button class="btn line" data-act="home">اختبار آخر</button></div>'+
-    '<p class="disclaimer">'+'من دليل المشارك لبرنامج (الوعي الذاتي) © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.'+'</p>';
+    '<p class="disclaimer">'+'من دليل المشارك لبرنامج ('+(S.t.guide||'الوعي الذاتي')+') © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.'+'</p>';
 }
 
 function ul(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
@@ -529,6 +574,22 @@ function result(){
     h+='<div class="box"><h4>'+X.tips+' '+low.d.n+(X.tipsEnd||'')+'</h4><ul>'+low.d.tip.map(function(x){return '<li><b>'+x[0]+':</b> '+x[1]+'</li>'}).join("")+'</ul></div>';
     h+='<div class="box"><h4>'+X.about+'</h4><p>'+X.aboutTxt+'</p><p>٧٥٪ فأكثر: قوة واضحة · ٥٠٪ إلى ٧٤٪: جيد قابل للتطوير · أقل من ٥٠٪: أولوية للتطوير.</p></div>';
     sum="الدرجة الكلية: "+P+"% ("+L.t+")\n"+rows.map(function(r){return r.d.n+": "+r.p+"%"}).join("\n");
+  }
+  else if(t.type==="abc"){
+    var c=[0,0,0],L2="أبج",miss=[];
+    S.ans.forEach(function(v,i){c[v-1]++;if(v!==2)miss.push(i)});
+    var n=t.items.length,P=Math.round(c[1]/n*100),flags=[];
+    if(c[0]>=2)flags.push(0);if(c[2]>=2)flags.push(2);
+    var lead=c[1]>=c[0]&&c[1]>=c[2]?1:(c[0]>=c[2]?0:2);
+    h+='<div class="score">'+ring(P,"إجابات (ب)",t.styles[1].c)+'<div><span class="lvl">أسلوبك الغالب</span><h3 style="color:'+t.styles[lead].c+'">'+t.styles[lead].n+'</h3><p>عدد إجاباتك: (أ) '+ar(c[0])+'، (ب) '+ar(c[1])+'، (ج) '+ar(c[2])+'.</p></div></div>';
+    h+='<div class="dims">';
+    [0,1,2].forEach(function(k){h+='<div class="dim-row" style="--dc:'+t.styles[k].c+'"><span>('+L2[k]+') '+t.styles[k].n+'</span><div class="bar"><i style="width:'+Math.max(Math.round(c[k]/n*100),3)+'%"></i></div><b>'+ar(c[k])+'</b></div>'});
+    h+='</div>';
+    h+='<div class="box"><h4>نقاط التقييم الذاتي للتواصل</h4>'+ul(flags.map(function(k){return '<b>إجابتان أو أكثر ('+L2[k]+'):</b> '+t.styles[k].m}).concat(['<b>إجاباتك بـ(ب): '+ar(c[1])+' من '+ar(n)+'.</b> '+t.styles[1].m]))+'</div>';
+    h+='<div class="box"><h4>السلبية، الثقة، أو العدوانية</h4><div class="cmp-wrap"><table class="cmp"><thead><tr>'+[0,1,2].map(function(k){return '<th'+(k===lead?' class="me"':'')+'>'+t.styles[k].n+'</th>'}).join("")+'</tr></thead><tbody>'+t.cmp.map(function(r){return '<tr><td>'+r.join('</td><td>')+'</td></tr>'}).join("")+'</tbody></table></div></div>';
+    if(miss.length){h+='<div class="box"><h4>الرد الأكثر ثقة ولباقة في المواقف التي اخترت فيها (أ) أو (ج)</h4><div class="better">'+miss.map(function(i){return '<div><small>'+ar(i+1)+'. '+t.items[i][0]+'</small>'+t.items[i][1][1]+'</div>'}).join("")+'</div></div>'}
+    h+='<div class="box"><h4>تعريف الدبلوماسية واللباقة</h4><p><b>الدبلوماسية:</b> هي مهارة تقديم حلول دون إثارة ضغينة.</p><p><b>اللباقة:</b> هي إحساس قوي بما يجب فعله أو قوله للحفاظ على العلاقات الطيبة مع الآخرين.</p></div>';
+    sum="أ: "+c[0]+"، ب: "+c[1]+"، ج: "+c[2];
   }
   else if(t.type==="choice"){
     var cnt={D:0,E:0,A:0,T:0};S.ans.forEach(function(r){for(var k in r)cnt[k]+=r[k]});
