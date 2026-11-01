@@ -376,8 +376,8 @@ var TESTS=[
   ],
   styles:[
     {n:"السلبية",c:"var(--sadu)",m:"ربما لديك ميل للتفاعل بخجل أو بسلبية مع الآخرين."},
-    {n:"الثقة والحزم",c:"var(--c-a)",m:"كلما زاد عدد إجاباتك بـ(ب) فهذه إشارة إلى أنك تتمتع عموماً بأسلوب تواصل مع الأفراد يتسم بالثقة والحزم."},
-    {n:"العدوانية",c:"var(--c-d)",m:"ربما لديك ميل لتكون عدوانياً أو حاد الطبع في التواصل مع الآخرين."}
+    {n:"الثقة والحزم",c:"var(--c-a)",m:"فهذه إشارة إلى أنك تتمتع عمومًا بأسلوب تواصل مع الأفراد يتسم بالثقة والحزم."},
+    {n:"العدوانية",c:"var(--c-d)",m:"ربما لديك ميل لتكون عدوانيًّا أو حاد الطبع في التواصل مع الآخرين."}
   ],
   cmp:[
     ["يتجنب المواجهة، وعادةً ما يعتذر أكثر من اللازم","لا يخاف المواجهة","يواجه بقوة ويرغم الآخرين على اتباعه"],
@@ -585,7 +585,7 @@ function result(){
     h+='<div class="dims">';
     [0,1,2].forEach(function(k){h+='<div class="dim-row" style="--dc:'+t.styles[k].c+'"><span>('+L2[k]+') '+t.styles[k].n+'</span><div class="bar"><i style="width:'+Math.max(Math.round(c[k]/n*100),3)+'%"></i></div><b>'+ar(c[k])+'</b></div>'});
     h+='</div>';
-    h+='<div class="box"><h4>نقاط التقييم الذاتي للتواصل</h4>'+ul(flags.map(function(k){return '<b>إجابتان أو أكثر ('+L2[k]+'):</b> '+t.styles[k].m}).concat(['<b>إجاباتك بـ(ب): '+ar(c[1])+' من '+ar(n)+'.</b> '+t.styles[1].m]))+'</div>';
+    h+='<div class="box"><h4>نقاط التقييم الذاتي للتواصل</h4>'+ul([0,2,1].map(function(k){var on=k===1?c[1]>0:c[k]>=2;return '<span style="'+(on?'':'opacity:.55')+'"><b>'+(k===1?'كلما زاد عدد إجاباتك بـ(ب):':'إجابتان أو أكثر ('+L2[k]+'):')+'</b> '+t.styles[k].m+'</span>'+(on?' <span class="lvl" style="font-size:.78rem">ينطبق عليك (عدد إجاباتك '+ar(c[k])+')</span>':'')}))+'</div>';
     h+='<div class="box"><h4>السلبية، الثقة، أو العدوانية</h4><div class="cmp-wrap"><table class="cmp"><thead><tr>'+[0,1,2].map(function(k){return '<th'+(k===lead?' class="me"':'')+'>'+t.styles[k].n+'</th>'}).join("")+'</tr></thead><tbody>'+t.cmp.map(function(r){return '<tr><td>'+r.join('</td><td>')+'</td></tr>'}).join("")+'</tbody></table></div></div>';
     if(miss.length){h+='<div class="box"><h4>الرد الأكثر ثقة ولباقة في المواقف التي اخترت فيها (أ) أو (ج)</h4><div class="better">'+miss.map(function(i){return '<div><small>'+ar(i+1)+'. '+t.items[i][0]+'</small>'+t.items[i][1][1]+'</div>'}).join("")+'</div></div>'}
     h+='<div class="box"><h4>تعريف الدبلوماسية واللباقة</h4><p><b>الدبلوماسية:</b> هي مهارة تقديم حلول دون إثارة ضغينة.</p><p><b>اللباقة:</b> هي إحساس قوي بما يجب فعله أو قوله للحفاظ على العلاقات الطيبة مع الآخرين.</p></div>';
