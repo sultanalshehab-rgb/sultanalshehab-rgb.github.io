@@ -446,18 +446,20 @@ function loadRank(){S.rank=S.ans[S.i]?JSON.parse(JSON.stringify(S.ans[S.i])):{}}
 function advance(){if(S.i<S.t.items.length-1){S.i++;loadRank();question()}else{result()}}
 function pick(v){
   if(S.t.type==="choice"){
-    var R=S.rank;if(R[v]||Object.keys(R).length===4)return;
+    if(S.busy)return;var R=S.rank;if(R[v]||Object.keys(R).length===4)return;
     R[v]=4-Object.keys(R).length;
     var left=S.order[S.i].filter(function(k){return !R[k]});
     if(left.length===1)R[left[0]]=1;
-    if(Object.keys(R).length===4){S.ans[S.i]=JSON.parse(JSON.stringify(R));question();setTimeout(advance,450);}
+    if(Object.keys(R).length===4){S.ans[S.i]=JSON.parse(JSON.stringify(R));question();S.busy=true;setTimeout(function(){S.busy=false;advance()},450);}
     else question();
     return;
   }
+  if(S.busy)return;
   if(S.t.type==="likert")v=+v;
-  S.ans[S.i]=v;
+  S.ans[S.i]=v;S.busy=true;
   [].forEach.call(run.querySelectorAll(".opt"),function(b){b.setAttribute("aria-pressed",String(b.dataset.v==String(v)))});
   setTimeout(function(){
+    S.busy=false;
     if(S.i<S.t.items.length-1){S.i++;question()}else{result()}
   },220);
 }
@@ -494,6 +496,7 @@ function actions(summary){
 
 function ul(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
 function result(){
+  if(S.t.type!=="control"){for(var q=0;q<S.t.items.length;q++){if(S.ans[q]==null){S.i=q;if(S.t.type==="choice")loadRank();question();return}}}
   var t=S.t,h='<div class="panel">'+head(),sum="";
   if(t.id==="eq"){
     var tot=0,often=[],rare=[];
@@ -565,9 +568,9 @@ run.addEventListener("click",function(e){
   if(a==="home"){S=null;location.hash="";return}
   if(a==="start"){startScreen();return}
   if(a==="begin"){begin();top();return}
-  if(a==="prev"){S.i--;if(S.t.type==="choice")loadRank();question();return}
-  if(a==="reset"){S.rank={};S.ans[S.i]=null;question();return}
-  if(a==="next"){advance();return}
+  if(a==="prev"){if(S.busy)return;S.i--;if(S.t.type==="choice")loadRank();question();return}
+  if(a==="reset"){if(S.busy)return;S.rank={};S.ans[S.i]=null;question();return}
+  if(a==="next"){if(S.busy)return;advance();return}
   if(a==="pick"){pick(b.dataset.v);return}
   if(a==="print"){window.print();return}
   if(a==="add"){S.sits.push({t:"",v:""});controlScreen();var ins=run.querySelectorAll(".sit-top input");ins[ins.length-1].focus();return}
