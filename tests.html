@@ -87,7 +87,7 @@ main{padding-block:20px 80px;min-height:50vh}
 .btn.wa{background:#25d366;color:#08311a}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .card .btn{justify-self:start;margin-top:6px}
-.c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)}
+.c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)} .c-love{--c:#be185d}
 .boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:8px}
 .boxes .box3 .art{aspect-ratio:5/2}
 .cmp{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:6px}
@@ -263,6 +263,7 @@ var CATS=[
   {id:"eq",cls:"c-eq",name:"التحكم العاطفي",desc:"الذكاء العاطفي: الوعي بعواطفنا وفهمها وإدارتها لتحقيق نتائج إيجابية"},
   {id:"style",cls:"c-style",name:"التواصل مع أنماط الشخصية المختلفة",desc:"حدد نمطك الشخصي وتعرّف على أنماط الشخصية المختلفة"},
   {id:"diplo",cls:"c-diplo",name:"التواصل بدبلوماسية ولباقة",desc:"اعرف أسلوبك في التواصل في المواقف الصعبة: سلبي، واثق وحازم، أم عدواني"},
+  {id:"love",cls:"c-love",name:"لغات الحب الخمس",desc:"اكتشف الطريقة التي تشعر بها بالحب أكثر من غيرها في علاقتك الزوجية"},
   {id:"stress",cls:"c-stress",name:"ضع التوتر والقلق في منظورهما الصحيح",desc:"قيّم منظورك عن القلق والتوتر وخطط لوضعهما في منظورهما الصحيح"}
 ];
 
@@ -390,6 +391,20 @@ var TESTS=[
   ]
 },
 {
+  id:"love",cat:"love",title:"ما لغة الحب الأساسية لديك؟",gender:true,
+  note:"مبني على مفهوم «لغات الحب الخمس» للدكتور غاري تشابمان، بأسئلة وصياغة خاصة.",
+  intro:"٣٠ زوجاً من العبارات. في كل سؤال اختر العبارة الأقرب لما يُشعرك بالحب من شريك حياتك، حتى لو انطبقت عليك العبارتان.",
+  mins:6,type:"pair",
+  langs:{
+    A:{n:"كلمات التشجيع",c:"var(--c-e)",d:"تشعر بالحب أكثر حين تسمعه: المديح الصادق، والشكر، وكلمات التقدير والتشجيع.",how:["عبّر عن تقديرك بالكلام بشكل يومي.","امدح الجهد لا النتيجة فقط.","اكتب رسالة قصيرة لطيفة في منتصف اليوم.","تجنب النقد الجارح؛ فوقعه على صاحب هذه اللغة أشد."]},
+    B:{n:"تكريس الوقت",c:"var(--c-t)",d:"تشعر بالحب أكثر حين يمنحك شريكك وقته وانتباهه الكامل دون انشغال.",how:["خصصا وقتاً ثابتاً لكما وحدكما.","أبعد الجوال عند الحديث معه.","استمع باهتمام دون مقاطعة.","شاركه نشاطاً يحبه."]},
+    C:{n:"تبادل الهدايا",c:"var(--c-d)",d:"الهدية عندك رمز للاهتمام والتفكير بك، وقيمتها في معناها لا في ثمنها.",how:["قدّم هدايا بسيطة دون مناسبة.","تذكّر المناسبات المهمة له.","اختر هدية تعكس ذوقه واهتماماته.","احتفظ بقائمة لما يحبه."]},
+    D:{n:"الأعمال الخدمية",c:"var(--c-a)",d:"تشعر بالحب حين يخفف عنك شريكك ويساعدك بأفعاله؛ فالأفعال عندك أبلغ من الكلام.",how:["بادر بمساعدته دون أن يطلب.","اسأله: كيف أساعدك اليوم؟","أنجز مهمة يعرف أنك لا تحبها.","أوفِ بما وعدت به."]},
+    E:{n:"الاتصال البدني",c:"#be185d",d:"القرب واللمسة الحانية، كالعناق ومسك اليد، هي أوضح ما يُشعرك بالحب والأمان.",how:["استقبله وودّعه بعناق.","امسك يده وأنتما تمشيان أو تجلسان.","اجلس قريباً منه.","الربتة على الكتف وقت التعب تعني له الكثير."]}
+  },
+  items:[[["A", "أرتاح كثيراً عندما {تمدحني|يمدحني} {زوجتي|زوجي} على شيء أنجزته."], ["E", "أحب أن {تحضنني|يحضنني} {زوجتي|زوجي}."]], [["B", "أحب أن نجلس أنا و{زوجتي|زوجي} وحدنا بعيداً عن الانشغالات."], ["D", "أشعر بالحب حين {تساعدني|يساعدني} {زوجتي|زوجي} في أعمال البيت."]], [["C", "الهدية من {زوجتي|زوجي} تُشعرني بأني في بال{ها|ه}."], ["B", "أستمتع بالمشاوير الطويلة مع {زوجتي|زوجي}."]], [["D", "يسعدني أن {تقوم|يقوم} {زوجتي|زوجي} بمهمة كانت عليّ {لتخفف|ليخفف} عني."], ["E", "أحب أن أمسك يد {زوجتي|زوجي}."]], [["E", "أرتاح حين {تجلس|يجلس} {زوجتي|زوجي} قريب{ة|اً} مني."], ["C", "أفرح بهدية {زوجتي|زوجي} مهما كانت بسيطة."]], [["B", "لا يهمني المكان، المهم أن أكون مع {زوجتي|زوجي}."], ["E", "لمسة حانية من {زوجتي|زوجي} تطمئنني."]], [["C", "أحب أن {تفاجئني|يفاجئني} {زوجتي|زوجي} بهدية دون مناسبة."], ["A", "كلمة «شكراً» من {زوجتي|زوجي} تصنع يومي."]], [["E", "أحب أن {تربت|يربت} {زوجتي|زوجي} على كتفي عندما أكون متعب{اً|ة}."], ["A", "أحب أن {تقول|يقول} لي {زوجتي|زوجي} إن{ها فخورة|ه فخور} بي."]], [["B", "الوقت الهادئ مع {زوجتي|زوجي} يملأ قلبي."], ["C", "أحتفظ بالهدايا التي {تقدمها|يقدمها} لي {زوجتي|زوجي} لأنها تعني لي الكثير."]], [["A", "تشجيع {زوجتي|زوجي} لي قبل أي خطوة مهمة يعطيني دفعة كبيرة."], ["D", "أقدّر أن {تنجز|ينجز} {زوجتي|زوجي} عني بعض المشاوير وقت انشغالي."]], [["B", "أحب أن نخطط أنا و{زوجتي|زوجي} لنشاط نقوم به معاً."], ["A", "أشعر بالحب حين أسمع من {زوجتي|زوجي} كلمات تقدير أمام الآخرين."]], [["D", "عندما {تجهز|يجهز} لي {زوجتي|زوجي} شيئاً أحتاجه دون أن أطلب، أعرف أن{ها تحبني|ه يحبني}."], ["E", "أشتاق لحضن {زوجتي|زوجي} بعد الغياب."]], [["A", "رسالة لطيفة من {زوجتي|زوجي} في منتصف اليوم تفرّحني."], ["C", "أنتظر بشوق هدية {زوجتي|زوجي} في المناسبات."]], [["B", "يكفيني أن أكون بجانب {زوجتي|زوجي}."], ["E", "القرب من {زوجتي|زوجي} يُشعرني بالأمان."]], [["A", "يهمني أن {تعبّر|يعبّر} {زوجتي|زوجي} عن إعجاب{ها|ه} بي بالكلام."], ["D", "أحب أن {تشاركني|يشاركني} {زوجتي|زوجي} في إنجاز مهامي الصعبة."]], [["E", "أحب أن {تستقبلني|يستقبلني} {زوجتي|زوجي} بعناق."], ["B", "أحب أن {تنصت|ينصت} لي {زوجتي|زوجي} باهتمام دون أن {تقاطعني|يقاطعني}."]], [["D", "أقدّر حين {تتولى|يتولى} {زوجتي|زوجي} من أجلي أمراً أعرف أن{ها لا تحبه|ه لا يحبه}."], ["C", "يعجبني حين {تختار|يختار} {زوجتي|زوجي} هدية تناسب ذوقي تماماً."]], [["A", "أحب أن {تذكر|يذكر} {زوجتي|زوجي} الصفات الجميلة التي {تراها|يراها} فيّ."], ["B", "أشعر بالحب حين {تترك|يترك} {زوجتي|زوجي} الجوال جانباً {لتتحدث|ليتحدث} معي."]], [["E", "قبلة سريعة من {زوجتي|زوجي} قبل الخروج تسعدني."], ["D", "أفعال {زوجتي|زوجي} عندي أبلغ من كلام{ها|ه}."]], [["D", "يسعدني أن أجد {زوجتي|زوجي} قد {أنجزت|أنجز} شيئاً كنت سأفعله بنفسي."], ["C", "أشعر بالحب حين {تحضر|يحضر} لي {زوجتي|زوجي} شيئاً أحبه عند عودت{ها|ه}."]], [["B", "أحب أن نتشارك أنا و{زوجتي|زوجي} هواية أو اهتماماً."], ["D", "أشعر بالدعم حين {تسألني|يسألني} {زوجتي|زوجي}: كيف أساعدك؟"]], [["C", "الهدية المغلفة بعناية من {زوجتي|زوجي} تسعدني."], ["A", "عندما {تقول|يقول} لي {زوجتي|زوجي} صراحةً إن{ها تثق|ه يثق} برأيي، أشعر بقيمتي."]], [["C", "تبقى هدايا {زوجتي|زوجي} في ذاكرتي لسنوات."], ["D", "أحب أن أعتمد على {زوجتي|زوجي} في تفاصيل الحياة اليومية."]], [["B", "يسعدني أن {تعطيني|يعطيني} {زوجتي|زوجي} كامل انتباه{ها|ه} عندما أتكلم."], ["C", "يكفي أن {تحضر|يحضر} لي {زوجتي|زوجي} شيئاً صغيراً من طريق{ها|ه} لأشعر باهتمام{ها|ه}."]], [["D", "مساعدة {زوجتي|زوجي} لي وقت التعب تعني لي الكثير."], ["B", "أحب أن نشاهد أنا و{زوجتي|زوجي} شيئاً معاً ثم نتحدث عنه."]], [["E", "أحب أن نجلس أنا و{زوجتي|زوجي} متقاربين."], ["C", "أحب تبادل الهدايا الصغيرة مع {زوجتي|زوجي}."]], [["A", "كلمة مديح صادقة من {زوجتي|زوجي} تبقى معي طويلاً."], ["B", "أقدّر أن {تخصص|يخصص} {زوجتي|زوجي} وقتاً لي وحدي كل أسبوع."]], [["C", "تذكار بسيط {تجلبه|يجلبه} لي {زوجتي|زوجي} من السفر يعني لي الكثير."], ["E", "أحب أن {تمسح|يمسح} {زوجتي|زوجي} على رأسي أو كتفي."]], [["D", "أقدّر أن {تهتم|يهتم} {زوجتي|زوجي} بأموري العملية الصغيرة."], ["A", "أحب أن {تقول|يقول} لي {زوجتي|زوجي} «أحبك» دون مناسبة."]], [["E", "لا أستغني عن قرب {زوجتي|زوجي} ولمست{ها|ه} الحانية."], ["A", "يسعدني أن {تلاحظ|يلاحظ} {زوجتي|زوجي} جهدي و{تشكرني|يشكرني} عليه."]]]
+},
+{
   id:"control",cat:"stress",title:"التوتر والقلق في حياتي: تقييم السيطرة",
   intro:"اكتب المواقف المثيرة للتوتر التي تواجهها في حياتك (حتى ١٠ مواقف)، وحدد لكل موقف: هل تتحكم فيه؟ نعم أو لا.",
   mins:5,type:"control"
@@ -406,11 +421,12 @@ var cat=document.getElementById("catalog"),run=document.getElementById("runner")
 var S=null;
 
 function byId(id){for(var i=0;i<TESTS.length;i++)if(TESTS[i].id===id)return TESTS[i];return null}
-function count(t){return t.type==="control"?"حتى ١٠ مواقف":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
+function count(t){return t.type==="control"?"حتى ١٠ مواقف":t.type==="pair"?ar(t.items.length)+" سؤالاً":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
 
 var ART={
   eq:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="70" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="262" cy="118" r="4" fill="#2dd4bf" opacity=".5"/><circle cx="250" cy="34" r="2.5" fill="#fff" opacity=".5"/><path d="M160 136C112 104 92 82 92 60a30 30 0 0 1 68-18 30 30 0 0 1 68 18c0 22-20 44-68 76z" fill="#2dd4bf" opacity=".18" stroke="#2dd4bf" stroke-width="3"/><path d="M60 92h62l10-22 14 42 14-60 12 40h98" fill="none" stroke="#eef3f7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   style:'<svg viewBox="0 0 320 160" aria-hidden="true"><g><circle cx="125" cy="48" r="30" fill="#fb923c"/><circle cx="195" cy="48" r="30" fill="#a78bfa"/><circle cx="125" cy="116" r="30" fill="#4ade80"/><circle cx="195" cy="116" r="30" fill="#60a5fa"/></g><g fill="#0d2436"><circle cx="125" cy="42" r="9"/><path d="M109 66a16 13 0 0 1 32 0z"/><circle cx="195" cy="42" r="9"/><path d="M179 66a16 13 0 0 1 32 0z"/><circle cx="125" cy="110" r="9"/><path d="M109 134a16 13 0 0 1 32 0z"/><circle cx="195" cy="110" r="9"/><path d="M179 134a16 13 0 0 1 32 0z"/></g><path d="M160 10v144M60 82h200" stroke="#eef3f7" stroke-width="2" stroke-dasharray="4 6" opacity=".5"/></svg>',
+  love:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="60" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="264" cy="122" r="4" fill="#2dd4bf" opacity=".5"/><path d="M135 132C95 106 78 86 78 66a26 26 0 0 1 57-14 26 26 0 0 1 57 14c0 20-17 40-57 66z" fill="#f472b6" opacity=".9"/><path d="M190 120c-26-17-37-30-37-43a17 17 0 0 1 37-9 17 17 0 0 1 37 9c0 13-11 26-37 43z" fill="#2dd4bf" opacity=".9"/><g fill="#eef3f7"><circle cx="120" cy="150" r="4"/><circle cx="140" cy="150" r="4"/><circle cx="160" cy="150" r="4"/><circle cx="180" cy="150" r="4"/><circle cx="200" cy="150" r="4"/></g></svg>',
   diplo:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="58" cy="36" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="268" cy="126" r="4" fill="#2dd4bf" opacity=".5"/><rect x="62" y="30" width="118" height="62" rx="16" fill="#60a5fa"/><path d="M84 92l-6 22 26-22z" fill="#60a5fa"/><rect x="140" y="62" width="118" height="62" rx="16" fill="#2dd4bf" opacity=".9"/><path d="M236 124l6 22-26-22z" fill="#2dd4bf" opacity=".9"/><g fill="#0d2436"><circle cx="100" cy="61" r="6"/><circle cx="121" cy="61" r="6"/><circle cx="142" cy="61" r="6"/></g><path d="M170 93h58M170 105h40" stroke="#0d2436" stroke-width="5" stroke-linecap="round"/></svg>',
   stress:'<svg viewBox="0 0 320 160" aria-hidden="true"><path d="M90 50L160 18l70 32z" fill="#2dd4bf" opacity=".85"/><rect x="92" y="54" width="136" height="8" rx="2" fill="#eef3f7"/><g fill="#eef3f7" opacity=".9"><rect x="104" y="68" width="20" height="58" rx="3"/><rect x="150" y="68" width="20" height="58" rx="3"/><rect x="196" y="68" width="20" height="58" rx="3"/></g><rect x="86" y="130" width="148" height="10" rx="2" fill="#eef3f7"/><path d="M40 150c30-12 60 12 90 0s60-12 90 0 60 12 60 0" fill="none" stroke="#2dd4bf" stroke-width="3" opacity=".6"/></svg>'
 };
@@ -421,7 +437,7 @@ function renderCatalog(){
     h+='<a class="box3 '+c.cls+'" href="#cat-'+c.id+'"><div class="art">'+ART[c.id]+'</div><div class="bd"><h2>'+c.name+'</h2><p>'+c.desc+'</p><ul>'+ts.map(function(t){return '<li>'+t.title+'</li>'}).join("")+'</ul><span class="go">'+(ts.length>1?'افتح '+ar(ts.length)+' اختبارات':'افتح الاختبار')+' ←</span></div></a>';
   });
   h+='</div>';
-  h+='<p class="note">تقييمات برنامجي (الوعي الذاتي) و(واثق) من أدلة المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد).</p>';
+  h+='<p class="note">تقييمات برنامجي (الوعي الذاتي) و(واثق) من أدلة المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. أما استبيان لغات الحب فمبني على مفهوم د. غاري تشابمان بصياغة خاصة. نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد).</p>';
   cat.innerHTML=h;
 }
 function renderCategory(c){
@@ -450,10 +466,11 @@ function startScreen(){
     '<span class="qdim">'+c.name+'</span><h2>'+t.title+'</h2><p class="sub">'+t.intro+'</p>'+
     '<div class="field"><label for="pn">اسمك</label><input id="pn" autocomplete="name" maxlength="60" value="'+esc(S.name)+'" placeholder="مثال: نورة العتيبي"></div>'+
     '<div class="field"><label for="po">الجهة أو البرنامج التدريبي <small>(اختياري)</small></label><input id="po" maxlength="80" value="'+esc(S.org)+'" placeholder="مثال: برنامج الوعي الذاتي - ارتياد"></div>'+
+    (t.gender?'<div class="field"><label>أجيب بصفتي</label><div class="seg" role="group" id="pg">'+[["m","زوج"],["f","زوجة"]].map(function(g){return '<button type="button" data-act="gen" data-v="'+g[0]+'" aria-pressed="'+(S.g===g[0])+'">'+g[1]+'</button>'}).join("")+'</div></div>':'')+
     '<div class="actions"><button class="btn" data-act="begin" id="go">ابدأ</button><span class="sub" style="margin:0">'+count(t)+' · '+ar(t.mins)+' دقائق تقريباً</span></div></div>';
   var pn=document.getElementById("pn"),go=document.getElementById("go");
-  function chk(){go.disabled=pn.value.trim().length<2}
-  pn.addEventListener("input",chk);chk();
+  function chk(){go.disabled=pn.value.trim().length<2||(t.gender&&!S.g)}
+  S.chk=chk;pn.addEventListener("input",chk);chk();
   pn.addEventListener("keydown",function(e){if(e.key==="Enter"&&!go.disabled)go.click()});
 }
 
@@ -467,6 +484,7 @@ function begin(){
   else{S.i=0;if(S.t.type==="choice")loadRank();question()}
 }
 
+function gtxt(x){var k=S.g==="f"?1:0;return x.replace(/\{([^|}]*)\|([^}]*)\}/g,function(m,a,b){return k?b:a})}
 function question(){
   var t=S.t,i=S.i,n=t.items.length,it=t.items[i],sel=S.ans[i];
   var h='<div class="panel"><button class="back" data-act="'+(i?"prev":"start")+'">→ '+(i?"السؤال السابق":"رجوع")+'</button>'+
@@ -474,6 +492,9 @@ function question(){
   if(t.type==="likert"){
     h+='<p class="qtext">'+(typeof it==="string"?it:it[1])+'</p><div class="opts '+(t.scale.length===5?"scale":"three")+'" role="group">';
     t.scale.forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+ar(k+1)+'</span>'+lab+'</button>'});
+  }else if(t.type==="pair"){
+    h+='<p class="qtext">أيّ العبارتين أقرب لك؟</p><div class="opts" role="group">';
+    it.forEach(function(o,k){h+='<button class="opt" data-act="pick" data-v="'+o[0]+'" aria-pressed="'+(sel===o[0])+'"><span class="k">'+"أب"[k]+'</span>'+gtxt(o[1])+'</button>'});
   }else if(t.type==="abc"){
     h+='<p class="qtext">'+it[0]+'</p><div class="opts" role="group">';
     it[1].forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+"أبج"[k]+'</span>'+lab+'</button>'});
@@ -537,7 +558,7 @@ function actions(summary){
   var msg="السلام عليكم أ. سلطان،\nهذه نتيجتي في ("+S.t.title+") من موقعك:\nالاسم: "+S.name+(S.org?"\nالجهة/البرنامج: "+S.org:"")+"\n"+summary;
   return '<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
     '<button class="btn line" data-act="home">اختبار آخر</button></div>'+
-    '<p class="disclaimer">'+'من دليل المشارك لبرنامج ('+(S.t.guide||'الوعي الذاتي')+') © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.'+'</p>';
+    '<p class="disclaimer">'+(S.t.note||'من دليل المشارك لبرنامج ('+(S.t.guide||'الوعي الذاتي')+') © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.')+'</p>';
 }
 
 function ul(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
@@ -574,6 +595,19 @@ function result(){
     h+='<div class="box"><h4>'+X.tips+' '+low.d.n+(X.tipsEnd||'')+'</h4><ul>'+low.d.tip.map(function(x){return '<li><b>'+x[0]+':</b> '+x[1]+'</li>'}).join("")+'</ul></div>';
     h+='<div class="box"><h4>'+X.about+'</h4><p>'+X.aboutTxt+'</p><p>٧٥٪ فأكثر: قوة واضحة · ٥٠٪ إلى ٧٤٪: جيد قابل للتطوير · أقل من ٥٠٪: أولوية للتطوير.</p></div>';
     sum="الدرجة الكلية: "+P+"% ("+L.t+")\n"+rows.map(function(r){return r.d.n+": "+r.p+"%"}).join("\n");
+  }
+  else if(t.type==="pair"){
+    var cnt={A:0,B:0,C:0,D:0,E:0};S.ans.forEach(function(v){cnt[v]++});
+    var ks=["A","B","C","D","E"].sort(function(a,b){return cnt[b]-cnt[a]});
+    var tops=ks.filter(function(k){return cnt[k]===cnt[ks[0]]}),L=t.langs[ks[0]];
+    var dual=tops.length>1,sec=dual?null:ks[1],close=!dual&&cnt[ks[0]]-cnt[sec]<=1;
+    h+='<div class="score">'+ring(Math.round(cnt[ks[0]]/12*100),ar(cnt[ks[0]])+' من ١٢',L.c)+'<div><span class="lvl">'+(dual?'لديك أكثر من لغة أساسية':'لغة الحب الأساسية لديك')+'</span><h3 style="color:'+L.c+'">'+tops.map(function(k){return t.langs[k].n}).join(' و')+'</h3><p>'+(dual?'تساوت نقاطك في أكثر من لغة، فكلها مهمة بالنسبة لك.':L.d+(close?' ولغتك الثانية <b>'+t.langs[sec].n+'</b> قريبة جداً منها، فهي مهمة لك أيضاً.':''))+'</p></div></div>';
+    h+='<div class="dims">';
+    ks.forEach(function(k){h+='<div class="dim-row" style="--dc:'+t.langs[k].c+'"><span>'+t.langs[k].n+'</span><div class="bar"><i style="width:'+Math.max(Math.round(cnt[k]/12*100),3)+'%"></i></div><b>'+ar(cnt[k])+'/١٢</b></div>'});
+    h+='</div>';
+    tops.forEach(function(k){var x=t.langs[k];h+='<div class="box" style="border-inline-start:5px solid '+x.c+'"><h4>'+x.n+'</h4><p>'+x.d+'</p><p><b>شارك هذه النتيجة مع '+(S.g==="f"?'زوجك':'زوجتك')+'؛ فهذه الأمور تملأ رصيدك العاطفي:</b></p>'+ul(x.how)+'</div>'});
+    h+='<div class="box"><h4>كيف تقرأ نتيجتك؟</h4><p>أعلى رقم هو لغة الحب الأساسية لديك، وأعلى ما يمكن تحقيقه في أي لغة هو ١٢. إذا تساوت لغتان فلديك لغتان أساسيتان، وإذا كانت اللغة الثانية قريبة من الأولى فهي مهمة لك أيضاً.</p><p>النتائج الأقل لا تعني أن تلك اللغات غير مهمة؛ فقد يعبّر شريكك عن حبه بها. والفائدة الأكبر أن يجيب شريكك على الاستبيان أيضاً، فيتعرف كل منكما على لغة الآخر ويتحدث بها.</p></div>';
+    sum=ks.map(function(k){return t.langs[k].n+": "+cnt[k]}).join("، ");
   }
   else if(t.type==="abc"){
     var c=[0,0,0],L2="أبج",miss=[];
@@ -630,6 +664,7 @@ run.addEventListener("click",function(e){
   var a=b.dataset.act;
   if(a==="home"){S=null;location.hash="";return}
   if(a==="start"){startScreen();return}
+  if(a==="gen"){S.g=b.dataset.v;[].forEach.call(b.parentNode.children,function(x){x.setAttribute("aria-pressed",String(x===b))});S.chk&&S.chk();return}
   if(a==="begin"){begin();top();return}
   if(a==="prev"){if(S.busy)return;S.i--;if(S.t.type==="choice")loadRank();question();return}
   if(a==="reset"){if(S.busy)return;S.rank={};S.ans[S.i]=null;question();return}
