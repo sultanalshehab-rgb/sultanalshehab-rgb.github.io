@@ -132,7 +132,7 @@ a.back{text-decoration:none;display:inline-block}
 @media (max-width:700px){.box3.c-love{flex-direction:column}.box3.c-love .art{aspect-ratio:2/1;border-inline-start:0;border-bottom:4px solid #ec4899}}
 .card.has-badge{padding-top:28px;border-top:5px solid var(--bc,#be185d)}
 .card.c-love{background:linear-gradient(180deg,color-mix(in srgb,#ec4899 8%,var(--surface)),var(--surface) 140px)}
-.card .badge{justify-self:start;background:var(--bc);color:#fff;font-weight:700;font-size:.85rem;padding:4px 14px;border-radius:999px}
+.card .badge{justify-self:start;background:var(--bc);color:#fff;width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
 .panel.skin-love{border-top:6px solid #ec4899;background:linear-gradient(180deg,color-mix(in srgb,#ec4899 9%,var(--surface)),var(--surface) 220px)}
 .panel.skin-love .opt[aria-pressed="true"]{border-color:#ec4899;background:color-mix(in srgb,#ec4899 14%,var(--surface))}
 .panel.skin-love .opt[aria-pressed="true"] .k{background:#ec4899;border-color:#ec4899;color:#fff}
@@ -411,7 +411,7 @@ var TESTS=[
   ]
 },
 {
-  id:"love-m",cat:"love",title:"لغات الحب الخمس للأزواج",g:"m",skin:"love",badge:["للأزواج","#1d4ed8"],
+  id:"love-m",cat:"love",title:"لغات الحب الخمس للأزواج",g:"m",skin:"love",badge:["MAN","#1d4ed8","رجل"],
   note:"مبني على مفهوم «لغات الحب الخمس» للدكتور غاري تشابمان، بأسئلة وصياغة خاصة.",
   intro:"٣٠ زوجاً من العبارات للزوج. في كل سؤال اختر العبارة الأقرب لما يُشعرك بالحب من زوجتك، حتى لو انطبقت عليك العبارتان.",
   mins:6,type:"pair",
@@ -432,7 +432,7 @@ var TESTS=[
 ];
 
 (function(){var b=byId("love-m"),f={};for(var k in b)f[k]=b[k];
-  f.id="love-f";f.g="f";f.title="لغات الحب الخمس للزوجات";f.badge=["للزوجات","#be185d"];
+  f.id="love-f";f.g="f";f.title="لغات الحب الخمس للزوجات";f.badge=["WOM","#be185d","امرأة"];
   f.intro="٣٠ زوجاً من العبارات للزوجة. في كل سؤال اختاري العبارة الأقرب لما يُشعرك بالحب من زوجك، حتى لو انطبقت عليك العبارتان.";
   TESTS.splice(TESTS.indexOf(b)+1,0,f)})();
 var CTRL={
@@ -447,6 +447,7 @@ var S=null;
 function byId(id){for(var i=0;i<TESTS.length;i++)if(TESTS[i].id===id)return TESTS[i];return null}
 function count(t){return t.type==="control"?"حتى ١٠ مواقف":t.type==="pair"?ar(t.items.length)+" سؤالاً":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
 
+var ICON={MAN:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M8.6 8h6.8a1.6 1.6 0 0 1 1.6 1.6V15h-2v7h-2.2v-6h-1.6v6H9v-7H7V9.6A1.6 1.6 0 0 1 8.6 8z" fill="currentColor"/></svg>',WOM:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M9.8 8h4.4a1.6 1.6 0 0 1 1.5 1.1L18 16h-3.2v6h-2v-6h-1.6v6h-2v-6H6l2.3-6.9A1.6 1.6 0 0 1 9.8 8z" fill="currentColor"/></svg>'};
 var ART={
   eq:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="70" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="262" cy="118" r="4" fill="#2dd4bf" opacity=".5"/><circle cx="250" cy="34" r="2.5" fill="#fff" opacity=".5"/><path d="M160 136C112 104 92 82 92 60a30 30 0 0 1 68-18 30 30 0 0 1 68 18c0 22-20 44-68 76z" fill="#2dd4bf" opacity=".18" stroke="#2dd4bf" stroke-width="3"/><path d="M60 92h62l10-22 14 42 14-60 12 40h98" fill="none" stroke="#eef3f7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   style:'<svg viewBox="0 0 320 160" aria-hidden="true"><g><circle cx="125" cy="48" r="30" fill="#fb923c"/><circle cx="195" cy="48" r="30" fill="#a78bfa"/><circle cx="125" cy="116" r="30" fill="#4ade80"/><circle cx="195" cy="116" r="30" fill="#60a5fa"/></g><g fill="#0d2436"><circle cx="125" cy="42" r="9"/><path d="M109 66a16 13 0 0 1 32 0z"/><circle cx="195" cy="42" r="9"/><path d="M179 66a16 13 0 0 1 32 0z"/><circle cx="125" cy="110" r="9"/><path d="M109 134a16 13 0 0 1 32 0z"/><circle cx="195" cy="110" r="9"/><path d="M179 134a16 13 0 0 1 32 0z"/></g><path d="M160 10v144M60 82h200" stroke="#eef3f7" stroke-width="2" stroke-dasharray="4 6" opacity=".5"/></svg>',
@@ -475,7 +476,7 @@ function renderCatalog(){
 function renderCategory(c){
   var h='<a class="back" href="#">→ كل التصنيفات</a><div class="cat-top '+c.cls+'"><div class="art">'+ART[c.id]+'</div><div><h2>'+c.name+'</h2><p>'+c.desc+'</p></div></div><div class="cards">';
   TESTS.filter(function(t){return t.cat===c.id}).forEach(function(t){
-    h+='<article class="card '+c.cls+(t.badge?' has-badge" style="--bc:'+t.badge[1]:'')+'">'+(t.badge?'<span class="badge">'+t.badge[0]+'</span>':'')+'<div class="meta"><span>'+count(t)+'</span><span>'+ar(t.mins)+' دقائق</span></div><h3>'+t.title+'</h3><p>'+t.intro+'</p><a class="btn" href="#'+t.id+'">ابدأ الاختبار</a></article>';
+    h+='<article class="card '+c.cls+(t.badge?' has-badge" style="--bc:'+t.badge[1]:'')+'">'+(t.badge?'<span class="badge" role="img" aria-label="'+t.badge[2]+'">'+ICON[t.badge[0]]+'</span>':'')+'<div class="meta"><span>'+count(t)+'</span><span>'+ar(t.mins)+' دقائق</span></div><h3>'+t.title+'</h3><p>'+t.intro+'</p><a class="btn" href="#'+t.id+'">ابدأ الاختبار</a></article>';
   });
   cat.innerHTML=h+'</div>';
 }
