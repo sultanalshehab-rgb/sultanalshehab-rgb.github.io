@@ -131,13 +131,14 @@ a.back{text-decoration:none;display:inline-block}
 .box3.c-love .go{color:#be185d}
 @media (max-width:700px){.box3.c-love{flex-direction:column}.box3.c-love .art{aspect-ratio:2/1;border-inline-start:0;border-bottom:4px solid #ec4899}}
 .card.has-badge{padding-top:28px;border-top:5px solid var(--bc,#be185d)}
-.card.c-love{background:linear-gradient(180deg,color-mix(in srgb,#ec4899 8%,var(--surface)),var(--surface) 140px)}
+.card.c-love{background:linear-gradient(180deg,color-mix(in srgb,var(--bc,#ec4899) 8%,var(--surface)),var(--surface) 140px)}
 .card .badge{justify-self:start;background:var(--bc);color:#fff;width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
-.panel.skin-love{border-top:6px solid #ec4899;background:linear-gradient(180deg,color-mix(in srgb,#ec4899 9%,var(--surface)),var(--surface) 220px)}
-.panel.skin-love .opt[aria-pressed="true"]{border-color:#ec4899;background:color-mix(in srgb,#ec4899 14%,var(--surface))}
-.panel.skin-love .opt[aria-pressed="true"] .k{background:#ec4899;border-color:#ec4899;color:#fff}
-@media (hover:hover){.panel.skin-love .opt:hover{border-color:#ec4899}}
-.panel.skin-love > .bar i{background:#ec4899}
+.panel.skin-love{--sk:#ec4899}.panel.skin-love.sk-m{--sk:#3b82f6}
+.panel.skin-love{border-top:6px solid var(--sk);background:linear-gradient(180deg,color-mix(in srgb,var(--sk) 9%,var(--surface)),var(--surface) 220px)}
+.panel.skin-love .opt[aria-pressed="true"]{border-color:var(--sk);background:color-mix(in srgb,var(--sk) 14%,var(--surface))}
+.panel.skin-love .opt[aria-pressed="true"] .k{background:var(--sk);border-color:var(--sk);color:#fff}
+@media (hover:hover){.panel.skin-love .opt:hover{border-color:var(--sk)}}
+.panel.skin-love > .bar i{background:var(--sk)}
 .note{margin-top:40px;padding:18px 20px;border-radius:16px;background:var(--gold-soft);color:var(--ink);font-size:.93rem}
 
 /* RUNNER */
@@ -495,7 +496,7 @@ function route(){
 
 function startScreen(){
   var t=S.t,c=CATS.filter(function(x){return x.id===t.cat})[0];
-  run.innerHTML='<div class="panel'+(t.skin?' skin-'+t.skin:'')+'"><a class="back" href="#cat-'+t.cat+'">→ رجوع</a>'+
+  run.innerHTML='<div class="panel'+(t.skin?' skin-'+t.skin+(t.g?' sk-'+t.g:''):'')+'"><a class="back" href="#cat-'+t.cat+'">→ رجوع</a>'+
     '<span class="qdim">'+c.name+'</span><h2>'+t.title+'</h2><p class="sub">'+t.intro+'</p>'+
     '<div class="field"><label for="pn">اسمك</label><input id="pn" autocomplete="name" maxlength="60" value="'+esc(S.name)+'" placeholder="مثال: نورة العتيبي"></div>'+
     '<div class="field"><label for="po">الجهة أو البرنامج التدريبي <small>(اختياري)</small></label><input id="po" maxlength="80" value="'+esc(S.org)+'" placeholder="مثال: برنامج الوعي الذاتي - ارتياد"></div>'+
@@ -520,7 +521,7 @@ function begin(){
 function gtxt(x){var k=S.g==="f"?1:0;return x.replace(/\{([^|}]*)\|([^}]*)\}/g,function(m,a,b){return k?b:a})}
 function question(){
   var t=S.t,i=S.i,n=t.items.length,it=t.items[i],sel=S.ans[i];
-  var h='<div class="panel'+(t.skin?' skin-'+t.skin:'')+'"><button class="back" data-act="'+(i?"prev":"start")+'">→ '+(i?"السؤال السابق":"رجوع")+'</button>'+
+  var h='<div class="panel'+(t.skin?' skin-'+t.skin+(t.g?' sk-'+t.g:''):'')+'"><button class="back" data-act="'+(i?"prev":"start")+'">→ '+(i?"السؤال السابق":"رجوع")+'</button>'+
     '<div class="qnum"><span>'+t.title+'</span><span>'+ar(i+1)+' من '+ar(n)+'</span></div><div class="bar"><i style="width:'+((i)/n*100)+'%"></i></div>';
   if(t.type==="likert"){
     h+='<p class="qtext">'+(typeof it==="string"?it:it[1])+'</p><div class="opts '+(t.scale.length===5?"scale":"three")+'" role="group">';
@@ -597,7 +598,7 @@ function actions(summary){
 function ul(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
 function result(){
   if(S.t.type!=="control"){for(var q=0;q<S.t.items.length;q++){if(S.ans[q]==null){S.i=q;if(S.t.type==="choice")loadRank();question();return}}}
-  var t=S.t,h='<div class="panel'+(t.skin?' skin-'+t.skin:'')+'">'+head(),sum="";
+  var t=S.t,h='<div class="panel'+(t.skin?' skin-'+t.skin+(t.g?' sk-'+t.g:''):'')+'">'+head(),sum="";
   if(t.id==="eq"){
     var tot=0,often=[],rare=[];
     t.items.forEach(function(it,i){var v=S.ans[i];tot+=v;if(v===3)often.push(it);if(v===1)rare.push(it)});
