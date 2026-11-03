@@ -80,6 +80,9 @@ main{padding-block:20px 80px;min-height:50vh}
 .card p{color:var(--muted);font-size:.95rem}
 .meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.82rem}
 .meta span{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 12px;color:var(--muted)}
+.meta span.tc{background:var(--gold-soft);border-color:transparent;color:#0f766e;font-weight:600}
+.box3 li small.tc{color:var(--muted);font-weight:400;font-size:.82rem;margin-inline-start:6px}
+.box3 li small.tc:empty{display:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s;background:var(--gold);color:#0d2436}
 .btn:hover{transform:translateY(-1px)}
 .btn.line{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
@@ -461,25 +464,37 @@ var GRPS=[
   {id:"dc",h:"اختبارات ديل كارنيجي (ارتياد)",p:"تقييمات برنامجي (الوعي الذاتي) و(واثق) من أدلة المشارك.",logos:true,note:"تقييمات برنامجي (الوعي الذاتي) و(واثق) من أدلة المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد)."},
   {id:"gen",h:"اختبارات عامة",p:"استبيانات تساعدك تفهم نفسك وعلاقاتك.",note:"استبيان لغات الحب الخمس مبني على مفهوم د. غاري تشابمان، بأسئلة وصياغة خاصة."}
 ];
+/* ---- taken counter (shared across visitors, shown only above 10) ---- */
+var CNT_API="https://abacus.jasoncameron.dev",CNT_NS="sultanalshehab-tests",COUNTS={};
+function tcText(n){return "اختبره "+ar(n)+" "+(n%100>10||n%100===0&&n<100?"شخصاً":"شخص")}
+function fillCounts(){[].forEach.call(document.querySelectorAll("[data-tc]"),function(el){var n=COUNTS[el.dataset.tc];if(n>10){el.textContent=el.tagName==="SMALL"?"· "+tcText(n):tcText(n);el.hidden=false}})}
+function loadCounts(){TESTS.forEach(function(t){
+  if(COUNTS[t.id]!=null)return;
+  fetch(CNT_API+"/get/"+CNT_NS+"/test-"+t.id).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&typeof j.value==="number"){COUNTS[t.id]=j.value;fillCounts()}}).catch(function(){});
+})}
+function countTaken(id){
+  var k="taken-"+id;try{if(localStorage.getItem(k))return;localStorage.setItem(k,"1")}catch(e){}
+  fetch(CNT_API+"/hit/"+CNT_NS+"/test-"+id).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&typeof j.value==="number")COUNTS[id]=j.value}).catch(function(){});
+}
 function renderCatalog(){
   var h='';
   GRPS.forEach(function(g){
   h+='<section class="grp"><div class="grp-h"><div><h2>'+g.h+'</h2><p>'+g.p+'</p></div>'+(g.logos?PARTNERS:'')+'</div><div class="boxes">';
   CATS.filter(function(c){return c.grp===g.id}).forEach(function(c){
     var ts=TESTS.filter(function(t){return t.cat===c.id});
-    h+='<a class="box3 '+c.cls+'" href="#cat-'+c.id+'"><div class="art">'+ART[c.id]+'</div><div class="bd"><h2>'+c.name+'</h2><p>'+c.desc+'</p><ul>'+ts.map(function(t){return '<li>'+t.title+'</li>'}).join("")+'</ul><span class="go">'+(ts.length>1?'افتح '+ar(ts.length)+' اختبارات':'افتح الاختبار')+' ←</span></div></a>';
+    h+='<a class="box3 '+c.cls+'" href="#cat-'+c.id+'"><div class="art">'+ART[c.id]+'</div><div class="bd"><h2>'+c.name+'</h2><p>'+c.desc+'</p><ul>'+ts.map(function(t){return '<li>'+t.title+'<small class="tc" data-tc="'+t.id+'"></small></li>'}).join("")+'</ul><span class="go">'+(ts.length>1?'افتح '+ar(ts.length)+' اختبارات':'افتح الاختبار')+' ←</span></div></a>';
   });
   h+='</div><p class="note">'+g.note+'</p></section>';
   });
   h+='<p class="note">نتيجتك تظهر لك أنت فقط على جهازك، ولا تُحفظ في أي مكان.</p>';
-  cat.innerHTML=h;
+  cat.innerHTML=h;fillCounts();
 }
 function renderCategory(c){
   var h='<a class="back" href="#">→ كل التصنيفات</a><div class="cat-top '+c.cls+'"><div class="art">'+ART[c.id]+'</div><div><h2>'+c.name+'</h2><p>'+c.desc+'</p></div></div><div class="cards">';
   TESTS.filter(function(t){return t.cat===c.id}).forEach(function(t){
-    h+='<article class="card '+c.cls+(t.badge?' has-badge" style="--bc:'+t.badge[1]:'')+'">'+(t.badge?'<span class="badge" role="img" aria-label="'+t.badge[2]+'">'+ICON[t.badge[0]]+'</span>':'')+'<div class="meta"><span>'+count(t)+'</span><span>'+ar(t.mins)+' دقائق</span></div><h3>'+t.title+'</h3><p>'+t.intro+'</p><a class="btn" href="#'+t.id+'">ابدأ الاختبار</a></article>';
+    h+='<article class="card '+c.cls+(t.badge?' has-badge" style="--bc:'+t.badge[1]:'')+'">'+(t.badge?'<span class="badge" role="img" aria-label="'+t.badge[2]+'">'+ICON[t.badge[0]]+'</span>':'')+'<div class="meta"><span>'+count(t)+'</span><span>'+ar(t.mins)+' دقائق</span><span class="tc" data-tc="'+t.id+'" hidden></span></div><h3>'+t.title+'</h3><p>'+t.intro+'</p><a class="btn" href="#'+t.id+'">ابدأ الاختبار</a></article>';
   });
-  cat.innerHTML=h+'</div>';
+  cat.innerHTML=h+'</div>';fillCounts();
 }
 
 function show(which){cat.hidden=which!=="cat";run.hidden=which==="cat"}
@@ -598,6 +613,7 @@ function actions(summary){
 function ul(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
 function result(){
   if(S.t.type!=="control"){for(var q=0;q<S.t.items.length;q++){if(S.ans[q]==null){S.i=q;if(S.t.type==="choice")loadRank();question();return}}}
+  if(!S.counted){S.counted=true;countTaken(S.t.id)}
   var t=S.t,h='<div class="panel'+(t.skin?' skin-'+t.skin+(t.g?' sk-'+t.g:''):'')+'">'+head(),sum="";
   if(t.id==="eq"){
     var tot=0,often=[],rare=[];
@@ -711,7 +727,7 @@ run.addEventListener("click",function(e){
   if(a==="ctlres"){result();return}
 });
 addEventListener("hashchange",route);
-route();
+route();loadCounts();
 })();
 </script>
 </body>
