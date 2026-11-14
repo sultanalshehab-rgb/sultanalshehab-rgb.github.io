@@ -90,7 +90,7 @@ main{padding-block:20px 80px;min-height:50vh}
 .btn.wa{background:#25d366;color:#08311a}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .card .btn{justify-self:start;margin-top:6px}
-.c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)} .c-love{--c:#be185d} .c-time{--c:#b45309} .c-team{--c:var(--c-a)}
+.c-career{--c:var(--gold-ink)} .c-lead{--c:var(--c-t)} .c-energy{--c:var(--c-d)} .c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)} .c-love{--c:#be185d} .c-time{--c:#b45309} .c-team{--c:var(--c-a)}
 .boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:8px}
 .boxes .box3 .art{aspect-ratio:5/2}
 .cmp{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:6px}
@@ -144,6 +144,19 @@ a.back{text-decoration:none;display:inline-block}
 .panel.skin-love > .bar i{background:var(--sk)}
 .note{margin-top:40px;padding:18px 20px;border-radius:16px;background:var(--gold-soft);color:var(--ink);font-size:.93rem}
 
+.finder{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin-top:8px}
+.finder h2{font-size:1.2rem}
+.finder p{color:var(--muted);font-size:.92rem;margin-top:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips button{padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font:inherit;font-size:.92rem;font-weight:500}
+@media (hover:hover){.chips button:hover{border-color:var(--gold)}}
+.chips button[aria-pressed="true"]{background:var(--gold-ink);border-color:var(--gold-ink);color:var(--surface);font-weight:700}
+.finder+.grp{margin-top:28px}
+.box3 li small.mn{margin-inline-start:auto;color:var(--muted);font-weight:400;font-size:.8rem;white-space:nowrap}
+.cta{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;margin-top:28px;padding:18px 22px;border-radius:18px;background:linear-gradient(160deg,var(--navy-2),var(--navy));color:#fff}
+.cta h4{margin:0;color:#fff;font-size:1.1rem}
+.cta p{color:#cfe0ea;font-size:.92rem;margin-top:4px}
+.disclaimer.ref{text-align:left;font-size:.75rem;margin-top:8px}
 /* RUNNER */
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,40px);max-width:760px;margin:8px auto 0}
 .back{background:none;border:0;color:var(--muted);cursor:pointer;padding:0;font-size:.95rem;margin-bottom:14px}
@@ -214,7 +227,7 @@ a.back{text-decoration:none;display:inline-block}
 .disclaimer{margin-top:22px;font-size:.82rem;color:var(--muted)}
 .print-only{display:none}
 
-footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:center}
+footer{padding-block:30px 40px;padding-inline:16px;color:var(--muted);font-size:.88rem;text-align:center}
 
 @media (max-width:760px){
   .cards,.grid2{grid-template-columns:1fr}
@@ -253,7 +266,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
   <div class="in">
     <span class="eyebrow">الاختبارات</span>
     <h1>اعرف نفسك أكثر،<br>وابدأ خطوتك التالية</h1>
-    <p>اختبارات برامج ديل كارنيجي (ارتياد)، واختبارات عامة تساعدك تعرف نفسك وعلاقاتك أكثر. تكتب اسمك، تجاوب بصدق، وتطلع لك نتيجتك باسمك فوراً وتقدر تحفظها.</p>
+    <p>اختبارات كوتشنج مبنية على مقاييس علمية، واختبارات برامج ديل كارنيجي (ارتياد)، واختبارات عامة تساعدك تعرف نفسك وعلاقاتك أكثر. تكتب اسمك، تجاوب بصدق، وتطلع لك نتيجتك باسمك فوراً وتقدر تحفظها.</p>
     <div class="steps"><span><b>١</b>اختر الاختبار</span><span><b>٢</b>اكتب اسمك</span><span><b>٣</b>أجب بصدق</span><span><b>٤</b>احفظ نتيجتك</span></div>
   </div>
 </div>
@@ -264,7 +277,7 @@ footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:ce
   <div id="runner" hidden></div>
 </main>
 
-<footer>تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) © Dale Carnegie &amp; Associates، تُستخدم بإذن.</footer>
+<footer>اختبارات الكوتشنج مبنية على مقاييس علمية منشورة، والمرجع مذكور مع كل نتيجة.<br>تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) © Dale Carnegie &amp; Associates، تُستخدم بإذن.</footer>
 
 <script>
 (function(){
@@ -290,6 +303,9 @@ var CATS=[
   {id:"love",grp:"gen",cls:"c-love",name:"لغات الحب الخمس",desc:"اكتشف الطريقة التي تشعر بها بالحب أكثر من غيرها في علاقتك الزوجية"},
   {id:"stress",grp:"dc",cls:"c-stress",name:"ضع التوتر والقلق في منظورهما الصحيح",desc:"قيّم منظورك عن القلق والتوتر وخطط لوضعهما في منظورهما الصحيح"},
   {id:"time",grp:"dc",cls:"c-time",name:"إدارة الوقت بفعالية",desc:"اعرف الأشياء التي تسلب وقتك: هل أغلبها عوامل خارجية أم نابعة من الذات؟"},
+  {id:"career",grp:"coach",cls:"c-career",name:"مسارك المهني",desc:"اعرف مدى جاهزيتك لخطوتك المهنية القادمة، وما الذي يهمك فعلاً في العمل"},
+  {id:"lead",grp:"coach",cls:"c-lead",name:"القيادة",desc:"اعرف نقاط قوتك كقائد، وأي أبعاد القيادة الملهمة تحتاج تطويرها"},
+  {id:"energy",grp:"coach",cls:"c-energy",name:"الطاقة والضغوط",desc:"قِس مستوى الاحتراق الوظيفي عندك، وقدرتك على التعافي بعد الضغوط"},
   {id:"team",grp:"dc",cls:"c-team",name:"كيف تكون عضو فريق مساهماً؟",desc:"قيّم نفسك كمساهم في الفريق، واعرف أقوى محاور إسهامك وأين تحتاج التركيز"}
 ];
 
@@ -298,6 +314,145 @@ var F3=["نادراً","أحياناً","غالباً"];
 var F5=["لا ينطبق عليّ إطلاقاً","ينطبق قليلاً","ينطبق أحياناً","ينطبق غالباً","ينطبق عليّ تماماً"];
 
 var TESTS=[
+/* ===== Coaching tests (Sultan's own): built on published scientific instruments / models ===== */
+{
+  id:"career-adapt",cat:"career",coach:1,title:"جاهزيتك لخطوتك المهنية القادمة",
+  res:{ring:"جاهزيتك المهنية",h3:"مدى جاهزيتك للتكيّف وبناء مسارك المهني",best:"أقوى موارد جاهزيتك هو",low:"والمورد الذي يحتاج تركيزك هو",tips:"خطوات عملية لتقوية",about:"ماذا يقيس هذا الاختبار؟",aboutTxt:"يقيس الاختبار أربعة موارد يحتاجها كل شخص ليبني مساره المهني ويتعامل مع التغيير فيه: الاهتمام بمستقبلك (هل تفكر فيه وتخطط له؟)، والتحكم (هل قرارك المهني بيدك؟)، والفضول (هل تستكشف خياراتك؟)، والثقة (هل تؤمن بقدرتك على التنفيذ؟). كلما اكتملت الأربعة، كان انتقالك من الحيرة إلى خطوتك التالية أسهل."},
+  intro:"١٦ عبارة عن علاقتك بمسارك المهني. اختر مدى انطباق كل عبارة عليك اليوم، لا كما تتمنى أن تكون.",
+  mins:4,type:"likert",scale:F5,
+  note:"بصياغة خاصة مبنية على نموذج التكيّف المهني للبروفيسور مارك سافيكاس وأبعاده الأربعة: الاهتمام، والتحكم، والفضول، والثقة. وهو أداة للوعي الذاتي وليس تشخيصاً.",
+  ref:"Savickas, M. L., & Porfeli, E. J. (2012). Career Adapt-Abilities Scale: Construction, reliability, and measurement equivalence across 13 countries. Journal of Vocational Behavior, 80(3), 661–673.",
+  dims:[
+    {k:"con",n:"الاهتمام بمستقبلك",tip:[["اكتب صورة مستقبلك","خصص نصف ساعة هذا الأسبوع واكتب كيف تريد أن يكون يومك المهني بعد ثلاث سنوات: الدور، والبيئة، ونوع الأثر."],["حوّل الصورة لخطوات","اختر خطوة واحدة صغيرة تقربك من هذه الصورة، وحدد لها موعداً في التقويم خلال أسبوعين."]]},
+    {k:"ctl",n:"التحكم في قرارك",tip:[["افصل قرارك عن توقعات الآخرين","اكتب ما تريده أنت، ثم ما يتوقعه منك المحيطون بك، وقارن بين القائمتين بصدق."],["ابدأ بقرار صغير","التحكم يُبنى بالتجربة: اتخذ قراراً مهنياً صغيراً بنفسك هذا الشهر وتحمّل نتيجته."]]},
+    {k:"cur",n:"الفضول والاستكشاف",tip:[["قابل ثلاثة أشخاص","تحدث مع ثلاثة أشخاص يعملون في أدوار أو مجالات تثير اهتمامك، واسألهم عن يومهم الحقيقي."],["جرّب قبل أن تقرر","تطوّع في مشروع، أو احضر ورشة، أو اقرأ عن مجال جديد؛ فالتجربة الصغيرة توضح أكثر من التفكير الطويل."]]},
+    {k:"cnf",n:"الثقة بقدرتك",tip:[["سجّل إنجازاتك","اكتب خمسة مواقف تجاوزت فيها تحدياً في عملك، وما المهارة التي استخدمتها في كل موقف."],["تعلّم مهارة واحدة","اختر مهارة يحتاجها مستقبلك المهني، وابدأ بتعلمها بخطة قصيرة وواضحة."]]}
+  ],
+  items:[
+    ["con","أفكر بانتظام في شكل مستقبلي المهني بعد ثلاث إلى خمس سنوات."],
+    ["ctl","أتخذ قراراتي المهنية بنفسي بدل أن أنتظر غيري ليقررها عني."],
+    ["cur","أبحث عن فرص جديدة للنمو والتعلم في مجالي."],
+    ["cnf","أثق بقدرتي على تعلم المهارات الجديدة التي يحتاجها مستقبلي المهني."],
+    ["con","أدرك أن قراراتي اليوم هي التي تصنع مساري المهني غداً."],
+    ["ctl","أتحمل مسؤولية نتائج اختياراتي المهنية."],
+    ["cur","أستكشف خيارات مهنية مختلفة قبل أن أحسم قراري."],
+    ["cnf","أتجاوز العقبات في عملي ولا أستسلم لها بسرعة."],
+    ["con","لدي أهداف مهنية واضحة أعرفها جيداً."],
+    ["ctl","أعرف ما يناسبني في العمل وأتمسك به حتى لو خالف توقعات الآخرين."],
+    ["cur","أتواصل مع أشخاص في مجالات أو أدوار تهمني لأتعرف عليها."],
+    ["cnf","أؤدي مهامي بإتقان وأستطيع أن أثبت قيمتي."],
+    ["con","أخطط لخطوات عملية توصلني لأهدافي المهنية."],
+    ["ctl","أعتمد على نفسي في تطوير مهاراتي ومساري."],
+    ["cur","أجرب طرقاً مختلفة لأداء عملي بدل التمسك بطريقة واحدة."],
+    ["cnf","أستطيع حل المشكلات التي تواجهني في عملي."]
+  ]
+},
+{
+  id:"values",cat:"career",coach:1,title:"ما الذي يهمك فعلاً في العمل؟",score:"rank",
+  intro:"١٨ عبارة عن أشياء يبحث عنها الناس في العمل. حدد مدى أهمية كل منها لك في وظيفتك المثالية، وستعرف قيمك المهنية الأهم.",
+  mins:4,type:"likert",scale:["غير مهم لي","مهم قليلاً","مهم","مهم جداً","مهم للغاية"],
+  note:"بصياغة خاصة مبنية على القيم المهنية الست في نظرية التوافق مع العمل لداويس ولوفكويست، وهي القيم نفسها التي تعتمدها أدوات الاستكشاف المهني في وزارة العمل الأمريكية. وهو أداة للوعي الذاتي وليس تشخيصاً.",
+  ref:"Dawis, R. V., & Lofquist, L. H. (1984). A Psychological Theory of Work Adjustment. University of Minnesota Press.",
+  dims:[
+    {k:"ach",n:"الإنجاز",c:"#0f766e",d:"تحتاج عملاً تستخدم فيه أفضل قدراتك وترى نتائجه بوضوح. الروتين الذي لا يتحدى قدراتك يطفئ حماسك بسرعة.",ask:["ما النتائج التي يُقاس بها نجاح هذا الدور؟","ما المهارات التي سأستخدمها فعلاً في يومي؟"]},
+    {k:"ind",n:"الاستقلالية",c:"#7c3aed",d:"تحتاج مساحة تقرر فيها طريقة عملك وتجرب أفكارك. الإدارة اللصيقة والتدخل في كل تفصيل يستنزفانك.",ask:["كم مساحة القرار المتاحة لي في هذا الدور؟","كيف يتابع المدير عمل فريقه؟"]},
+    {k:"rec",n:"التقدير والتقدم",c:"#b45309",d:"تحتاج أن يُرى عملك ويُقدَّر، وأن يكون أمامك طريق واضح للتقدم والتأثير.",ask:["كيف تبدو فرص الترقي هنا خلال سنتين؟","كيف يُكافأ الأداء المتميز؟"]},
+    {k:"rel",n:"العلاقات والقيم",c:"#be185d",d:"تحتاج زملاء تحبهم، وعملاً يخدم الآخرين، وبيئة لا تطلب منك ما يتعارض مع مبادئك.",ask:["كيف تصف روح الفريق هنا؟","ما أثر هذا العمل على الناس؟"]},
+    {k:"sup",n:"الدعم والعدالة",c:"#1d4ed8",d:"تحتاج مديراً يدعمك، وجهة تعامل موظفيها بعدل ووضوح، وتوجيهاً يساعدك على التطور.",ask:["كيف يدعم المدير فريقه عند الأخطاء والضغوط؟","ما فرص التدريب والتوجيه المتاحة؟"]},
+    {k:"wc",n:"الاستقرار وظروف العمل",c:"#15803d",d:"تحتاج دخلاً مناسباً، وأماناً وظيفياً، وبيئة وساعات عمل تناسب حياتك.",ask:["ما طبيعة ساعات العمل والمرونة فيها؟","ما مدى استقرار هذا الدور والجهة؟"]}
+  ],
+  items:[
+    ["ach","أن أستخدم أفضل ما لدي من قدرات في عملي."],
+    ["ind","أن أقرر بنفسي طريقة أداء عملي."],
+    ["rec","أن تتاح لي فرص واضحة للترقي."],
+    ["rel","أن أعمل مع زملاء متعاونين وودودين."],
+    ["sup","أن يكون لي مدير يدعم فريقه ويقف معه."],
+    ["wc","أن أحصل على دخل جيد مقارنة بغيري."],
+    ["ach","أن أرى نتائج ملموسة لما أنجزه."],
+    ["ind","أن أجرب أفكاري الخاصة دون الحاجة لإذن في كل مرة."],
+    ["rec","أن يُقدَّر عملي ويُذكر أمام الآخرين."],
+    ["rel","أن أخدم الآخرين وأساعدهم من خلال عملي."],
+    ["sup","أن تعامل الجهة موظفيها بعدل ووضوح."],
+    ["wc","أن يكون عملي مستقراً وآمناً."],
+    ["ach","أن أشعر في نهاية اليوم بأني حققت شيئاً ذا قيمة."],
+    ["ind","أن تكون لي مساحة لاتخاذ القرارات في نطاق عملي."],
+    ["rec","أن يكون لي دور قيادي أو مكانة مؤثرة."],
+    ["rel","ألا يُطلب مني فعل ما يتعارض مع قيمي ومبادئي."],
+    ["sup","أن أحصل على التدريب والتوجيه الذي أحتاجه."],
+    ["wc","أن تكون بيئة العمل وساعاته مناسبة لحياتي."]
+  ]
+},
+{
+  id:"leadership",cat:"lead",coach:1,title:"إلى أي حد أنت قائد ملهم؟",
+  res:{ring:"القيادة الملهمة",h3:"ملامح قيادتك الملهمة",best:"أقوى أبعاد قيادتك هو",low:"والبعد الذي يحتاج تركيزك هو",tips:"خطوات عملية لتقوية بُعد",about:"ماذا يقيس هذا الاختبار؟",aboutTxt:"يقيس الاختبار أربعة أبعاد للقيادة الملهمة (التحويلية): أن تكون قدوة يثق بها فريقك، وأن تلهمهم برؤية واضحة، وأن تحفّز تفكيرهم وأفكارهم الجديدة، وأن تهتم بكل فرد وتطوره. القادة الذين تكتمل عندهم هذه الأبعاد يحققون مع فرقهم نتائج أعلى من المتوقع."},
+  intro:"١٦ عبارة عن طريقتك في قيادة فريقك. اختر كم مرة تتصرف بهذه الطريقة فعلاً، وإن لم يكن لديك فريق رسمي ففكّر في أقرب دور قيادي مارسته.",
+  mins:4,type:"likert",scale:["نادراً","أحياناً","كثيراً","غالباً","دائماً تقريباً"],
+  note:"بصياغة خاصة مبنية على الأبعاد الأربعة لنموذج القيادة التحويلية لبرنارد باس، وليس نسخة من استبيان القيادة متعدد العوامل المحمي بحقوق. وهو أداة للوعي الذاتي وليس تشخيصاً.",
+  ref:"Bass, B. M., & Riggio, R. E. (2006). Transformational Leadership (2nd ed.). Lawrence Erlbaum Associates.",
+  dims:[
+    {k:"idl",n:"القدوة",tip:[["اطلب من نفسك أولاً","قبل أن تطلب شيئاً من فريقك هذا الأسبوع، اسأل نفسك: هل ألتزم به أنا؟"],["تكلم عن قيمك","شارك فريقك بمبدأ واحد تعمل به ولماذا هو مهم لك، ثم دعهم يرونه في تصرفاتك."]]},
+    {k:"ins",n:"الإلهام",tip:[["اربط المهمة بالمعنى","في اجتماعك القادم، ابدأ بلماذا نعمل هذا العمل قبل ماذا سنعمل."],["ارسم الصورة","صِف لفريقك في ثلاث جمل كيف سيبدو النجاح بعد سنة، وكررها حتى يرددوها."]]},
+    {k:"int",n:"التحفيز الفكري",tip:[["اسأل قبل أن تجيب","عندما يأتيك أحد بمشكلة، اسأله أولاً: ما الحلول التي تراها أنت؟"],["كافئ الفكرة المختلفة","اشكر علناً من يطرح رأياً يخالف رأيك، حتى لو لم تأخذ به."]]},
+    {k:"ind",n:"الاهتمام الفردي",tip:[["لقاء فردي منتظم","خصص لقاءً قصيراً مع كل فرد من فريقك كل أسبوعين، واسأله عن طموحه لا عن مهامه فقط."],["طوّر نقطة قوة","اختر لكل فرد مهمة تستثمر نقطة قوته وتوسعها."]]}
+  ],
+  items:[
+    ["idl","أتصرف بطريقة تجعل فريقي يثق بي ويحترمني."],
+    ["ins","أتحدث بحماس عما يجب علينا إنجازه."],
+    ["int","أشجع فريقي على النظر للمشكلات من زوايا جديدة."],
+    ["ind","أخصص وقتاً لتوجيه أفراد فريقي وتطويرهم."],
+    ["idl","أقدّم مصلحة الفريق على مصلحتي الشخصية."],
+    ["ins","أرسم لفريقي صورة واضحة ومشوّقة للمستقبل."],
+    ["int","أطلب آراء مختلفة قبل أن أحسم قراراً مهماً."],
+    ["ind","أتعامل مع كل فرد بما يناسبه بدل أن أعامل الجميع بالطريقة نفسها."],
+    ["idl","ألتزم بما أطلبه من الآخرين قبل أن أطلبه منهم."],
+    ["ins","أعبّر عن ثقتي بأن فريقي سيحقق أهدافه."],
+    ["int","أراجع الطرق المعتادة في العمل وأسأل إن كانت لا تزال الأفضل."],
+    ["ind","أعرف طموحات كل فرد في فريقي ونقاط قوته."],
+    ["idl","أتحدث عن القيم والمبادئ التي تهمني وأعمل بها أمام فريقي."],
+    ["ins","أربط مهام الفريق اليومية بهدف أكبر وأهم."],
+    ["int","أرحّب بالأفكار التي تخالف رأيي."],
+    ["ind","أساعد أفراد فريقي على تطوير نقاط قوتهم."]
+  ]
+},
+{
+  id:"burnout",cat:"energy",coach:1,title:"مؤشر الاحتراق الوظيفي",score:"cbi",unit:"سؤالاً",
+  intro:"١٣ سؤالاً عن طاقتك وإرهاقك في حياتك وعملك خلال الفترة الأخيرة. أجب بما تشعر به فعلاً، وستعرف مستوى الاحتراق الشخصي والمرتبط بالعمل.",
+  mins:3,type:"likert",
+  scale:["أبداً تقريباً","نادراً","أحياناً","غالباً","دائماً"],
+  scales:{d:["بدرجة قليلة جداً","بدرجة قليلة","إلى حد ما","بدرجة كبيرة","بدرجة كبيرة جداً"]},
+  note:"ترجمة عربية خاصة لجزأي الاحتراق الشخصي والاحتراق المرتبط بالعمل من مقياس كوبنهاغن للاحتراق الوظيفي، الصادر عن المعهد الوطني لأبحاث بيئة العمل في الدنمارك، وهو مقياس مجاني الاستخدام. وهو أداة للوعي الذاتي وليس تشخيصاً طبياً أو نفسياً.",
+  ref:"Kristensen, T. S., Borritz, M., Villadsen, E., & Christensen, K. B. (2005). The Copenhagen Burnout Inventory: A new tool for the assessment of burnout. Work & Stress, 19(3), 192–207.",
+  items:[
+    ["p","كم مرة تشعر بالتعب؟"],
+    ["p","كم مرة تشعر بالإنهاك الجسدي؟"],
+    ["p","كم مرة تشعر بالإنهاك العاطفي؟"],
+    ["p","كم مرة تقول في نفسك: ما عدت أتحمّل؟"],
+    ["p","كم مرة تشعر بأنك مستنزَف تماماً؟"],
+    ["p","كم مرة تشعر بالضعف وبأنك عرضة للمرض؟"],
+    ["w","هل عملك مُنهِك لك عاطفياً؟",0,"d"],
+    ["w","هل تشعر بالاحتراق بسبب عملك؟",0,"d"],
+    ["w","هل يسبب لك عملك الإحباط؟",0,"d"],
+    ["w","هل تشعر بالاستنزاف في نهاية يوم العمل؟"],
+    ["w","هل تشعر بالإنهاك في الصباح عندما تفكر في يوم عمل جديد؟"],
+    ["w","هل تشعر بأن كل ساعة عمل مُتعبة لك؟"],
+    ["w","هل لديك طاقة كافية لأسرتك وأصدقائك في وقت فراغك؟",1]
+  ]
+},
+{
+  id:"resilience",cat:"energy",coach:1,title:"مرونتك النفسية: كم تحتاج لتنهض من جديد؟",score:"brs",
+  intro:"٦ عبارات فقط عن قدرتك على التعافي واستعادة توازنك بعد الضغوط والأوقات الصعبة. حدد مدى موافقتك على كل عبارة.",
+  mins:2,type:"likert",scale:["لا أوافق بشدة","لا أوافق","محايد","أوافق","أوافق بشدة"],
+  note:"ترجمة عربية خاصة للمقياس المختصر للمرونة النفسية لسميث وزملائه، وهو مقياس منشور كاملاً ومتاح مجاناً مع ذكر المرجع. وهو أداة للوعي الذاتي وليس تشخيصاً.",
+  ref:"Smith, B. W., Dalen, J., Wiggins, K., Tooley, E., Christopher, P., & Bernard, J. (2008). The Brief Resilience Scale: Assessing the ability to bounce back. International Journal of Behavioral Medicine, 15(3), 194–200.",
+  items:[
+    ["r","أميل إلى التعافي بسرعة بعد الأوقات الصعبة."],
+    ["r","أجد صعوبة في تجاوز المواقف الضاغطة.",1],
+    ["r","لا يستغرق مني وقتاً طويلاً أن أتعافى من موقف ضاغط."],
+    ["r","يصعب عليّ أن أستعيد توازني عندما يحدث شيء سيئ.",1],
+    ["r","عادةً أتجاوز الأوقات الصعبة دون عناء كبير."],
+    ["r","أميل إلى أخذ وقت طويل حتى أتجاوز النكسات في حياتي.",1]
+  ]
+},
 {
   id:"eq",cat:"eq",title:"تقييم اللياقة العاطفية",
   intro:"٣٠ عبارة تقيس مستوى لياقتك العاطفية الحالي. اختر لكل عبارة: نادراً، أحياناً، أو غالباً.",
@@ -507,10 +662,14 @@ var cat=document.getElementById("catalog"),run=document.getElementById("runner")
 var S=null;
 
 function byId(id){for(var i=0;i<TESTS.length;i++)if(TESTS[i].id===id)return TESTS[i];return null}
-function count(t){return t.type==="control"?"حتى ١٠ مواقف":t.type==="pair"?ar(t.items.length)+" سؤالاً":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
+function mt(m){return m===2?"دقيقتان":ar(m)+" دقائق"}
+function count(t){return t.unit?ar(t.items.length)+" "+t.unit:t.type==="control"?"حتى ١٠ مواقف":t.type==="pair"?ar(t.items.length)+" سؤالاً":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
 
 var ICON={MAN:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M8.6 8h6.8a1.6 1.6 0 0 1 1.6 1.6V15h-2v7h-2.2v-6h-1.6v6H9v-7H7V9.6A1.6 1.6 0 0 1 8.6 8z" fill="currentColor"/></svg>',WOM:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M9.8 8h4.4a1.6 1.6 0 0 1 1.5 1.1L18 16h-3.2v6h-2v-6h-1.6v6h-2v-6H6l2.3-6.9A1.6 1.6 0 0 1 9.8 8z" fill="currentColor"/></svg>'};
 var ART={
+  career:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="54" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="276" cy="128" r="4" fill="#2dd4bf" opacity=".5"/><path d="M60 132h50v-26h50V80h50V54h50" fill="none" stroke="#eef3f7" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M85 118C125 98 165 82 235 44" stroke="#2dd4bf" stroke-width="2.5" stroke-dasharray="4 7" fill="none" opacity=".7"/><circle cx="85" cy="118" r="9" fill="#2dd4bf"/><path d="M260 54V22" stroke="#eef3f7" stroke-width="4" stroke-linecap="round"/><path d="M260 22h30l-8 9 8 9h-30z" fill="#2dd4bf"/></svg>',
+  lead:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="56" cy="36" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="270" cy="124" r="4" fill="#2dd4bf" opacity=".5"/><path d="M160 12l5 11 12 1.5-9 8 2.5 12L160 39l-10.5 5.5 2.5-12-9-8 12-1.5z" fill="#2dd4bf"/><g fill="#eef3f7"><circle cx="160" cy="64" r="13"/><path d="M136 112a24 26 0 0 1 48 0z"/></g><g fill="#eef3f7" opacity=".55"><circle cx="92" cy="96" r="10"/><path d="M74 134a18 20 0 0 1 36 0z"/><circle cx="228" cy="96" r="10"/><path d="M210 134a18 20 0 0 1 36 0z"/></g><path d="M112 118l22-10M208 118l-22-10" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" opacity=".7"/><rect x="60" y="142" width="200" height="4" rx="2" fill="#2dd4bf" opacity=".35"/></svg>',
+  energy:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="58" cy="38" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="268" cy="126" r="4" fill="#2dd4bf" opacity=".5"/><rect x="86" y="44" width="136" height="64" rx="12" fill="none" stroke="#eef3f7" stroke-width="5"/><rect x="226" y="64" width="10" height="24" rx="3" fill="#eef3f7"/><rect x="97" y="55" width="32" height="42" rx="5" fill="#fb923c"/><rect x="138" y="55" width="32" height="42" rx="5" fill="#2dd4bf" opacity=".9"/><rect x="179" y="55" width="32" height="42" rx="5" fill="#2dd4bf" opacity=".3"/><path d="M40 138c30-12 60 12 90 0s60-12 90 0 60 12 60 0" fill="none" stroke="#2dd4bf" stroke-width="3" opacity=".6"/></svg>',
   eq:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="70" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="262" cy="118" r="4" fill="#2dd4bf" opacity=".5"/><circle cx="250" cy="34" r="2.5" fill="#fff" opacity=".5"/><path d="M160 136C112 104 92 82 92 60a30 30 0 0 1 68-18 30 30 0 0 1 68 18c0 22-20 44-68 76z" fill="#2dd4bf" opacity=".18" stroke="#2dd4bf" stroke-width="3"/><path d="M60 92h62l10-22 14 42 14-60 12 40h98" fill="none" stroke="#eef3f7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   style:'<svg viewBox="0 0 320 160" aria-hidden="true"><g><circle cx="125" cy="48" r="30" fill="#fb923c"/><circle cx="195" cy="48" r="30" fill="#a78bfa"/><circle cx="125" cy="116" r="30" fill="#4ade80"/><circle cx="195" cy="116" r="30" fill="#60a5fa"/></g><g fill="#0d2436"><circle cx="125" cy="42" r="9"/><path d="M109 66a16 13 0 0 1 32 0z"/><circle cx="195" cy="42" r="9"/><path d="M179 66a16 13 0 0 1 32 0z"/><circle cx="125" cy="110" r="9"/><path d="M109 134a16 13 0 0 1 32 0z"/><circle cx="195" cy="110" r="9"/><path d="M179 134a16 13 0 0 1 32 0z"/></g><path d="M160 10v144M60 82h200" stroke="#eef3f7" stroke-width="2" stroke-dasharray="4 6" opacity=".5"/></svg>',
   love:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="60" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="264" cy="122" r="4" fill="#2dd4bf" opacity=".5"/><path d="M135 132C95 106 78 86 78 66a26 26 0 0 1 57-14 26 26 0 0 1 57 14c0 20-17 40-57 66z" fill="#f472b6" opacity=".9"/><path d="M190 120c-26-17-37-30-37-43a17 17 0 0 1 37-9 17 17 0 0 1 37 9c0 13-11 26-37 43z" fill="#2dd4bf" opacity=".9"/><g fill="#eef3f7"><circle cx="120" cy="150" r="4"/><circle cx="140" cy="150" r="4"/><circle cx="160" cy="150" r="4"/><circle cx="180" cy="150" r="4"/><circle cx="200" cy="150" r="4"/></g></svg>',
@@ -521,9 +680,13 @@ var ART={
 };
 var PARTNERS='<div class="partners"><img src="logos/ertyad-white.png" alt="ارتياد" width="227" height="136" style="height:44px"><span class="sep"></span><img src="logos/dale-carnegie-white.png" alt="Dale Carnegie" width="334" height="117"></div>';
 var GRPS=[
+  {id:"coach",h:"اختبارات الكوتشنج",p:"مقاييس علمية منشورة تساعدك تعرف وين أنت في مسارك المهني وقيادتك وطاقتك.",note:"مبنية على مقاييس ونماذج علمية منشورة، والمرجع مذكور أسفل كل نتيجة. وهي أدوات للوعي الذاتي وليست تشخيصاً نفسياً أو طبياً. وفي نهاية كل نتيجة تقدر تحجز جلسة كوتشنج نقرأ فيها نتيجتك ونحوّلها لخطة."},
   {id:"dc",h:"اختبارات ديل كارنيجي (ارتياد)",p:"تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) من أدلة المشارك.",logos:true,note:"تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) من أدلة المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد)."},
   {id:"gen",h:"اختبارات عامة",p:"استبيانات تساعدك تفهم نفسك وعلاقاتك.",note:"استبيان لغات الحب الخمس مبني على مفهوم د. غاري تشابمان، بأسئلة وصياغة خاصة."}
 ];
+var TOPICS=[["all","كل الاختبارات"],["career","مسارك المهني"],["lead","القيادة والفريق"],["energy","الضغوط والطاقة"],["comm","التواصل والعلاقات"]];
+var TOPIC_OF={career:"career",lead:"lead",team:"lead",energy:"energy",stress:"energy",eq:"energy",time:"energy",style:"comm",diplo:"comm",love:"comm"};
+var TOPIC="all";
 /* ---- taken counter (shared across visitors, shown only above 10) ---- */
 var CNT_API="https://abacus.jasoncameron.dev",CNT_NS="sultanalshehab-tests",COUNTS={};
 function tcText(n){return "اختبره "+ar(n)+" "+(n%100>10||n%100===0&&n<100?"شخصاً":"شخص")}
@@ -537,12 +700,14 @@ function countTaken(id){
   fetch(CNT_API+"/hit/"+CNT_NS+"/test-"+id).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&typeof j.value==="number")COUNTS[id]=j.value}).catch(function(){});
 }
 function renderCatalog(){
-  var h='';
+  var h='<div class="finder"><h2>وش تبي تعرف عن نفسك؟</h2><p>اختر الموضوع اللي يهمك، وبتظهر لك الاختبارات المناسبة له فقط.</p><div class="chips" role="group" aria-label="تصفية الاختبارات حسب الموضوع">'+TOPICS.map(function(x){return '<button type="button" data-topic="'+x[0]+'" aria-pressed="'+(TOPIC===x[0])+'">'+x[1]+'</button>'}).join("")+'</div></div>';
   GRPS.forEach(function(g){
+  var gc=CATS.filter(function(c){return c.grp===g.id&&(TOPIC==="all"||TOPIC_OF[c.id]===TOPIC)});
+  if(!gc.length)return;
   h+='<section class="grp"><div class="grp-h"><div><h2>'+g.h+'</h2><p>'+g.p+'</p></div>'+(g.logos?PARTNERS:'')+'</div><div class="boxes">';
-  CATS.filter(function(c){return c.grp===g.id}).forEach(function(c){
+  gc.forEach(function(c){
     var ts=TESTS.filter(function(t){return t.cat===c.id});
-    h+='<a class="box3 '+c.cls+'" href="#cat-'+c.id+'"><div class="art">'+ART[c.id]+'</div><div class="bd"><h2>'+c.name+'</h2><p>'+c.desc+'</p><ul>'+ts.map(function(t){return '<li>'+t.title+'<small class="tc" data-tc="'+t.id+'"></small></li>'}).join("")+'</ul><span class="go">'+(ts.length>1?'افتح '+ar(ts.length)+' اختبارات':'افتح الاختبار')+' ←</span></div></a>';
+    h+='<a class="box3 '+c.cls+'" href="#cat-'+c.id+'"><div class="art">'+ART[c.id]+'</div><div class="bd"><h2>'+c.name+'</h2><p>'+c.desc+'</p><ul>'+ts.map(function(t){return '<li>'+t.title+'<small class="tc" data-tc="'+t.id+'"></small><small class="mn">'+mt(t.mins)+'</small></li>'}).join("")+'</ul><span class="go">'+(ts.length>1?'افتح '+ar(ts.length)+' اختبارات':'افتح الاختبار')+' ←</span></div></a>';
   });
   h+='</div><p class="note">'+g.note+'</p></section>';
   });
@@ -552,7 +717,7 @@ function renderCatalog(){
 function renderCategory(c){
   var h='<a class="back" href="#">→ كل التصنيفات</a><div class="cat-top '+c.cls+'"><div class="art">'+ART[c.id]+'</div><div><h2>'+c.name+'</h2><p>'+c.desc+'</p></div></div><div class="cards">';
   TESTS.filter(function(t){return t.cat===c.id}).forEach(function(t){
-    h+='<article class="card '+c.cls+(t.badge?' has-badge" style="--bc:'+t.badge[1]:'')+'">'+(t.badge?'<span class="badge" role="img" aria-label="'+t.badge[2]+'">'+ICON[t.badge[0]]+'</span>':'')+'<div class="meta"><span>'+count(t)+'</span><span>'+ar(t.mins)+' دقائق</span><span class="tc" data-tc="'+t.id+'" hidden></span></div><h3>'+t.title+'</h3><p>'+t.intro+'</p><a class="btn" href="#'+t.id+'">ابدأ الاختبار</a></article>';
+    h+='<article class="card '+c.cls+(t.badge?' has-badge" style="--bc:'+t.badge[1]:'')+'">'+(t.badge?'<span class="badge" role="img" aria-label="'+t.badge[2]+'">'+ICON[t.badge[0]]+'</span>':'')+'<div class="meta"><span>'+count(t)+'</span><span>'+mt(t.mins)+'</span><span class="tc" data-tc="'+t.id+'" hidden></span></div><h3>'+t.title+'</h3><p>'+t.intro+'</p><a class="btn" href="#'+t.id+'">ابدأ الاختبار</a></article>';
   });
   cat.innerHTML=h+'</div>';fillCounts();
 }
@@ -574,8 +739,8 @@ function startScreen(){
   run.innerHTML='<div class="panel'+(t.skin?' skin-'+t.skin+(t.g?' sk-'+t.g:''):'')+'"><a class="back" href="#cat-'+t.cat+'">→ رجوع</a>'+
     '<span class="qdim">'+c.name+'</span><h2>'+t.title+'</h2><p class="sub">'+t.intro+'</p>'+
     '<div class="field"><label for="pn">اسمك</label><input id="pn" autocomplete="name" maxlength="60" value="'+esc(S.name)+'" placeholder="مثال: نورة العتيبي"></div>'+
-    '<div class="field"><label for="po">الجهة أو البرنامج التدريبي <small>(اختياري)</small></label><input id="po" maxlength="80" value="'+esc(S.org)+'" placeholder="مثال: برنامج الوعي الذاتي - ارتياد"></div>'+
-    '<div class="actions"><button class="btn" data-act="begin" id="go">ابدأ</button><span class="sub" style="margin:0">'+count(t)+' · '+ar(t.mins)+' دقائق تقريباً</span></div></div>';
+    '<div class="field"><label for="po">الجهة أو البرنامج التدريبي <small>(اختياري)</small></label><input id="po" maxlength="80" value="'+esc(S.org)+'" placeholder="'+(t.coach?'مثال: اسم جهتك أو برنامجك':'مثال: برنامج الوعي الذاتي - ارتياد')+'"></div>'+
+    '<div class="actions"><button class="btn" data-act="begin" id="go">ابدأ</button><span class="sub" style="margin:0">'+count(t)+' · '+mt(t.mins)+' تقريباً</span></div></div>';
   var pn=document.getElementById("pn"),go=document.getElementById("go");
   function chk(){go.disabled=pn.value.trim().length<2}
   S.chk=chk;pn.addEventListener("input",chk);chk();
@@ -599,8 +764,9 @@ function question(){
   var h='<div class="panel'+(t.skin?' skin-'+t.skin+(t.g?' sk-'+t.g:''):'')+'"><button class="back" data-act="'+(i?"prev":"start")+'">→ '+(i?"السؤال السابق":"رجوع")+'</button>'+
     '<div class="qnum"><span>'+t.title+'</span><span>'+ar(i+1)+' من '+ar(n)+'</span></div><div class="bar"><i style="width:'+((i)/n*100)+'%"></i></div>';
   if(t.type==="likert"){
-    h+='<p class="qtext">'+(typeof it==="string"?it:it[1])+'</p><div class="opts '+(t.scale.length===5?"scale":"three")+'" role="group">';
-    t.scale.forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+ar(k+1)+'</span>'+lab+'</button>'});
+    var sc=(it[3]&&t.scales&&t.scales[it[3]])||t.scale;
+    h+='<p class="qtext">'+(typeof it==="string"?it:it[1])+'</p><div class="opts '+(sc.length===5?"scale":"three")+'" role="group">';
+    sc.forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+ar(k+1)+'</span>'+lab+'</button>'});
   }else if(t.type==="pair"){
     h+='<p class="qtext">أيّ العبارتين أقرب لك؟</p><div class="opts" role="group">';
     it.forEach(function(o,k){h+='<button class="opt" data-act="pick" data-v="'+o[0]+'" aria-pressed="'+(sel===o[0])+'"><span class="k">'+"أب"[k]+'</span>'+gtxt(o[1])+'</button>'});
@@ -665,9 +831,9 @@ function head(){
 function ring(p,label,color){return '<div class="ring" style="--p:'+p+(color?';--rc:'+color:'')+'"><div><span><b>'+ar(p)+'٪</b><br><small>'+label+'</small></span></div></div>'}
 function actions(summary){
   var msg="السلام عليكم أ. سلطان،\nهذه نتيجتي في ("+S.t.title+") من موقعك:\nالاسم: "+S.name+(S.org?"\nالجهة/البرنامج: "+S.org:"")+"\n"+summary;
-  return '<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
+  return (S.t.coach?'<div class="cta no-print"><div><h4>تبي تحوّل نتيجتك إلى خطة واضحة؟</h4><p>في جلسة كوتشنج نقرأ نتيجتك معاً، ونحدد خطوتك التالية.</p></div><a class="btn" href="'+BOOK+'" target="_blank" rel="noopener">احجز جلسة كوتشنج</a></div>':'')+'<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
     '<button class="btn line" data-act="home">اختبار آخر</button></div>'+
-    '<p class="disclaimer">'+(S.t.note||'من دليل المشارك لبرنامج ('+(S.t.guide||'الوعي الذاتي')+') © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.')+'</p>';
+    '<p class="disclaimer">'+(S.t.note||'من دليل المشارك لبرنامج ('+(S.t.guide||'الوعي الذاتي')+') © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.')+'</p>'+(S.t.ref?'<p class="disclaimer ref" dir="ltr" lang="en">'+S.t.ref+'</p>':'');
 }
 
 function ul(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
@@ -707,6 +873,50 @@ function result(){
     h+='<div class="box"><h4>نصائح لإدارة الوقت بفاعلية</h4>'+ul(t.tips)+'</div>';
     h+='<div class="box"><h4>كيف تُحسب النتيجة؟</h4><p>كل عامل يأخذ ٠ (لا يسلب وقتي) أو ١ (بعض وقتي) أو ٢ (كثيراً من وقتي). نسبة العوامل الخارجية = مجموع نقاطها ÷ مجموع كل النقاط، ومثلها العوامل النابعة من الذات. وحجم الوقت المسلوب = مجموع نقاطك من أعلى مجموع ممكن (٥٦).</p></div>';
     sum="خارجية: "+px+"%، نابعة من الذات: "+pi+"%";
+  }
+  else if(t.score==="rank"){
+    var sc={};t.dims.forEach(function(d){sc[d.k]=0});
+    t.items.forEach(function(it,i){sc[it[0]]+=S.ans[i]});
+    var rows=t.dims.map(function(d){return {d:d,s:sc[d.k],p:pct(sc[d.k],3,15)}}).sort(function(a,b){return b.s-a.s});
+    var t1=rows[0],t2=rows[1],lw=rows[rows.length-1];
+    h+='<div class="score">'+ring(t1.p,"أهم قيمة",t1.d.c)+'<div><span class="lvl">أهم قيمتين لك في العمل</span><h3><span style="color:'+t1.d.c+'">'+t1.d.n+'</span> و<span style="color:'+t2.d.c+'">'+t2.d.n+'</span></h3><p>هذه القيم هي ما يجعلك ترتاح وتبدع في عملك. اختر وظيفتك أو خطوتك القادمة بناءً عليها، لا على المسمى الوظيفي أو الراتب وحدهما.</p></div></div>';
+    h+='<div class="dims">';
+    rows.forEach(function(r,k){h+='<div class="dim-row" style="--dc:'+r.d.c+'"><span>'+ar(k+1)+'. '+r.d.n+'</span><div class="bar"><i style="width:'+Math.max(r.p,3)+'%"></i></div><b>'+ar(r.p)+'٪</b></div>'});
+    h+='</div>';
+    [t1,t2].forEach(function(r){h+='<div class="box" style="border-inline-start:5px solid '+r.d.c+'"><h4>'+r.d.n+'</h4><p>'+r.d.d+'</p><p><b>أسئلة تسألها قبل أن تقبل أي وظيفة أو دور جديد:</b></p>'+ul(r.d.ask)+'</div>'});
+    h+='<div class="box"><h4>أقل القيم أولوية عندك: '+lw.d.n+'</h4><p>هذا لا يعني أنها غير مهمة لك، لكنك غالباً مستعد للتنازل عن جزء منها مقابل قيمك الأهم. وإذا شعرت بعدم الرضا في عملك الحالي، فابحث أولاً: هل يلبّي عملك قيمتيك الأهم؟</p></div>';
+    h+='<div class="box"><h4>كيف تُحسب النتيجة؟</h4><p>لكل قيمة ثلاث عبارات، وكل عبارة من ١ إلى ٥. نسبة كل قيمة = مجموع درجاتها من أعلى مجموع ممكن، ثم تُرتَّب القيم من الأهم إلى الأقل أهمية لك.</p></div>';
+    sum=rows.map(function(r){return r.d.n+": "+r.p+"%"}).join("، ");
+  }
+  else if(t.score==="cbi"){
+    var ps=[],ws=[];
+    t.items.forEach(function(it,i){var v=(S.ans[i]-1)*25;if(it[2])v=100-v;(it[0]==="p"?ps:ws).push(v)});
+    function avg(a){return Math.round(a.reduce(function(x,y){return x+y},0)/a.length)}
+    var BP=avg(ps),BW=avg(ws);
+    function cl(x){return x>=75?{t:"مرتفع",c:"#b91c1c"}:x>=50?{t:"متوسط",c:"#b45309"}:{t:"منخفض",c:"#15803d"}}
+    var mx=Math.max(BP,BW),CW=cl(BW),CM=cl(mx);
+    var HD={"منخفض":["طاقتك بحالة جيدة","مستوى الإرهاق عندك ضمن الحدود الطبيعية. حافظ على العادات التي تحمي طاقتك، فهي رصيدك في الفترات الضاغطة."],"متوسط":["علامات إنذار مبكرة تستحق انتباهك","تشعر بإرهاق واضح في كثير من الأحيان. هذا هو الوقت المناسب للتدخل قبل أن يتحول الإرهاق إلى احتراق كامل."],"مرتفع":["مستوى احتراق مرتفع يحتاج اهتماماً الآن","إرهاقك متكرر ومستمر، وهذا يؤثر غالباً على صحتك وأدائك وعلاقاتك. لا تؤجل التعامل معه."]};
+    h+='<div class="score">'+ring(BW,"المرتبط بالعمل",CW.c)+'<div><span class="lvl">الاحتراق المرتبط بالعمل: '+CW.t+'</span><h3>'+HD[CM.t][0]+'</h3><p>'+HD[CM.t][1]+'</p></div></div>';
+    h+='<div class="dims">';
+    [["الاحتراق الشخصي",BP],["الاحتراق المرتبط بالعمل",BW]].forEach(function(r){var k=cl(r[1]);h+='<div class="dim-row" style="--dc:'+k.c+'"><span>'+r[0]+' ('+k.t+')</span><div class="bar"><i style="width:'+Math.max(r[1],3)+'%"></i></div><b>'+ar(r[1])+'٪</b></div>'});
+    h+='</div>';
+    var TP={"منخفض":["استمر في فصل وقت العمل عن وقت الراحة.","راقب مؤشراتك في مواسم الضغط، وأعد الاختبار بعد ثلاثة أشهر."],"متوسط":["حدد أكثر مصدرين يستنزفان طاقتك في العمل، وابدأ بالتعامل مع واحد منهما هذا الأسبوع.","احمِ نومك وفترات راحتك كما تحمي مواعيدك المهمة.","تحدث مع مديرك عن أولوياتك وحجم أعبائك بوضوح.","أعد الاختبار بعد شهر لترى إن كان المؤشر يتحسن."],"مرتفع":["لا تتعامل مع الأمر بالصبر وحده؛ الاحتراق لا يزول بالتجاهل.","خذ راحة حقيقية في أقرب فرصة، ولو كانت أياماً قليلة بعيداً عن العمل تماماً.","تحدث مع مديرك أو قسم الموارد البشرية عن ضغط العمل وإمكانية تخفيفه.","اطلب الدعم من شخص تثق به، ولا تحمل الضغط وحدك."]};
+    h+='<div class="box"><h4>ماذا تفعل الآن؟</h4>'+ul(TP[CM.t])+'</div>';
+    if(mx>=75)h+='<div class="box" style="border-inline-start:5px solid #b91c1c"><h4>تنبيه مهم</h4><p>إذا استمر هذا الإرهاق، أو بدأ يؤثر على نومك أو صحتك أو مزاجك، فننصحك بمراجعة طبيب أو مختص نفسي. هذا المؤشر لا يغني عن التقييم المهني.</p></div>';
+    h+='<div class="box"><h4>كيف تُحسب النتيجة؟</h4><p>كل إجابة تتحول إلى درجة من ٠ إلى ١٠٠، ودرجة كل جزء هي متوسط أسئلته. السؤال الأخير عن الطاقة للأسرة والأصدقاء يُحسب بالعكس.</p><p>أقل من ٥٠: منخفض · من ٥٠ إلى ٧٤: متوسط · ٧٥ فأكثر: مرتفع.</p></div>';
+    sum="الاحتراق الشخصي: "+BP+" ("+cl(BP).t+")، المرتبط بالعمل: "+BW+" ("+CW.t+")";
+  }
+  else if(t.score==="brs"){
+    var s=0;t.items.forEach(function(it,i){var v=S.ans[i];if(it[2])v=6-v;s+=v});
+    var m=s/t.items.length,P=pct(m,1,5),mt=ar(m.toFixed(2)).replace(".","٫");
+    var B=m<3?{t:"مرونة منخفضة",c:"#b45309",d:"تحتاج وقتاً وجهداً أكبر من غيرك لتستعيد توازنك بعد الضغوط. هذه مهارة تُكتسب، والخبر الجيد أنها تتحسن بالتدريب.",tp:["بعد كل موقف صعب، اكتب ما الذي ساعدك على تجاوزه ولو قليلاً؛ فهذه أدواتك.","قسّم المشكلة الكبيرة إلى خطوة صغيرة واحدة تقدر تبدأ بها اليوم.","ابقَ قريباً من أشخاص يدعمونك، ولا تعزل نفسك وقت الضغط.","اعتنِ بالأساسيات: النوم، والحركة، والوقت بعيداً عن الشاشات."]}:m<=4.3?{t:"مرونة طبيعية",c:"var(--gold-ink)",d:"تتعافى من الضغوط والأوقات الصعبة بشكل طبيعي مثل أغلب الناس، وفيه مساحة لتقوية هذه القدرة أكثر.",tp:["لاحظ ما الذي يسرّع تعافيك بعد المواقف الصعبة، وكرّره بوعي.","درّب نفسك على رؤية الموقف الصعب كتحدٍّ مؤقت، لا كتهديد دائم.","ابنِ عادة يومية صغيرة تعيد لك توازنك، مثل المشي أو التأمل أو الكتابة."]}:{t:"مرونة مرتفعة",c:"#15803d",d:"تنهض بسرعة بعد الضغوط والنكسات، وهذه قوة تساعدك في القيادة والتغيير.",tp:["شارك فريقك أو من حولك بالطرق التي تساعدك على التعافي.","انتبه ألا تتجاهل مشاعرك أو إرهاقك بحجة أنك قوي.","استثمر مرونتك في قيادة التغيير ومساندة الآخرين وقت الأزمات."]};
+    h+='<div class="score">'+ring(P,"مرونتك",B.c)+'<div><span class="lvl">'+B.t+'</span><h3>درجتك '+mt+' من ٥</h3><p>'+B.d+'</p></div></div>';
+    h+='<div class="dims">';
+    [["مرونة منخفضة","١ إلى ٢٫٩٩",m<3],["مرونة طبيعية","٣ إلى ٤٫٣٠",m>=3&&m<=4.3],["مرونة مرتفعة","٤٫٣١ إلى ٥",m>4.3]].forEach(function(r){h+='<div class="dim-row" style="--dc:'+(r[2]?B.c:"var(--line)")+'"><span>'+(r[2]?'<b>'+r[0]+' (نتيجتك)</b>':r[0])+'</span><div class="bar"><i style="width:'+(r[2]?100:3)+'%"></i></div><b>'+r[1]+'</b></div>'});
+    h+='</div>';
+    h+='<div class="box"><h4>كيف تقوّي مرونتك؟</h4>'+ul(B.tp)+'</div>';
+    h+='<div class="box"><h4>كيف تُحسب النتيجة؟</h4><p>كل عبارة من ١ إلى ٥، والعبارات الثانية والرابعة والسادسة تُحسب بالعكس. درجتك هي متوسط العبارات الست: أقل من ٣ منخفضة، ومن ٣ إلى ٤٫٣٠ طبيعية، وأعلى من ذلك مرتفعة.</p></div>';
+    sum="المرونة النفسية: "+m.toFixed(2)+" من 5 ("+B.t+")";
   }
   else if(t.type==="likert"){
     var tot=0,max=5,dimS={};
@@ -805,6 +1015,7 @@ run.addEventListener("click",function(e){
   if(a==="ctl"){S.sits[+b.dataset.i].v=b.dataset.v;[].forEach.call(b.parentNode.children,function(x){x.setAttribute("aria-pressed",String(x===b))});chkCtl();return}
   if(a==="ctlres"){result();return}
 });
+cat.addEventListener("click",function(e){var b=e.target.closest("[data-topic]");if(!b)return;TOPIC=b.dataset.topic;renderCatalog();var f=cat.querySelector("[data-topic=\""+TOPIC+"\"]");f&&f.focus()});
 addEventListener("hashchange",route);
 route();loadCounts();
 })();
