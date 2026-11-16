@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="اختبارات برامج ديل كارنيجي (ارتياد) واختبارات عامة مثل لغات الحب الخمس. نتيجة فورية باسمك.">
+<meta name="description" content="اختبارات الكوتشنج واختبارات برامج ديل كارنيجي (ارتياد). نتيجة فورية باسمك.">
 <title>الاختبارات | سلطان الشهاب</title>
 <style>
 @font-face{font-family:'Dubai';font-weight:300;font-display:swap;src:url('fonts/Dubai-Light.woff2') format('woff2'),url('fonts/Dubai-Light.woff') format('woff')}
@@ -90,7 +90,7 @@ main{padding-block:20px 80px;min-height:50vh}
 .btn.wa{background:#25d366;color:#08311a}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .card .btn{justify-self:start;margin-top:6px}
-.c-career{--c:var(--gold-ink)} .c-lead{--c:var(--c-t)} .c-energy{--c:var(--c-d)} .c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)} .c-love{--c:#be185d} .c-time{--c:#b45309} .c-team{--c:var(--c-a)}
+.c-career{--c:var(--gold-ink)} .c-lead{--c:var(--c-t)} .c-energy{--c:var(--c-d)} .c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)} .c-time{--c:#b45309} .c-team{--c:var(--c-a)}
 .boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:8px}
 .boxes .box3 .art{aspect-ratio:5/2}
 .cmp{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:6px}
@@ -126,22 +126,8 @@ a.back{text-decoration:none;display:inline-block}
 .grp-h p{color:#cfe0ea;font-size:.9rem;margin-top:2px}
 .grp-h .partners{margin:0}.grp-h .partners img{height:30px}
 .grp .note{margin-top:18px}
-.box3.c-love{grid-column:1/-1;flex-direction:row;background:linear-gradient(135deg,color-mix(in srgb,#ec4899 12%,var(--surface)),var(--surface) 60%);border-color:color-mix(in srgb,#ec4899 35%,var(--line))}
-.box3.c-love .art{flex:0 0 44%;aspect-ratio:auto;border-bottom:0;border-inline-start:4px solid #ec4899;background:radial-gradient(circle at 30% 30%,#3b1530,var(--navy))}
-.box3.c-love .bd{padding:28px;align-content:center}
-.box3.c-love h2{font-size:1.6rem;color:#be185d}
-.box3.c-love li::before{background:#ec4899;border-radius:50%}
-.box3.c-love .go{color:#be185d}
-@media (max-width:700px){.box3.c-love{flex-direction:column}.box3.c-love .art{aspect-ratio:2/1;border-inline-start:0;border-bottom:4px solid #ec4899}}
 .card.has-badge{padding-top:28px;border-top:5px solid var(--bc,#be185d)}
-.card.c-love{background:linear-gradient(180deg,color-mix(in srgb,var(--bc,#ec4899) 8%,var(--surface)),var(--surface) 140px)}
 .card .badge{justify-self:start;background:var(--bc);color:#fff;width:46px;height:46px;border-radius:50%;display:grid;place-items:center}
-.panel.skin-love{--sk:#ec4899}.panel.skin-love.sk-m{--sk:#3b82f6}
-.panel.skin-love{border-top:6px solid var(--sk);background:linear-gradient(180deg,color-mix(in srgb,var(--sk) 9%,var(--surface)),var(--surface) 220px)}
-.panel.skin-love .opt[aria-pressed="true"]{border-color:var(--sk);background:color-mix(in srgb,var(--sk) 14%,var(--surface))}
-.panel.skin-love .opt[aria-pressed="true"] .k{background:var(--sk);border-color:var(--sk);color:#fff}
-@media (hover:hover){.panel.skin-love .opt:hover{border-color:var(--sk)}}
-.panel.skin-love > .bar i{background:var(--sk)}
 .note{margin-top:40px;padding:18px 20px;border-radius:16px;background:var(--gold-soft);color:var(--ink);font-size:.93rem}
 
 .finder{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin-top:8px}
@@ -300,7 +286,6 @@ var CATS=[
   {id:"eq",grp:"dc",cls:"c-eq",name:"التحكم العاطفي",desc:"الذكاء العاطفي: الوعي بعواطفنا وفهمها وإدارتها لتحقيق نتائج إيجابية"},
   {id:"style",grp:"dc",cls:"c-style",name:"التواصل مع أنماط الشخصية المختلفة",desc:"حدد نمطك الشخصي وتعرّف على أنماط الشخصية المختلفة"},
   {id:"diplo",grp:"dc",cls:"c-diplo",name:"التواصل بدبلوماسية ولباقة",desc:"اعرف أسلوبك في التواصل في المواقف الصعبة: سلبي، واثق وحازم، أم عدواني"},
-  {id:"love",grp:"gen",cls:"c-love",name:"لغات الحب الخمس",desc:"اكتشف الطريقة التي تشعر بها بالحب أكثر من غيرها في علاقتك الزوجية"},
   {id:"stress",grp:"dc",cls:"c-stress",name:"ضع التوتر والقلق في منظورهما الصحيح",desc:"قيّم منظورك عن القلق والتوتر وخطط لوضعهما في منظورهما الصحيح"},
   {id:"time",grp:"dc",cls:"c-time",name:"إدارة الوقت بفعالية",desc:"اعرف الأشياء التي تسلب وقتك: هل أغلبها عوامل خارجية أم نابعة من الذات؟"},
   {id:"career",grp:"coach",cls:"c-career",name:"مسارك المهني",desc:"اعرف مدى جاهزيتك لخطوتك المهنية القادمة، وما الذي يهمك فعلاً في العمل"},
@@ -628,30 +613,12 @@ var TESTS=[
   ]
 },
 {
-  id:"love-m",cat:"love",title:"لغات الحب الخمس للأزواج",g:"m",skin:"love",badge:["MAN","#1d4ed8","رجل"],
-  note:"مبني على مفهوم «لغات الحب الخمس» للدكتور غاري تشابمان، بأسئلة وصياغة خاصة.",
-  intro:"٣٠ زوجاً من العبارات للزوج. في كل سؤال اختر العبارة الأقرب لما يُشعرك بالحب من زوجتك، حتى لو انطبقت عليك العبارتان.",
-  mins:6,type:"pair",
-  langs:{
-    A:{n:"كلمات التشجيع",c:"var(--c-e)",d:"تشعر بالحب أكثر حين تسمعه: المديح الصادق، والشكر، وكلمات التقدير والتشجيع.",how:["عبّر عن تقديرك بالكلام بشكل يومي.","امدح الجهد لا النتيجة فقط.","اكتب رسالة قصيرة لطيفة في منتصف اليوم.","تجنب النقد الجارح؛ فوقعه على صاحب هذه اللغة أشد."]},
-    B:{n:"تكريس الوقت",c:"var(--c-t)",d:"تشعر بالحب أكثر حين يمنحك شريكك وقته وانتباهه الكامل دون انشغال.",how:["خصصا وقتاً ثابتاً لكما وحدكما.","أبعد الجوال عند الحديث معه.","استمع باهتمام دون مقاطعة.","شاركه نشاطاً يحبه."]},
-    C:{n:"تبادل الهدايا",c:"var(--c-d)",d:"الهدية عندك رمز للاهتمام والتفكير بك، وقيمتها في معناها لا في ثمنها.",how:["قدّم هدايا بسيطة دون مناسبة.","تذكّر المناسبات المهمة له.","اختر هدية تعكس ذوقه واهتماماته.","احتفظ بقائمة لما يحبه."]},
-    D:{n:"الأعمال الخدمية",c:"var(--c-a)",d:"تشعر بالحب حين يخفف عنك شريكك ويساعدك بأفعاله؛ فالأفعال عندك أبلغ من الكلام.",how:["بادر بمساعدته دون أن يطلب.","اسأله: كيف أساعدك اليوم؟","أنجز مهمة يعرف أنك لا تحبها.","أوفِ بما وعدت به."]},
-    E:{n:"الاتصال البدني",c:"#be185d",d:"القرب واللمسة الحانية، كالعناق ومسك اليد، هي أوضح ما يُشعرك بالحب والأمان.",how:["استقبله وودّعه بعناق.","امسك يده وأنتما تمشيان أو تجلسان.","اجلس قريباً منه.","الربتة على الكتف وقت التعب تعني له الكثير."]}
-  },
-  items:[[["A", "أرتاح كثيراً عندما {تمدحني|يمدحني} {زوجتي|زوجي} على شيء أنجزته."], ["E", "أحب أن {تحضنني|يحضنني} {زوجتي|زوجي}."]], [["B", "أحب أن نجلس أنا و{زوجتي|زوجي} وحدنا بعيداً عن الانشغالات."], ["D", "أشعر بالحب حين {تساعدني|يساعدني} {زوجتي|زوجي} في أعمال البيت."]], [["C", "الهدية من {زوجتي|زوجي} تُشعرني بأني في بال{ها|ه}."], ["B", "أستمتع بالمشاوير الطويلة مع {زوجتي|زوجي}."]], [["D", "يسعدني أن {تقوم|يقوم} {زوجتي|زوجي} بمهمة كانت عليّ {لتخفف|ليخفف} عني."], ["E", "أحب أن أمسك يد {زوجتي|زوجي}."]], [["E", "أرتاح حين {تجلس|يجلس} {زوجتي|زوجي} قريب{ة|اً} مني."], ["C", "أفرح بهدية {زوجتي|زوجي} مهما كانت بسيطة."]], [["B", "لا يهمني المكان، المهم أن أكون مع {زوجتي|زوجي}."], ["E", "لمسة حانية من {زوجتي|زوجي} تطمئنني."]], [["C", "أحب أن {تفاجئني|يفاجئني} {زوجتي|زوجي} بهدية دون مناسبة."], ["A", "كلمة «شكراً» من {زوجتي|زوجي} تصنع يومي."]], [["E", "أحب أن {تربت|يربت} {زوجتي|زوجي} على كتفي عندما أكون متعب{اً|ة}."], ["A", "أحب أن {تقول|يقول} لي {زوجتي|زوجي} إن{ها فخورة|ه فخور} بي."]], [["B", "الوقت الهادئ مع {زوجتي|زوجي} يملأ قلبي."], ["C", "أحتفظ بالهدايا التي {تقدمها|يقدمها} لي {زوجتي|زوجي} لأنها تعني لي الكثير."]], [["A", "تشجيع {زوجتي|زوجي} لي قبل أي خطوة مهمة يعطيني دفعة كبيرة."], ["D", "أقدّر أن {تنجز|ينجز} {زوجتي|زوجي} عني بعض المشاوير وقت انشغالي."]], [["B", "أحب أن نخطط أنا و{زوجتي|زوجي} لنشاط نقوم به معاً."], ["A", "أشعر بالحب حين أسمع من {زوجتي|زوجي} كلمات تقدير أمام الآخرين."]], [["D", "عندما {تجهز|يجهز} لي {زوجتي|زوجي} شيئاً أحتاجه دون أن أطلب، أعرف أن{ها تحبني|ه يحبني}."], ["E", "أشتاق لحضن {زوجتي|زوجي} بعد الغياب."]], [["A", "رسالة لطيفة من {زوجتي|زوجي} في منتصف اليوم تفرّحني."], ["C", "أنتظر بشوق هدية {زوجتي|زوجي} في المناسبات."]], [["B", "يكفيني أن أكون بجانب {زوجتي|زوجي}."], ["E", "القرب من {زوجتي|زوجي} يُشعرني بالأمان."]], [["A", "يهمني أن {تعبّر|يعبّر} {زوجتي|زوجي} عن إعجاب{ها|ه} بي بالكلام."], ["D", "أحب أن {تشاركني|يشاركني} {زوجتي|زوجي} في إنجاز مهامي الصعبة."]], [["E", "أحب أن {تستقبلني|يستقبلني} {زوجتي|زوجي} بعناق."], ["B", "أحب أن {تنصت|ينصت} لي {زوجتي|زوجي} باهتمام دون أن {تقاطعني|يقاطعني}."]], [["D", "أقدّر حين {تتولى|يتولى} {زوجتي|زوجي} من أجلي أمراً أعرف أن{ها لا تحبه|ه لا يحبه}."], ["C", "يعجبني حين {تختار|يختار} {زوجتي|زوجي} هدية تناسب ذوقي تماماً."]], [["A", "أحب أن {تذكر|يذكر} {زوجتي|زوجي} الصفات الجميلة التي {تراها|يراها} فيّ."], ["B", "أشعر بالحب حين {تترك|يترك} {زوجتي|زوجي} الجوال جانباً {لتتحدث|ليتحدث} معي."]], [["E", "قبلة سريعة من {زوجتي|زوجي} قبل الخروج تسعدني."], ["D", "أفعال {زوجتي|زوجي} عندي أبلغ من كلام{ها|ه}."]], [["D", "يسعدني أن أجد {زوجتي|زوجي} قد {أنجزت|أنجز} شيئاً كنت سأفعله بنفسي."], ["C", "أشعر بالحب حين {تحضر|يحضر} لي {زوجتي|زوجي} شيئاً أحبه عند عودت{ها|ه}."]], [["B", "أحب أن نتشارك أنا و{زوجتي|زوجي} هواية أو اهتماماً."], ["D", "أشعر بالدعم حين {تسألني|يسألني} {زوجتي|زوجي}: كيف أساعدك؟"]], [["C", "الهدية المغلفة بعناية من {زوجتي|زوجي} تسعدني."], ["A", "عندما {تقول|يقول} لي {زوجتي|زوجي} صراحةً إن{ها تثق|ه يثق} برأيي، أشعر بقيمتي."]], [["C", "تبقى هدايا {زوجتي|زوجي} في ذاكرتي لسنوات."], ["D", "أحب أن أعتمد على {زوجتي|زوجي} في تفاصيل الحياة اليومية."]], [["B", "يسعدني أن {تعطيني|يعطيني} {زوجتي|زوجي} كامل انتباه{ها|ه} عندما أتكلم."], ["C", "يكفي أن {تحضر|يحضر} لي {زوجتي|زوجي} شيئاً صغيراً من طريق{ها|ه} لأشعر باهتمام{ها|ه}."]], [["D", "مساعدة {زوجتي|زوجي} لي وقت التعب تعني لي الكثير."], ["B", "أحب أن نشاهد أنا و{زوجتي|زوجي} شيئاً معاً ثم نتحدث عنه."]], [["E", "أحب أن نجلس أنا و{زوجتي|زوجي} متقاربين."], ["C", "أحب تبادل الهدايا الصغيرة مع {زوجتي|زوجي}."]], [["A", "كلمة مديح صادقة من {زوجتي|زوجي} تبقى معي طويلاً."], ["B", "أقدّر أن {تخصص|يخصص} {زوجتي|زوجي} وقتاً لي وحدي كل أسبوع."]], [["C", "تذكار بسيط {تجلبه|يجلبه} لي {زوجتي|زوجي} من السفر يعني لي الكثير."], ["E", "أحب أن {تمسح|يمسح} {زوجتي|زوجي} على رأسي أو كتفي."]], [["D", "أقدّر أن {تهتم|يهتم} {زوجتي|زوجي} بأموري العملية الصغيرة."], ["A", "أحب أن {تقول|يقول} لي {زوجتي|زوجي} «أحبك» دون مناسبة."]], [["E", "لا أستغني عن قرب {زوجتي|زوجي} ولمست{ها|ه} الحانية."], ["A", "يسعدني أن {تلاحظ|يلاحظ} {زوجتي|زوجي} جهدي و{تشكرني|يشكرني} عليه."]]]
-},
-{
   id:"control",cat:"stress",title:"التوتر والقلق في حياتي: تقييم السيطرة",
   intro:"اكتب المواقف المثيرة للتوتر التي تواجهها في حياتك (حتى ١٠ مواقف)، وحدد لكل موقف: هل تتحكم فيه؟ نعم أو لا.",
   mins:5,type:"control"
 }
 ];
 
-(function(){var b=byId("love-m"),f={};for(var k in b)f[k]=b[k];
-  f.id="love-f";f.g="f";f.title="لغات الحب الخمس للزوجات";f.badge=["WOM","#be185d","امرأة"];
-  f.intro="٣٠ زوجاً من العبارات للزوجة. في كل سؤال اختاري العبارة الأقرب لما يُشعرك بالحب من زوجك، حتى لو انطبقت عليك العبارتان.";
-  TESTS.splice(TESTS.indexOf(b)+1,0,f)})();
 var CTRL={
   y:{n:"نعم، أتحكم فيه",c:"var(--c-a)",a:"ركّز عليه: هذا موقف يمكنك التأثير على نتائجه."},
   n:{n:"لا أتحكم فيه",c:"var(--sadu)",a:"لا يمكنك تغييره، لكن يمكنك أن تغيّر رد فعلك تجاهه."}
@@ -663,7 +630,7 @@ var S=null;
 
 function byId(id){for(var i=0;i<TESTS.length;i++)if(TESTS[i].id===id)return TESTS[i];return null}
 function mt(m){return m===2?"دقيقتان":ar(m)+" دقائق"}
-function count(t){return t.unit?ar(t.items.length)+" "+t.unit:t.type==="control"?"حتى ١٠ مواقف":t.type==="pair"?ar(t.items.length)+" سؤالاً":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
+function count(t){return t.unit?ar(t.items.length)+" "+t.unit:t.type==="control"?"حتى ١٠ مواقف":t.type==="abc"?ar(t.items.length)+" مواقف":t.type==="choice"?ar(t.items.length)+" صفوف":ar(t.items.length)+" عبارة"}
 
 var ICON={MAN:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M8.6 8h6.8a1.6 1.6 0 0 1 1.6 1.6V15h-2v7h-2.2v-6h-1.6v6H9v-7H7V9.6A1.6 1.6 0 0 1 8.6 8z" fill="currentColor"/></svg>',WOM:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M9.8 8h4.4a1.6 1.6 0 0 1 1.5 1.1L18 16h-3.2v6h-2v-6h-1.6v6h-2v-6H6l2.3-6.9A1.6 1.6 0 0 1 9.8 8z" fill="currentColor"/></svg>'};
 var ART={
@@ -672,7 +639,6 @@ var ART={
   energy:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="58" cy="38" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="268" cy="126" r="4" fill="#2dd4bf" opacity=".5"/><rect x="86" y="44" width="136" height="64" rx="12" fill="none" stroke="#eef3f7" stroke-width="5"/><rect x="226" y="64" width="10" height="24" rx="3" fill="#eef3f7"/><rect x="97" y="55" width="32" height="42" rx="5" fill="#fb923c"/><rect x="138" y="55" width="32" height="42" rx="5" fill="#2dd4bf" opacity=".9"/><rect x="179" y="55" width="32" height="42" rx="5" fill="#2dd4bf" opacity=".3"/><path d="M40 138c30-12 60 12 90 0s60-12 90 0 60 12 60 0" fill="none" stroke="#2dd4bf" stroke-width="3" opacity=".6"/></svg>',
   eq:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="70" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="262" cy="118" r="4" fill="#2dd4bf" opacity=".5"/><circle cx="250" cy="34" r="2.5" fill="#fff" opacity=".5"/><path d="M160 136C112 104 92 82 92 60a30 30 0 0 1 68-18 30 30 0 0 1 68 18c0 22-20 44-68 76z" fill="#2dd4bf" opacity=".18" stroke="#2dd4bf" stroke-width="3"/><path d="M60 92h62l10-22 14 42 14-60 12 40h98" fill="none" stroke="#eef3f7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   style:'<svg viewBox="0 0 320 160" aria-hidden="true"><g><circle cx="125" cy="48" r="30" fill="#fb923c"/><circle cx="195" cy="48" r="30" fill="#a78bfa"/><circle cx="125" cy="116" r="30" fill="#4ade80"/><circle cx="195" cy="116" r="30" fill="#60a5fa"/></g><g fill="#0d2436"><circle cx="125" cy="42" r="9"/><path d="M109 66a16 13 0 0 1 32 0z"/><circle cx="195" cy="42" r="9"/><path d="M179 66a16 13 0 0 1 32 0z"/><circle cx="125" cy="110" r="9"/><path d="M109 134a16 13 0 0 1 32 0z"/><circle cx="195" cy="110" r="9"/><path d="M179 134a16 13 0 0 1 32 0z"/></g><path d="M160 10v144M60 82h200" stroke="#eef3f7" stroke-width="2" stroke-dasharray="4 6" opacity=".5"/></svg>',
-  love:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="60" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="264" cy="122" r="4" fill="#2dd4bf" opacity=".5"/><path d="M135 132C95 106 78 86 78 66a26 26 0 0 1 57-14 26 26 0 0 1 57 14c0 20-17 40-57 66z" fill="#f472b6" opacity=".9"/><path d="M190 120c-26-17-37-30-37-43a17 17 0 0 1 37-9 17 17 0 0 1 37 9c0 13-11 26-37 43z" fill="#2dd4bf" opacity=".9"/><g fill="#eef3f7"><circle cx="120" cy="150" r="4"/><circle cx="140" cy="150" r="4"/><circle cx="160" cy="150" r="4"/><circle cx="180" cy="150" r="4"/><circle cx="200" cy="150" r="4"/></g></svg>',
   diplo:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="58" cy="36" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="268" cy="126" r="4" fill="#2dd4bf" opacity=".5"/><rect x="62" y="30" width="118" height="62" rx="16" fill="#60a5fa"/><path d="M84 92l-6 22 26-22z" fill="#60a5fa"/><rect x="140" y="62" width="118" height="62" rx="16" fill="#2dd4bf" opacity=".9"/><path d="M236 124l6 22-26-22z" fill="#2dd4bf" opacity=".9"/><g fill="#0d2436"><circle cx="100" cy="61" r="6"/><circle cx="121" cy="61" r="6"/><circle cx="142" cy="61" r="6"/></g><path d="M170 93h58M170 105h40" stroke="#0d2436" stroke-width="5" stroke-linecap="round"/></svg>',
   time:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="160" cy="82" r="52" fill="#2dd4bf" opacity=".14" stroke="#eef3f7" stroke-width="4"/><path d="M160 82V50M160 82l24 14" stroke="#eef3f7" stroke-width="5" stroke-linecap="round"/><circle cx="160" cy="82" r="5" fill="#2dd4bf"/><path d="M226 50l34-14M232 82h40M226 114l34 14" stroke="#2dd4bf" stroke-width="4" stroke-linecap="round" opacity=".8"/><path d="M94 50L60 36M88 82H48M94 114l-34 14" stroke="#eef3f7" stroke-width="4" stroke-linecap="round" opacity=".55"/></svg>',
   team:'<svg viewBox="0 0 320 160" aria-hidden="true"><path d="M160 46l60 34-60 34-60-34z" fill="#2dd4bf" opacity=".12"/><path d="M160 46L220 80M160 46L100 80M100 80l60 34M220 80l-60 34M160 46v68" stroke="#2dd4bf" stroke-width="2.5" opacity=".6"/><g fill="#eef3f7"><circle cx="160" cy="40" r="13"/><circle cx="100" cy="80" r="13"/><circle cx="220" cy="80" r="13"/><circle cx="160" cy="120" r="13"/></g><circle cx="160" cy="40" r="6" fill="#2dd4bf"/><circle cx="50" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="272" cy="126" r="4" fill="#2dd4bf" opacity=".5"/></svg>',
@@ -682,10 +648,9 @@ var PARTNERS='<div class="partners"><img src="logos/ertyad-white.png" alt="ار�
 var GRPS=[
   {id:"coach",h:"اختبارات الكوتشنج",p:"مقاييس علمية منشورة تساعدك تعرف وين أنت في مسارك المهني وقيادتك وطاقتك.",note:"مبنية على مقاييس ونماذج علمية منشورة، والمرجع مذكور أسفل كل نتيجة. وهي أدوات للوعي الذاتي وليست تشخيصاً نفسياً أو طبياً. وفي نهاية كل نتيجة تقدر تحجز جلسة كوتشنج نقرأ فيها نتيجتك ونحوّلها لخطة."},
   {id:"dc",h:"اختبارات ديل كارنيجي (ارتياد)",p:"تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) من أدلة المشارك.",logos:true,note:"تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) من أدلة المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد)."},
-  {id:"gen",h:"اختبارات عامة",p:"استبيانات تساعدك تفهم نفسك وعلاقاتك.",note:"استبيان لغات الحب الخمس مبني على مفهوم د. غاري تشابمان، بأسئلة وصياغة خاصة."}
 ];
 var TOPICS=[["all","كل الاختبارات"],["career","مسارك المهني"],["lead","القيادة والفريق"],["energy","الضغوط والطاقة"],["comm","التواصل والعلاقات"]];
-var TOPIC_OF={career:"career",lead:"lead",team:"lead",energy:"energy",stress:"energy",eq:"energy",time:"energy",style:"comm",diplo:"comm",love:"comm"};
+var TOPIC_OF={career:"career",lead:"lead",team:"lead",energy:"energy",stress:"energy",eq:"energy",time:"energy",style:"comm",diplo:"comm"};
 var TOPIC="all";
 /* ---- taken counter (shared across visitors, shown only above 10) ---- */
 var CNT_API="https://abacus.jasoncameron.dev",CNT_NS="sultanalshehab-tests",COUNTS={};
@@ -767,9 +732,6 @@ function question(){
     var sc=(it[3]&&t.scales&&t.scales[it[3]])||t.scale;
     h+='<p class="qtext">'+(typeof it==="string"?it:it[1])+'</p><div class="opts '+(sc.length===5?"scale":"three")+'" role="group">';
     sc.forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+ar(k+1)+'</span>'+lab+'</button>'});
-  }else if(t.type==="pair"){
-    h+='<p class="qtext">أيّ العبارتين أقرب لك؟</p><div class="opts" role="group">';
-    it.forEach(function(o,k){h+='<button class="opt" data-act="pick" data-v="'+o[0]+'" aria-pressed="'+(sel===o[0])+'"><span class="k">'+"أب"[k]+'</span>'+gtxt(o[1])+'</button>'});
   }else if(t.type==="abc"){
     h+='<p class="qtext">'+it[0]+'</p><div class="opts" role="group">';
     it[1].forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+"أبج"[k]+'</span>'+lab+'</button>'});
@@ -934,19 +896,6 @@ function result(){
     h+='<div class="box"><h4>'+X.tips+' '+low.d.n+(X.tipsEnd||'')+'</h4><ul>'+low.d.tip.map(function(x){return '<li><b>'+x[0]+':</b> '+x[1]+'</li>'}).join("")+'</ul></div>';
     h+='<div class="box"><h4>'+X.about+'</h4><p>'+X.aboutTxt+'</p><p>٧٥٪ فأكثر: قوة واضحة · ٥٠٪ إلى ٧٤٪: جيد قابل للتطوير · أقل من ٥٠٪: أولوية للتطوير.</p></div>';
     sum="الدرجة الكلية: "+P+"% ("+L.t+")\n"+rows.map(function(r){return r.d.n+": "+r.p+"%"}).join("\n");
-  }
-  else if(t.type==="pair"){
-    var cnt={A:0,B:0,C:0,D:0,E:0};S.ans.forEach(function(v){cnt[v]++});
-    var ks=["A","B","C","D","E"].sort(function(a,b){return cnt[b]-cnt[a]});
-    var tops=ks.filter(function(k){return cnt[k]===cnt[ks[0]]}),L=t.langs[ks[0]];
-    var dual=tops.length>1,sec=dual?null:ks[1],close=!dual&&cnt[ks[0]]-cnt[sec]<=1;
-    h+='<div class="score">'+ring(Math.round(cnt[ks[0]]/12*100),ar(cnt[ks[0]])+' من ١٢',L.c)+'<div><span class="lvl">'+(dual?'لديك أكثر من لغة أساسية':'لغة الحب الأساسية لديك')+'</span><h3 style="color:'+L.c+'">'+tops.map(function(k){return t.langs[k].n}).join(' و')+'</h3><p>'+(dual?'تساوت نقاطك في أكثر من لغة، فكلها مهمة بالنسبة لك.':L.d+(close?' ولغتك الثانية <b>'+t.langs[sec].n+'</b> قريبة جداً منها، فهي مهمة لك أيضاً.':''))+'</p></div></div>';
-    h+='<div class="dims">';
-    ks.forEach(function(k){h+='<div class="dim-row" style="--dc:'+t.langs[k].c+'"><span>'+t.langs[k].n+'</span><div class="bar"><i style="width:'+Math.max(Math.round(cnt[k]/12*100),3)+'%"></i></div><b>'+ar(cnt[k])+'/١٢</b></div>'});
-    h+='</div>';
-    tops.forEach(function(k){var x=t.langs[k];h+='<div class="box" style="border-inline-start:5px solid '+x.c+'"><h4>'+x.n+'</h4><p>'+x.d+'</p><p><b>شارك هذه النتيجة مع '+(S.g==="f"?'زوجك':'زوجتك')+'؛ فهذه الأمور تملأ رصيدك العاطفي:</b></p>'+ul(x.how)+'</div>'});
-    h+='<div class="box"><h4>كيف تقرأ نتيجتك؟</h4><p>أعلى رقم هو لغة الحب الأساسية لديك، وأعلى ما يمكن تحقيقه في أي لغة هو ١٢. إذا تساوت لغتان فلديك لغتان أساسيتان، وإذا كانت اللغة الثانية قريبة من الأولى فهي مهمة لك أيضاً.</p><p>النتائج الأقل لا تعني أن تلك اللغات غير مهمة؛ فقد يعبّر شريكك عن حبه بها. والفائدة الأكبر أن يجيب شريكك على الاستبيان أيضاً، فيتعرف كل منكما على لغة الآخر ويتحدث بها.</p></div>';
-    sum=ks.map(function(k){return t.langs[k].n+": "+cnt[k]}).join("، ");
   }
   else if(t.type==="abc"){
     var c=[0,0,0],L2="أبج",miss=[];
