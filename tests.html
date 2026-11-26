@@ -15,16 +15,19 @@
   --navy:#0d2436; --navy-2:#153650; --on-navy:#eef3f7; --on-navy-muted:#a9bccb;
   --gold:#2dd4bf; --gold-soft:#d5f5f0; --gold-ink:#0f766e; --teal:#2f7f86; --sadu:#a8402c;
   --c-d:#c2410c; --c-e:#7c3aed; --c-a:#15803d; --c-t:#1d4ed8;
+  --c-dd:#b91c1c; --c-ii:#a16207; --c-ss:#15803d; --c-cc:#1d4ed8;
   --font:"Dubai","Segoe UI",Tahoma,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
   --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf;
-  --c-d:#fb923c; --c-e:#a78bfa; --c-a:#4ade80; --c-t:#60a5fa; color-scheme:dark}}
+  --c-d:#fb923c; --c-e:#a78bfa; --c-a:#4ade80; --c-t:#60a5fa;
+  --c-dd:#f87171; --c-ii:#facc15; --c-ss:#4ade80; --c-cc:#60a5fa; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
   --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf;
-  --c-d:#fb923c; --c-e:#a78bfa; --c-a:#4ade80; --c-t:#60a5fa; color-scheme:dark}
+  --c-d:#fb923c; --c-e:#a78bfa; --c-a:#4ade80; --c-t:#60a5fa;
+  --c-dd:#f87171; --c-ii:#facc15; --c-ss:#4ade80; --c-cc:#60a5fa; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.8}
@@ -90,7 +93,7 @@ main{padding-block:20px 80px;min-height:50vh}
 .btn.wa{background:#25d366;color:#08311a}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
 .card .btn{justify-self:start;margin-top:6px}
-.c-career{--c:var(--gold-ink)} .c-lead{--c:var(--c-t)} .c-energy{--c:var(--c-d)} .c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)} .c-time{--c:#b45309} .c-team{--c:var(--c-a)}
+.c-career{--c:var(--gold-ink)} .c-lead{--c:var(--c-t)} .c-energy{--c:var(--c-d)} .c-eq{--c:var(--gold-ink)} .c-style{--c:var(--c-e)} .c-stress{--c:var(--sadu)} .c-diplo{--c:var(--c-t)} .c-time{--c:#b45309} .c-team{--c:var(--c-a)} .c-disc{--c:var(--gold-ink)}
 .boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:8px}
 .boxes .box3 .art{aspect-ratio:5/2}
 .cmp{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:6px}
@@ -170,6 +173,17 @@ a.back{text-decoration:none;display:inline-block}
 .opts.scale .opt{flex-direction:column;justify-content:center;text-align:center;gap:6px;padding:14px 6px;font-size:.82rem;line-height:1.4}
 .opts.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .opts.three .opt{justify-content:center}
+
+/* most / least (DISC) */
+.opt.ml-m{border-color:var(--c-a);background:color-mix(in srgb,var(--c-a) 12%,var(--bg))}
+.opt.ml-l{border-color:var(--sadu);background:color-mix(in srgb,var(--sadu) 10%,var(--bg))}
+.opt.ml-m .k{background:var(--c-a);border-color:var(--c-a);color:#fff}
+.opt.ml-l .k{background:var(--sadu);border-color:var(--sadu);color:#fff}
+.opt .tag{margin-inline-start:auto;font-size:.78rem;font-weight:700;white-space:nowrap}
+.opt.ml-m .tag{color:var(--c-a)} .opt.ml-l .tag{color:var(--sadu)}
+.qhint{color:var(--muted);font-size:.88rem;margin-top:6px}
+.dl{display:inline-block;min-width:1.6em;text-align:center;font-weight:700;border-radius:6px;padding:0 4px;color:#fff;background:var(--dc);margin-inline-end:6px;font-size:.85rem}
+.box.warn{border-inline-start:5px solid var(--sadu)}
 
 /* situations */
 .sit{border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px;background:var(--bg)}
@@ -288,6 +302,7 @@ var CATS=[
   {id:"diplo",grp:"dc",cls:"c-diplo",name:"التواصل بدبلوماسية ولباقة",desc:"اعرف أسلوبك في التواصل في المواقف الصعبة: سلبي، واثق وحازم، أم عدواني"},
   {id:"stress",grp:"dc",cls:"c-stress",name:"ضع التوتر والقلق في منظورهما الصحيح",desc:"قيّم منظورك عن القلق والتوتر وخطط لوضعهما في منظورهما الصحيح"},
   {id:"time",grp:"dc",cls:"c-time",name:"إدارة الوقت بفعالية",desc:"اعرف الأشياء التي تسلب وقتك: هل أغلبها عوامل خارجية أم نابعة من الذات؟"},
+  {id:"disc",grp:"coach",cls:"c-disc",name:"شخصيتك وسلوكك (DISC)",desc:"اعرف نمط شخصيتك وكيف تتصرف هذه الشخصية: في قراراتك، وتواصلك، وقيادتك، وتحت الضغط"},
   {id:"career",grp:"coach",cls:"c-career",name:"مسارك المهني",desc:"اعرف مدى جاهزيتك لخطوتك المهنية القادمة، وما الذي يهمك فعلاً في العمل"},
   {id:"lead",grp:"coach",cls:"c-lead",name:"القيادة",desc:"اعرف نقاط قوتك كقائد، وأي أبعاد القيادة الملهمة تحتاج تطويرها"},
   {id:"energy",grp:"coach",cls:"c-energy",name:"الطاقة والضغوط",desc:"قِس مستوى الاحتراق الوظيفي عندك، وقدرتك على التعافي بعد الضغوط"},
@@ -300,6 +315,104 @@ var F5=["لا ينطبق عليّ إطلاقاً","ينطبق قليلاً","ي�
 
 var TESTS=[
 /* ===== Coaching tests (Sultan's own): built on published scientific instruments / models ===== */
+/* DISC: ORIGINAL items written for this site on Marston's public-domain 1928 model (not Everything DiSC / any commercial instrument). Forced choice: most (+1) / least (-1) per block. */
+{
+  id:"disc",cat:"disc",coach:1,title:"اختبار DISC: اكتشف شخصيتك وسلوكك",unit:"مجموعة",
+  intro:"اختبار يساعدك تعرف نمط شخصيتك وكيف تتصرف هذه الشخصية في العمل: كيف تقرر، وكيف تتواصل، وكيف تقود، وكيف تتصرف تحت الضغط. ٢٨ مجموعة في كل منها أربع عبارات: اختر الأقرب لك، ثم الأبعد عنك.",
+  mins:8,type:"most",
+  note:"صياغة أصلية خاصة بهذا الموقع مبنية على نموذج DISC العام للعالم وليام مارستون (١٩٢٨) بأبعاده الأربعة: الحسم، والتأثير، والثبات، والدقة. لا يرتبط بأي اختبار تجاري. وهو أداة تطويرية للوعي الذاتي تصف أسلوبك السلوكي المفضّل، وليس مقياساً مقنناً أو تشخيصاً نفسياً، ولا يصلح وحده لقرارات التوظيف أو التقييم.",
+  ref:"Marston, W. M. (1928). Emotions of Normal People. London: Kegan Paul, Trench, Trubner & Co.",
+  styles:{
+    D:{n:"الحاسم",l:"الحسم",c:"var(--c-dd)",s:"مباشر، سريع، يركّز على النتائج والتحدي",
+      sum:"أنت شخص تتحرك نحو الهدف بثقة وسرعة. ترى المشكلة فتتعامل معها مباشرة، وتحب أن تمسك زمام الأمور وتحسم القرار بدل الانتظار. يحفزك التحدي والإنجاز، وتكون في أفضل حالاتك حين تملك الصلاحية والمسؤولية عن النتيجة.",
+      str:["تحسم القرارات بسرعة حتى في الغموض","تتحمل المسؤولية ولا تهرب من المواجهة","تحرّك الأمور الراكدة وتدفع نحو النتائج","ترفع سقف التوقعات لك ولمن حولك","واضح ومباشر، والناس تعرف موقفك"],
+      work:["تفضّل الوتيرة السريعة والمهام التي فيها تحدٍّ حقيقي","تبدأ بالنتيجة المطلوبة ثم تبحث عن الطريق","تحب الاستقلالية وأقل قدر من الإشراف التفصيلي","تتضايق من الإجراءات الطويلة والاجتماعات بلا قرار"],
+      comm:["تتكلم باختصار وتدخل في الموضوع مباشرة","تقول رأيك بصراحة وحزم، وقد يُفهم كلامك أحياناً أنه حاد","تسأل «وش المطلوب؟ ومتى؟» أكثر من «كيف نشعر؟»"],
+      tome:["ادخل في الموضوع مباشرة وكن مختصراً","اعرض الخيارات والنتائج المتوقعة، واترك له القرار","ركّز على الحقائق والهدف لا على التفاصيل الجانبية","لا تأخذ صراحته على محمل شخصي"],
+      lead:["تقود بالرؤية والحسم، وتحدد الاتجاه بوضوح","تفوّض النتائج وتتابعها بحزم","تتألق في التحول والأزمات والمشاريع الصعبة","تحتاج أن تخصص وقتاً للاستماع وبناء الالتزام لا الامتثال فقط"],
+      press:["تصبح أكثر حدة واستعجالاً","تفرض رأيك لتحسم الأمر","تقلّ صبرك على البطء والتردد"],
+      blind:["قد تتجاوز مشاعر الآخرين في سبيل النتيجة","قد تتخذ قراراً سريعاً قبل اكتمال المعلومات المهمة","قد يتردد الآخرون في مصارحتك أو مخالفتك","قد تبدو غير مهتم بالتفاصيل والإجراءات"],
+      grow:["اسأل سؤالاً واحداً على الأقل قبل أن تعطي رأيك في أي نقاش","قبل القرار الكبير خذ ١٠ دقائق: ما المعلومة الناقصة؟ ومن سيتأثر؟","اشكر جهود فريقك علناً، لا النتائج فقط","اطلب من شخص تثق به أن يخبرك بصراحة متى يكون أسلوبك حاداً"],
+      env:"بيئة سريعة، فيها صلاحيات واضحة، وأهداف طموحة، ومساحة للمبادرة والاستقلال."},
+    I:{n:"المؤثر",l:"التأثير",c:"var(--c-ii)",s:"متحمس، اجتماعي، متفائل، يُقنع ويُلهم",
+      sum:"أنت شخص تستمد طاقتك من الناس. تكوّن العلاقات بسهولة، وتنقل حماسك لمن حولك، وتعرف كيف تقنع الآخرين بفكرتك وتجمعهم حولها. ترى الفرص والجانب المشرق، وتحب الأفكار الجديدة والتفاعل والتقدير.",
+      str:["تبني العلاقات وشبكات التواصل بسهولة","تُلهم الآخرين وتحفّزهم بتفاؤلك","تقنع وتؤثر وتعرض الأفكار بأسلوب جذاب","تولّد أفكاراً جديدة وتحب العصف الذهني","تخلق جواً إيجابياً في الفريق"],
+      work:["تفضّل العمل مع الناس على العمل منفرداً","تحب التنوع والمرونة والمشاريع الجديدة","تتحمس في البداية، وقد تحتاج دعماً لإكمال التفاصيل حتى النهاية","يحفزك التقدير العلني والاعتراف بجهدك"],
+      comm:["تتكلم بحماس وعفوية وتستخدم القصص والأمثلة","تفكر بصوت عالٍ مع الآخرين","تهتم بالعلاقة والجو العام قبل التفاصيل"],
+      tome:["ابدأ بحديث ودي قبل الدخول في العمل","أعطه مساحة ليعبّر عن أفكاره وتحمّس معه","اكتب له التفاصيل والمواعيد بعد الاجتماع حتى لا تضيع","قدّر جهده أمام الآخرين"],
+      lead:["تقود بالإلهام والحماس وبناء الروح المعنوية","تجمع الناس حول رؤية وتسوّق الفكرة جيداً","تتألق في إطلاق المبادرات والتغيير وتمثيل الفريق","تحتاج أن توازن الحماس بالمتابعة والمحاسبة الواضحة"],
+      press:["تكثر الكلام ويقل تركيزك على التفاصيل","تلجأ للآخرين لتخفيف التوتر","قد تبالغ في التفاؤل أو تتجنب الحقائق المزعجة"],
+      blind:["قد تلتزم بأكثر مما تستطيع إنجازه","قد تهمل التفاصيل والمتابعة والتوثيق","قد تتخذ قراراً بناءً على الانطباع لا البيانات","قد تتأثر كثيراً برأي الناس فيك"],
+      grow:["قبل أن تقول «نعم» لالتزام جديد، راجع تقويمك وأولوياتك","أنهِ كل اجتماع بثلاثة أسطر مكتوبة: ما اتُفق عليه، ومن المسؤول، ومتى","استند إلى رقم أو دليل واحد على الأقل عند عرض أي فكرة","خصص وقتاً يومياً للعمل الهادئ بلا مقاطعات"],
+      env:"بيئة مرنة واجتماعية، فيها تنوع وتفاعل، وتقدير للأفكار والجهد، ومساحة للتعبير."},
+    S:{n:"الثابت",l:"الثبات",c:"var(--c-ss)",s:"هادئ، صبور، متعاون، يُعتمد عليه",
+      sum:"أنت شخص تمنح من حولك الإحساس بالأمان والاستقرار. هادئ وصبور، تستمع بعمق، وتدعم زملاءك، وتنجز عملك بثبات وانتظام. تقدّر العلاقات الطويلة والتعاون والوضوح، وتفضّل التغيير المدروس الذي يأتي بتمهيد.",
+      str:["مستمع ممتاز ويشعر الناس بالراحة معك","يُعتمد عليك وتفي بالتزاماتك","تحافظ على هدوئك وتهدّئ المواقف المتوترة","لاعب فريق حقيقي، تقدّم مصلحة الفريق","ثابت ومنتظم في الأداء على المدى الطويل"],
+      work:["تفضّل أدواراً واضحة وتوقعات محددة","تعمل بإيقاع ثابت وتتقن الروتين","تحتاج وقتاً وتمهيداً للتأقلم مع التغيير المفاجئ","تحب التعاون أكثر من المنافسة"],
+      comm:["تتكلم بهدوء ولطف وتفضّل الاستماع على الحديث","تحتاج وقتاً لتفكر قبل أن ترد","تتجنب الصدام وقد لا تُظهر اعتراضك صراحة"],
+      tome:["كن ودوداً وهادئاً ولا تستعجله","مهّد للتغيير واشرح أسبابه وخطواته","اطلب رأيه بشكل مباشر، فقد لا يبادر بقوله","أكّد له الدعم والاستقرار"],
+      lead:["تقود بالقدوة والدعم والإنصات","تبني فرقاً متماسكة يسودها الثقة والولاء","تتألق في الاستمرارية وتطوير الأفراد ورعاية العلاقات","تحتاج أن تتدرب على الحسم والمواجهة البنّاءة"],
+      press:["تكتم انزعاجك وتستمر بصمت","تتنازل لتتجنب الخلاف","تتمسك بالطريقة المألوفة وتقاوم التغيير"],
+      blind:["قد تقول «نعم» وأنت تقصد «لا»","قد تؤجل المحادثات الصعبة حتى تكبر المشكلة","قد تقاوم التغيير حتى لو كان مفيداً","قد لا يُرى إنجازك لأنك لا تتحدث عنه"],
+      grow:["تدرّب على قول «لا» بلطف في موقف صغير هذا الأسبوع","عبّر عن رأيك المخالف مبكراً بجملة: «عندي وجهة نظر مختلفة»","تعامل مع التغيير كتجربة قصيرة لها مدة محددة","تحدّث عن إنجازاتك مع مديرك بانتظام"],
+      env:"بيئة مستقرة وودية، فيها أدوار واضحة، وتعاون، وتغيير مدروس يأتي بتمهيد كافٍ."},
+    C:{n:"الدقيق",l:"الدقة",c:"var(--c-cc)",s:"منهجي، تحليلي، يهتم بالجودة والمعايير",
+      sum:"أنت شخص يريد أن يكون العمل صحيحاً ومتقناً. تحلل قبل أن تقرر، وتعتمد على الحقائق والمنطق، وتهتم بالتفاصيل والمعايير والجودة. تحب أن تفهم «لماذا» و«كيف» قبل أن تبدأ، ويثق الناس بدقة عملك.",
+      str:["دقيق وتكتشف الأخطاء والثغرات قبل غيرك","تحلل المشكلات بعمق وموضوعية","تضع معايير عالية للجودة وتلتزم بها","منظم ومنهجي في التخطيط والتنفيذ","قراراتك مبنية على أدلة وبيانات"],
+      work:["تفضّل المهام التي تحتاج تركيزاً وتحليلاً","تحب الإجراءات الواضحة والمعايير المحددة","تحتاج وقتاً كافياً لتنجز العمل بالجودة التي ترضيك","تتضايق من العشوائية والقرارات غير المدروسة"],
+      comm:["تتكلم بدقة وتحفّظ، وتختار كلماتك بعناية","تفضّل التواصل المكتوب والمعلومات المفصلة","تسأل أسئلة كثيرة لتفهم الصورة كاملة"],
+      tome:["كن منظماً ومستعداً بالمعلومات والأرقام","أعطه وقتاً للتفكير والمراجعة قبل القرار","تجنب المبالغة والوعود غير المدعومة","انتقد الفكرة بالأدلة لا الشخص"],
+      lead:["تقود بالخبرة والمعايير والتخطيط الدقيق","تبني أنظمة وإجراءات تضمن الجودة","تتألق في المشاريع المعقدة والفنية وإدارة المخاطر","تحتاج أن توازن الدقة بالسرعة، والمنطق بالمشاعر"],
+      press:["تنسحب لتفكر وتصبح أكثر تحفظاً","تتمسك بالقواعد وتدقق أكثر","تصبح ناقداً لنفسك وللآخرين"],
+      blind:["قد تتأخر في القرار انتظاراً لمعلومات أكثر","قد تبدو ناقداً أو بارداً دون قصد","قد تنشغل بالكمال على حساب الإنجاز","قد تتجنب التعبير عن مشاعرك"],
+      grow:["حدد مسبقاً متى تكون المعلومات «كافية» للقرار، والتزم بالموعد","ابدأ ملاحظتك بما هو جيد قبل ما يحتاج تصحيحاً","فرّق بين المهام التي تحتاج ١٠٠٪ وتلك التي يكفيها ٨٠٪","شارك تفكيرك مبكراً بدل أن تنتظر حتى يكتمل"],
+      env:"بيئة منظمة وهادئة، فيها معايير واضحة، ووقت كافٍ للإتقان، وتقدير للخبرة والدقة."}
+  },
+  blends:{
+    DI:["الحاسم المُحفِّز","تجمع الحسم مع القدرة على تحريك الناس؛ تقود التغيير بسرعة وتكسب الآخرين لرؤيتك.","قد تسبق حماستك التخطيطَ والتفاصيل."],
+    DS:["الحاسم المثابر","تدفع نحو النتائج بإصرار ونفَس طويل، وتحسم حين يلزم مع حرص على استقرار فريقك.","قد تتأرجح بين الاستعجال والتحفظ تجاه التغيير."],
+    DC:["الحاسم المنهجي","تريد نتيجة كبيرة ومتقنة معاً؛ طموح عالٍ ومعايير عالية.","قد تبدو صارماً وناقداً، وتقل مساحة المشاعر والعلاقات."],
+    ID:["المؤثر المبادر","تُقنع وتُلهم ثم تتحرك بسرعة لتحويل الفكرة إلى واقع.","قد تُكثر الالتزامات وتستعجل قبل الإعداد الكافي."],
+    IS:["المؤثر الداعم","دافئ وقريب من الناس، تجمع الحماس مع الاهتمام الصادق بمن حولك.","قد تتجنب المواجهة والقرارات غير الشعبية."],
+    IC:["المؤثر المتقن","تقدّم الأفكار بجاذبية وتدعمها بالمنطق والإعداد الجيد.","قد تتردد بين رغبتك في الانطلاق وحرصك على الكمال."],
+    SD:["الثابت المُنجز","هادئ في الظاهر، لكنك مثابر وعازم على إنجاز ما تلتزم به.","قد تكتم انزعاجك طويلاً ثم يظهر بحدة."],
+    SI:["الثابت الودود","صبور ومتعاون، تبني الثقة والعلاقات طويلة المدى.","قد تقول «نعم» أكثر مما تستطيع."],
+    SC:["الثابت المنظّم","موثوق ودقيق، تحب الوضوح والإجراءات والعمل المتقن بلا ضجيج.","قد تقاوم التغيير وتحتاج وقتاً أطول للقرارات الجديدة."],
+    CD:["الدقيق الحازم","معاييرك عالية وتدافع عنها بحزم؛ تريد الصواب وتريده منجزاً.","قد تبدو قاسياً في النقد أو قليل المرونة."],
+    CI:["الدقيق المتواصل","تحلل بعمق، وتعرف كيف تشرح الفكرة المعقدة ببساطة للناس.","قد تتأرجح بين الانفتاح والتحفظ حسب الموقف."],
+    CS:["الدقيق المتأني","منهجي وصبور ويُعتمد عليك، تقدّم عملاً عالي الجودة بثبات.","قد تؤجل القرار انتظاراً لمزيد من المعلومات."]
+  },
+  items:[
+    {D:"أحسم القرار بسرعة حتى لو لم تكتمل كل المعلومات",I:"أنشر الحماس في من حولي",S:"أحافظ على هدوئي حين يتوتر الآخرون",C:"أراجع التفاصيل قبل أن أعتمد أي شيء"},
+    {D:"أحب المنافسة وأسعى للفوز",I:"أكوّن علاقات جديدة بسهولة",S:"أستمع للآخرين بصبر حتى ينهوا كلامهم",C:"أتبع خطوات واضحة ومنظمة في عملي"},
+    {D:"أقول رأيي بصراحة ومباشرة",I:"أقنع الآخرين بأفكاري بأسلوب مؤثر",S:"أقف مع زملائي وأدعمهم وقت الحاجة",C:"أبني رأيي على الحقائق والأرقام"},
+    {D:"أتحمس للتحديات الصعبة",I:"أرى الجانب المشرق في أغلب المواقف",S:"أرتاح في بيئة عمل مستقرة وواضحة",C:"أهتم بجودة العمل أكثر من سرعته"},
+    {D:"أتولى زمام الأمور حين يغيب الاتجاه",I:"أعبّر عن أفكاري بحماس وحرية",S:"أنجز مهامي بثبات وانتظام",C:"أطرح أسئلة دقيقة لأفهم الموضوع من كل جوانبه"},
+    {D:"أركّز على النتيجة النهائية أكثر من الطريقة",I:"أعبّر عن مشاعري بعفوية",S:"أبحث عن التوافق وأتجنب الصدام",C:"ألتزم بالأنظمة والمعايير المعتمدة"},
+    {D:"أدفع الأمور للأمام بسرعة",I:"أستمتع بالعمل مع الناس أكثر من العمل وحدي",S:"أعمل بإيقاع ثابت دون استعجال",C:"أحلل الخيارات بعناية قبل أن أختار"},
+    {D:"أبادر دون أن أنتظر تكليفاً",I:"أضفي روح المرح على الفريق",S:"أتعامل مع الناس بلطف وتفهّم",C:"أحرص على الدقة وتجنّب الأخطاء"},
+    {D:"أضع أهدافاً طموحة وأطاردها",I:"أُلهم الآخرين برؤية متفائلة للمستقبل",S:"أفضّل أن يكون التغيير تدريجياً ومدروساً",C:"أخطط بشكل منهجي قبل التنفيذ"},
+    {D:"أواجه المشكلات مباشرة دون تردد",I:"أبادر بالتعارف وكسر الجليد",S:"أبقى وفياً لفريقي والتزاماتي على المدى الطويل",C:"أقيّم المخاطر قبل أن أتحرك"},
+    {D:"أتحمل المخاطرة المحسوبة من أجل نتيجة أكبر",I:"يحفزني أن يُقدَّر جهدي أمام الآخرين",S:"أفضّل التعاون على المنافسة",C:"أحب أن تكون المعايير والتوقعات محددة بوضوح"},
+    {D:"أتكلم بحزم حين أكون مقتنعاً",I:"أتحدث بسهولة مع أشخاص لا أعرفهم",S:"أرتاح لروتين عمل منتظم",C:"أتحقق من المعلومة قبل أن أصدّقها"},
+    {D:"أحب أن يكون القرار الأخير بيدي",I:"أفكر بصوت عالٍ مع الآخرين",S:"أصبر على الآخرين حين يتأخرون أو يخطئون",C:"أحتاج أن أفهم «لماذا» قبل أن أبدأ"},
+    {D:"أنجز أكثر حين أملك الصلاحية الكاملة",I:"أجمع الناس حول فكرة جديدة",S:"أساعد الآخرين دون أن يطلبوا",C:"أتأكد أن العمل مكتمل وخالٍ من الثغرات"},
+    {D:"لا تشتتني العوائق عن الهدف",I:"أتصرف بعفوية وأتكيف مع اللحظة",S:"أحرص على أن يشعر الجميع بالراحة",C:"أعتمد على المنطق أكثر من الانطباع"},
+    {D:"أتحدى الوضع القائم إذا كان يعطّل النتائج",I:"أشجّع الآخرين بكلمات إيجابية",S:"أنفّذ ما يُتفق عليه بهدوء وإتقان",C:"أتحفّظ في إبداء رأيي حتى أتأكد منه"},
+    {D:"أفضّل الوتيرة السريعة في العمل",I:"أحب العصف الذهني وتوليد الأفكار مع المجموعة",S:"أقدّر الاستقرار والاستمرارية",C:"أنظّم المعلومات والملفات بدقة"},
+    {D:"أطالب بالنتائج وأتابعها بحزم",I:"يلفت حضوري وحديثي انتباه الناس",S:"أتفهّم وجهات النظر المختلفة قبل أن أحكم",C:"أقارن البدائل بالبيانات قبل القرار"},
+    {D:"أعتمد على نفسي وأستقل بعملي",I:"أبني شبكة علاقات واسعة",S:"أفضّل العمل ضمن فريق متناغم",C:"أبحث عن الطريقة الصحيحة لأداء العمل"},
+    {D:"أتصرف بثقة حتى في المواقف الغامضة",I:"أنقل حماسي للعميل أو الجمهور بسهولة",S:"أتريث ولا أستعجل في ردود أفعالي",C:"ألتزم بالتفاصيل الفنية والمواصفات"},
+    {D:"أرفع سقف التوقعات لي ولفريقي",I:"أخلق جواً إيجابياً في المكان",S:"أحافظ على علاقات طويلة وثابتة",C:"أراجع عملي أكثر من مرة قبل تسليمه"},
+    {D:"أقود النقاش نحو قرار واضح",I:"أستخدم القصص والأمثلة لأوصل فكرتي",S:"أهدّئ الخلافات وأقرّب وجهات النظر",C:"أستند إلى الأدلة والمراجع في نقاشاتي"},
+    {D:"تحت الضغط أصبح أكثر حدة واستعجالاً",I:"تحت الضغط أكثر الكلام ويقل تركيزي على التفاصيل",S:"تحت الضغط أتنازل لأتجنب الخلاف",C:"تحت الضغط أنسحب لأفكر وأصبح أكثر تحفظاً"},
+    {D:"تحت الضغط أفرض رأيي لأحسم الأمر",I:"تحت الضغط ألجأ للحديث مع الآخرين لأخفف التوتر",S:"تحت الضغط أكتم انزعاجي وأستمر بصمت",C:"تحت الضغط أتمسك بالقواعد وأدقق أكثر"},
+    {D:"أفضّل الرسائل المختصرة التي تدخل في الموضوع",I:"أفضّل الحديث وجهاً لوجه بأسلوب ودي",S:"أفضّل أن أُعطى وقتاً لأفكر قبل أن أرد",C:"أفضّل المعلومات المكتوبة والمفصلة"},
+    {D:"يحفزني الإنجاز والتقدم السريع",I:"يحفزني التفاعل مع الناس والتقدير",S:"يحفزني الأمان ووضوح دوري",C:"يحفزني إتقان العمل والمعرفة المتعمقة"},
+    {D:"يزعجني أن أفقد السيطرة على النتيجة",I:"يزعجني أن أُتجاهل أو لا يُلتفت لرأيي",S:"يزعجني التغيير المفاجئ دون تمهيد",C:"يزعجني أن يُكتشف خطأ في عملي"},
+    {D:"أقرر بناءً على ما يحقق النتيجة",I:"أقرر بناءً على حدسي وأثر القرار على الناس",S:"أقرر بعد التشاور والتأكد من قبول الجميع",C:"أقرر بعد جمع البيانات وتحليلها"}
+  ]
+},
 {
   id:"career-adapt",cat:"career",coach:1,title:"جاهزيتك لخطوتك المهنية القادمة",
   res:{ring:"جاهزيتك المهنية",h3:"مدى جاهزيتك للتكيّف وبناء مسارك المهني",best:"أقوى موارد جاهزيتك هو",low:"والمورد الذي يحتاج تركيزك هو",tips:"خطوات عملية لتقوية",about:"ماذا يقيس هذا الاختبار؟",aboutTxt:"يقيس الاختبار أربعة موارد يحتاجها كل شخص ليبني مساره المهني ويتعامل مع التغيير فيه: الاهتمام بمستقبلك (هل تفكر فيه وتخطط له؟)، والتحكم (هل قرارك المهني بيدك؟)، والفضول (هل تستكشف خياراتك؟)، والثقة (هل تؤمن بقدرتك على التنفيذ؟). كلما اكتملت الأربعة، كان انتقالك من الحيرة إلى خطوتك التالية أسهل."},
@@ -634,6 +747,7 @@ function count(t){return t.unit?ar(t.items.length)+" "+t.unit:t.type==="control"
 
 var ICON={MAN:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M8.6 8h6.8a1.6 1.6 0 0 1 1.6 1.6V15h-2v7h-2.2v-6h-1.6v6H9v-7H7V9.6A1.6 1.6 0 0 1 8.6 8z" fill="currentColor"/></svg>',WOM:'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="4" r="2.6" fill="currentColor"/><path d="M9.8 8h4.4a1.6 1.6 0 0 1 1.5 1.1L18 16h-3.2v6h-2v-6h-1.6v6h-2v-6H6l2.3-6.9A1.6 1.6 0 0 1 9.8 8z" fill="currentColor"/></svg>'};
 var ART={
+  disc:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="52" cy="38" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="272" cy="126" r="4" fill="#2dd4bf" opacity=".5"/><g font-family="Dubai,Segoe UI,sans-serif" font-weight="700" font-size="26" text-anchor="middle"><path d="M160 80V22a58 58 0 0 1 58 58z" fill="#f87171" opacity=".9"/><path d="M160 80h58a58 58 0 0 1-58 58z" fill="#4ade80" opacity=".9"/><path d="M160 80v58a58 58 0 0 1-58-58z" fill="#60a5fa" opacity=".9"/><path d="M160 80h-58a58 58 0 0 1 58-58z" fill="#facc15" opacity=".9"/><circle cx="160" cy="80" r="20" fill="#0d2436" stroke="#2dd4bf" stroke-width="3"/><text x="185" y="66" fill="#0d2436">D</text><text x="185" y="113" fill="#0d2436">S</text><text x="135" y="113" fill="#0d2436">C</text><text x="135" y="66" fill="#0d2436">I</text></g><circle cx="160" cy="80" r="62" fill="none" stroke="#eef3f7" stroke-width="2" opacity=".5"/></svg>',
   career:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="54" cy="40" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="276" cy="128" r="4" fill="#2dd4bf" opacity=".5"/><path d="M60 132h50v-26h50V80h50V54h50" fill="none" stroke="#eef3f7" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M85 118C125 98 165 82 235 44" stroke="#2dd4bf" stroke-width="2.5" stroke-dasharray="4 7" fill="none" opacity=".7"/><circle cx="85" cy="118" r="9" fill="#2dd4bf"/><path d="M260 54V22" stroke="#eef3f7" stroke-width="4" stroke-linecap="round"/><path d="M260 22h30l-8 9 8 9h-30z" fill="#2dd4bf"/></svg>',
   lead:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="56" cy="36" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="270" cy="124" r="4" fill="#2dd4bf" opacity=".5"/><path d="M160 12l5 11 12 1.5-9 8 2.5 12L160 39l-10.5 5.5 2.5-12-9-8 12-1.5z" fill="#2dd4bf"/><g fill="#eef3f7"><circle cx="160" cy="64" r="13"/><path d="M136 112a24 26 0 0 1 48 0z"/></g><g fill="#eef3f7" opacity=".55"><circle cx="92" cy="96" r="10"/><path d="M74 134a18 20 0 0 1 36 0z"/><circle cx="228" cy="96" r="10"/><path d="M210 134a18 20 0 0 1 36 0z"/></g><path d="M112 118l22-10M208 118l-22-10" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" opacity=".7"/><rect x="60" y="142" width="200" height="4" rx="2" fill="#2dd4bf" opacity=".35"/></svg>',
   energy:'<svg viewBox="0 0 320 160" aria-hidden="true"><circle cx="58" cy="38" r="3" fill="#2dd4bf" opacity=".6"/><circle cx="268" cy="126" r="4" fill="#2dd4bf" opacity=".5"/><rect x="86" y="44" width="136" height="64" rx="12" fill="none" stroke="#eef3f7" stroke-width="5"/><rect x="226" y="64" width="10" height="24" rx="3" fill="#eef3f7"/><rect x="97" y="55" width="32" height="42" rx="5" fill="#fb923c"/><rect x="138" y="55" width="32" height="42" rx="5" fill="#2dd4bf" opacity=".9"/><rect x="179" y="55" width="32" height="42" rx="5" fill="#2dd4bf" opacity=".3"/><path d="M40 138c30-12 60 12 90 0s60-12 90 0 60 12 60 0" fill="none" stroke="#2dd4bf" stroke-width="3" opacity=".6"/></svg>',
@@ -650,7 +764,7 @@ var GRPS=[
   {id:"dc",h:"اختبارات ديل كارنيجي (ارتياد)",p:"تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) من أدلة المشارك.",logos:true,note:"تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) من أدلة المشارك من ديل كارنيجي، وتُستخدم بإذن من ديل كارنيجي وارتياد. ولقراءة نتيجتك بعمق وتحويلها لخطة، اسأل المدرب الخاص بك من ديل كارنيجي (ارتياد)."},
 ];
 var TOPICS=[["all","كل الاختبارات"],["career","مسارك المهني"],["lead","القيادة والفريق"],["energy","الضغوط والطاقة"],["comm","التواصل والعلاقات"]];
-var TOPIC_OF={career:"career",lead:"lead",team:"lead",energy:"energy",stress:"energy",eq:"energy",time:"energy",style:"comm",diplo:"comm"};
+var TOPIC_OF={disc:"comm",career:"career",lead:"lead",team:"lead",energy:"energy",stress:"energy",eq:"energy",time:"energy",style:"comm",diplo:"comm"};
 var TOPIC="all";
 /* ---- taken counter (shared across visitors, shown only above 10) ---- */
 var CNT_API="https://abacus.jasoncameron.dev",CNT_NS="sultanalshehab-tests",COUNTS={};
@@ -716,11 +830,11 @@ function begin(){
   if(S.t.g)S.g=S.t.g;
   S.name=document.getElementById("pn").value.trim();
   S.org=document.getElementById("po").value.trim();
-  if(S.t.type==="choice"&&!S.order){
-    S.order=S.t.items.map(function(){var k=["D","E","A","T"];for(var i=3;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=k[i];k[i]=k[j];k[j]=x}return k});
+  if(isRank(S.t)&&!S.order){
+    S.order=S.t.items.map(function(it){var k=Object.keys(it);for(var i=3;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=k[i];k[i]=k[j];k[j]=x}return k});
   }
   if(S.t.type==="control"){if(!S.sits.length)S.sits=[{t:"",v:""},{t:"",v:""},{t:"",v:""}];controlScreen()}
-  else{S.i=0;if(S.t.type==="choice")loadRank();question()}
+  else{S.i=0;if(isRank(S.t))loadRank();question()}
 }
 
 function gtxt(x){var k=S.g==="f"?1:0;return x.replace(/\{([^|}]*)\|([^}]*)\}/g,function(m,a,b){return k?b:a})}
@@ -735,6 +849,12 @@ function question(){
   }else if(t.type==="abc"){
     h+='<p class="qtext">'+it[0]+'</p><div class="opts" role="group">';
     it[1].forEach(function(lab,k){h+='<button class="opt" data-act="pick" data-v="'+(k+1)+'" aria-pressed="'+(sel===k+1)+'"><span class="k">'+"أبج"[k]+'</span>'+lab+'</button>'});
+  }else if(t.type==="most"){
+    var R=S.rank;
+    h+='<p class="qtext">'+(R.m?'والآن: أيّ عبارة هي <u>الأبعد</u> عنك؟':'أيّ عبارة هي <u>الأقرب</u> لك؟')+'</p><p class="qhint">'+(R.m?'اختر من العبارات الثلاث الباقية الأقل انطباقاً عليك. (للتراجع عن «الأقرب» اضغط عليها مرة أخرى)':'فكّر في نفسك في العمل كما أنت فعلاً، لا كما تتمنى أو كما يُنتظر منك. أول إحساس غالباً هو الأصدق.')+'</p><div class="opts" role="group">';
+    S.order[i].forEach(function(st){var m=R.m===st,l=R.l===st;h+='<button class="opt'+(m?' ml-m':l?' ml-l':'')+'" data-act="pick" data-v="'+st+'" aria-pressed="'+(m||l)+'"'+(R.m&&R.l&&!m&&!l?' disabled':'')+'><span class="k">'+(m?'✓':l?'✕':'')+'</span>'+it[st]+(m?'<span class="tag">الأقرب لي</span>':l?'<span class="tag">الأبعد عني</span>':'')+'</button>'});
+    h+='</div><div class="actions" style="margin-top:16px">'+(R.m?'<button class="btn line" data-act="reset">إعادة اختيار المجموعة</button>':'')+(R.m&&R.l?'<button class="btn" data-act="next">التالي</button>':'')+'</div>';
+    h+='</div>';run.innerHTML=h;return;
   }else{
     var R=S.rank,nr=Object.keys(R).length;
     h+='<p class="qtext">الصف '+"أبجدهوزحطي"[i]+': رتّب الكلمات من الأقرب لك إلى الأبعد</p><p class="sub" style="margin-top:6px">اضغط على الأقرب لك أولاً (٤)، ثم التالية (٣)، ثم (٢)، والأخيرة تأخذ (١) تلقائياً.</p><div class="opts" role="group">';
@@ -746,9 +866,18 @@ function question(){
   run.innerHTML=h;
 }
 
+function isRank(t){return t.type==="choice"||t.type==="most"}
 function loadRank(){S.rank=S.ans[S.i]?JSON.parse(JSON.stringify(S.ans[S.i])):{}}
 function advance(){if(S.i<S.t.items.length-1){S.i++;loadRank();question()}else{result()}}
 function pick(v){
+  if(S.t.type==="most"){
+    if(S.busy)return;var R=S.rank;
+    if(R.m&&R.l)return;
+    if(!R.m)R.m=v;else if(v===R.m)delete R.m;else R.l=v;
+    if(R.m&&R.l){S.ans[S.i]={m:R.m,l:R.l};question();S.busy=true;setTimeout(function(){S.busy=false;advance()},450)}
+    else question();
+    return;
+  }
   if(S.t.type==="choice"){
     if(S.busy)return;var R=S.rank;if(R[v]||Object.keys(R).length===4)return;
     R[v]=4-Object.keys(R).length;
@@ -788,7 +917,7 @@ function chkCtl(){var b=document.getElementById("cr");if(b)b.disabled=validSits(
 function today(){try{return new Date().toLocaleDateString("ar-SA-u-ca-gregory-nu-arab",{year:"numeric",month:"long",day:"numeric"})}catch(e){return new Date().toISOString().slice(0,10)}}
 
 function head(){
-  return '<div class="rhead"><div class="who">نتيجة: <b>'+esc(S.name)+'</b>'+(S.org?'<br>'+esc(S.org):'')+'<br>'+S.t.title+' · '+today()+'</div></div>';
+  return '<div class="rhead"><div class="who">نتيجة: <b>'+esc(S.name)+'</b>'+(S.org?'<br>'+esc(S.org):'')+'<br><bdi>'+S.t.title+'</bdi> · <bdi>'+today()+'</bdi></div></div>';
 }
 function ring(p,label,color){return '<div class="ring" style="--p:'+p+(color?';--rc:'+color:'')+'"><div><span><b>'+ar(p)+'٪</b><br><small>'+label+'</small></span></div></div>'}
 function actions(summary){
@@ -800,7 +929,7 @@ function actions(summary){
 
 function ul(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
 function result(){
-  if(S.t.type!=="control"){for(var q=0;q<S.t.items.length;q++){if(S.ans[q]==null){S.i=q;if(S.t.type==="choice")loadRank();question();return}}}
+  if(S.t.type!=="control"){for(var q=0;q<S.t.items.length;q++){if(S.ans[q]==null){S.i=q;if(isRank(S.t))loadRank();question();return}}}
   if(!S.counted){S.counted=true;countTaken(S.t.id)}
   var t=S.t,h='<div class="panel'+(t.skin?' skin-'+t.skin+(t.g?' sk-'+t.g:''):'')+'">'+head(),sum="";
   if(t.id==="eq"){
@@ -913,6 +1042,35 @@ function result(){
     h+='<div class="box"><h4>تعريف الدبلوماسية واللباقة</h4><p><b>الدبلوماسية:</b> هي مهارة تقديم حلول دون إثارة ضغينة.</p><p><b>اللباقة:</b> هي إحساس قوي بما يجب فعله أو قوله للحفاظ على العلاقات الطيبة مع الآخرين.</p></div>';
     sum="أ: "+c[0]+"، ب: "+c[1]+"، ج: "+c[2];
   }
+  else if(t.type==="most"){
+    var K=["D","I","S","C"],n=t.items.length,M={},L={},N={},P={};
+    K.forEach(function(k){M[k]=0;L[k]=0});
+    S.ans.forEach(function(a){M[a.m]++;L[a.l]++});
+    K.forEach(function(k){N[k]=M[k]-L[k];P[k]=Math.round((N[k]+n)/(2*n)*100)});
+    var ks=K.slice().sort(function(a,b){return N[b]-N[a]||M[b]-M[a]});
+    var k1=ks[0],k2=ks[1],X=t.styles[k1],Y=t.styles[k2];
+    var spread=N[k1]-N[ks[3]],gap=N[k1]-N[k2];
+    var flat=spread<8,hasSec=N[k2]>0,co=hasSec&&gap<=2;
+    var BL=hasSec?t.blends[k1+k2]:null;
+    var clar=spread>=20?["واضح جداً","تفضيلك لهذا النمط قوي وثابت عبر المواقف."]:spread>=12?["واضح","نمطك الأساسي واضح، مع حضور للأنماط الأخرى حسب الموقف."]:spread>=8?["متوسط","نمطك الأساسي ظاهر لكن الفروق بين الأنماط ليست كبيرة؛ اقرأ أيضاً وصف نمطك الثاني."]:["متوازن","لا يبرز عندك نمط واحد بوضوح؛ أنت تتنقل بين الأنماط حسب الموقف، أو ربما أجبت بحسب ما يُتوقع منك. جرّب إعادة الاختبار في وقت هادئ وأجب بعفوية."];
+    h+='<div class="score">'+ring(P[k1],"شدة نمط "+X.n,X.c)+'<div><span class="lvl">'+(co?'نمطاك الأساسيان':'نمطك الأساسي')+'</span><h3><span style="color:'+X.c+'">'+X.n+' ('+k1+')</span>'+(co?' و<span style="color:'+Y.c+'">'+Y.n+' ('+k2+')</span>':hasSec?' <small style="font-size:.95rem;color:var(--muted)">مع ميل إلى</small> <span style="color:'+Y.c+'">'+Y.n+' ('+k2+')</span>':'')+'</h3><p>'+X.s+'.'+(BL?' <b>'+BL[0]+':</b> '+BL[1]:' نمطك أحادي واضح، والأنماط الأخرى أقل حضوراً في سلوكك.')+'</p></div></div>';
+    h+='<div class="dims">';
+    ks.forEach(function(k){var x=t.styles[k];h+='<div class="dim-row" style="--dc:'+x.c+'"><span><span class="dl">'+k+'</span>'+x.n+' · '+x.l+'</span><div class="bar"><i style="width:'+Math.max(P[k],3)+'%"></i></div><b>'+ar(P[k])+'٪</b></div>'});
+    h+='</div>';
+    h+='<p class="disclaimer" style="margin-top:12px">وضوح النمط: <b>'+clar[0]+'</b>. '+clar[1]+'</p>';
+    h+='<div class="box" style="border-inline-start:5px solid '+X.c+'"><h4>شخصيتك: '+X.n+'</h4><p>'+X.sum+'</p>'+(BL?'<p><b>مزيجك ('+k1+k2+') '+BL[0]+':</b> '+BL[1]+' <b>انتبه:</b> '+BL[2]+'</p>':'')+'</div>';
+    h+='<div class="grid2 sec-gap"><div class="box"><h4>نقاط قوتك</h4>'+ul(X.str)+'</div><div class="box"><h4>أسلوبك في العمل</h4>'+ul(X.work)+'<p><b>بيئتك المثالية:</b> '+X.env+'</p></div>'+
+       '<div class="box"><h4>كيف تتواصل</h4>'+ul(X.comm)+'</div><div class="box"><h4>كيف تقود</h4>'+ul(X.lead)+'</div>'+
+       '<div class="box"><h4>سلوكك تحت الضغط</h4>'+ul(X.press)+'</div><div class="box warn"><h4>نقاطك العمياء</h4>'+ul(X.blind)+'</div></div>';
+    h+='<div class="box"><h4>كيف يتعامل الآخرون معك بأفضل طريقة</h4>'+ul(X.tome)+'</div>';
+    h+='<div class="box"><h4>خطة تطوير عملية لك</h4>'+ul(X.grow)+'</div>';
+    if(co)h+='<div class="box" style="border-inline-start:5px solid '+Y.c+'"><h4>نمطك الأساسي الثاني: '+Y.n+'</h4><p>'+Y.sum+'</p><p><b>نقاط قوته:</b> '+Y.str.join("، ")+'.</p><p><b>انتبه إلى:</b> '+Y.blind.join("، ")+'.</p></div>';
+    h+='<div class="box"><h4>كيف تتعامل مع الأنماط الأخرى</h4>'+K.filter(function(k){return k!==k1}).map(function(k){var x=t.styles[k];return '<p><b style="color:'+x.c+'">'+x.n+' ('+k+')</b>: '+x.s+'. <b>معه:</b> '+x.tome.slice(0,3).join("، ")+'.</p>'}).join("")+'</div>';
+    h+='<div class="box"><h4>كيف تقرأ نتيجتك؟</h4><ul><li>لا يوجد نمط أفضل من نمط؛ كل نمط له قوة في موقف وتحدٍّ في موقف آخر.</li><li>كل شخص فيه الأنماط الأربعة بنسب مختلفة، والنتيجة تصف ما تميل إليه أكثر، لا كل ما أنت عليه.</li><li>النمط يصف السلوك المفضّل، لا القدرة أو الذكاء أو القيم.</li><li>سلوكك يتغير حسب الموقف، والوعي بنمطك يساعدك تختار السلوك المناسب بدل ردة الفعل التلقائية.</li></ul></div>';
+    h+='<div class="box"><h4>كيف تُحسب النتيجة؟</h4><p>في كل مجموعة عبارة لكل نمط. اختيار «الأقرب» يعطي النمط +١، واختيار «الأبعد» يعطيه −١. الدرجة الصافية لكل نمط = عدد مرات «الأقرب» − عدد مرات «الأبعد»، وتتراوح بين −'+ar(n)+' و+'+ar(n)+'، ثم تُحوَّل إلى نسبة من ٠ إلى ١٠٠ (٥٠٪ هي نقطة المنتصف). النمط الأعلى هو نمطك الأساسي، والثاني يُعد ميلاً ثانوياً إذا كان فوق المنتصف، وإذا كان الفرق بينهما نقطتين أو أقل فهما نمطان أساسيان. وترتيب العبارات يتغير عشوائياً في كل مجموعة حتى لا يؤثر على اختيارك.</p><div class="cmp-wrap"><table class="cmp"><thead><tr><th>النمط</th><th>الأقرب</th><th>الأبعد</th><th>الصافي</th></tr></thead><tbody>'+ks.map(function(k){return '<tr><td>'+t.styles[k].n+' ('+k+')</td><td>'+ar(M[k])+'</td><td>'+ar(L[k])+'</td><td dir="ltr" style="text-align:end">'+(N[k]>0?'+':'')+N[k]+'</td></tr>'}).join("")+'</tbody></table></div></div>';
+    S.head="النمط الغالب: "+k1+" "+X.n+(hasSec?(co?" و":" مع ميل إلى ")+k2+" "+Y.n:"");
+    sum="النمط الأساسي: "+X.n+" ("+k1+")"+(hasSec?(co?" و":" مع ميل إلى ")+Y.n+" ("+k2+")":"")+"\n"+ks.map(function(k){return t.styles[k].n+": "+P[k]+"%"}).join("، ");
+  }
   else if(t.type==="choice"){
     var cnt={D:0,E:0,A:0,T:0};S.ans.forEach(function(r){for(var k in r)cnt[k]+=r[k]});
     var ks=["E","D","A","T"].sort(function(a,b){return cnt[b]-cnt[a]});
@@ -954,7 +1112,7 @@ run.addEventListener("click",function(e){
   if(a==="start"){startScreen();return}
   if(a==="gen"){S.g=b.dataset.v;[].forEach.call(b.parentNode.children,function(x){x.setAttribute("aria-pressed",String(x===b))});S.chk&&S.chk();return}
   if(a==="begin"){begin();top();return}
-  if(a==="prev"){if(S.busy)return;S.i--;if(S.t.type==="choice")loadRank();question();return}
+  if(a==="prev"){if(S.busy)return;S.i--;if(isRank(S.t))loadRank();question();return}
   if(a==="reset"){if(S.busy)return;S.rank={};S.ans[S.i]=null;question();return}
   if(a==="next"){if(S.busy)return;advance();return}
   if(a==="pick"){pick(b.dataset.v);return}
