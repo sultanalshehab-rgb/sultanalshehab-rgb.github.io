@@ -304,6 +304,7 @@ footer{padding-block:30px 40px;padding-inline:16px;color:var(--muted);font-size:
 
 <footer>اختبارات الكوتشنج مبنية على مقاييس علمية منشورة، والمرجع مذكور مع كل نتيجة.<br>تقييمات برامج (الوعي الذاتي) و(واثق) و(إدارة الوقت وفرق العمل) © Dale Carnegie &amp; Associates، تُستخدم بإذن.</footer>
 
+<script src="report.js"></script>
 <script>
 (function(){
 "use strict";
@@ -924,7 +925,7 @@ function startScreen(){
     '<span class="qdim">'+c.name+'</span><h2>'+t.title+'</h2><p class="sub">'+t.intro+'</p>'+
     '<div class="field"><label for="pn">اسمك</label><input id="pn" autocomplete="name" maxlength="60" value="'+esc(S.name)+'" placeholder="مثال: نورة العتيبي"></div>'+
     '<div class="field"><label for="po">الجهة أو البرنامج التدريبي <small>(اختياري)</small></label><input id="po" maxlength="80" value="'+esc(S.org)+'" placeholder="'+(t.coach?'مثال: اسم جهتك أو برنامجك':'مثال: برنامج الوعي الذاتي - ارتياد')+'"></div>'+
-    '<div class="actions"><button class="btn" data-act="begin" id="go">ابدأ</button><span class="sub" style="margin:0">'+count(t)+' · '+mt(t.mins)+' تقريباً</span></div></div>';
+    (window.SR&&SR.enabled()?'<p class="sub" style="margin-top:14px;font-size:.85rem">تُحفظ نتيجتك بسرية لدى سلطان الشهاب لأغراض الكوتشنج والتطوير، ولا تُشارك مع أي جهة.</p>':'')+'<div class="actions"><button class="btn" data-act="begin" id="go">ابدأ</button><span class="sub" style="margin:0">'+count(t)+' · '+mt(t.mins)+' تقريباً</span></div></div>';
   var pn=document.getElementById("pn"),go=document.getElementById("go");
   function chk(){go.disabled=pn.value.trim().length<2}
   S.chk=chk;pn.addEventListener("input",chk);chk();
@@ -1030,7 +1031,7 @@ function head(){
 function ring(p,label,color){return '<div class="ring" style="--p:'+p+(color?';--rc:'+color:'')+'"><div><span><b>'+ar(p)+'٪</b><br><small>'+label+'</small></span></div></div>'}
 function actions(summary){
   var msg="السلام عليكم أ. سلطان،\nهذه نتيجتي في ("+S.t.title+") من موقعك:\nالاسم: "+S.name+(S.org?"\nالجهة/البرنامج: "+S.org:"")+"\n"+summary;
-  return (S.t.coach?'<div class="cta no-print"><div><h4>تبي تحوّل نتيجتك إلى خطة واضحة؟</h4><p>في جلسة كوتشنج نقرأ نتيجتك معاً، ونحدد خطوتك التالية.</p></div><a class="btn" href="'+BOOK+'" target="_blank" rel="noopener">احجز جلسة كوتشنج</a></div>':'')+'<div class="actions no-print"><button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>'+
+  return (S.t.coach?'<div class="cta no-print"><div><h4>تبي تحوّل نتيجتك إلى خطة واضحة؟</h4><p>في جلسة كوتشنج نقرأ نتيجتك معاً، ونحدد خطوتك التالية.</p></div><a class="btn" href="'+BOOK+'" target="_blank" rel="noopener">احجز جلسة كوتشنج</a></div>':'')+(window.SR?SR.card():'')+'<div class="actions no-print">'+(window.SR?'':'<button class="btn dark" data-act="print">احفظ النتيجة PDF / اطبعها</button>')+
     '<button class="btn line" data-act="home">اختبار آخر</button></div>'+
     '<p class="disclaimer">'+(S.t.note||'من دليل المشارك لبرنامج ('+(S.t.guide||'الوعي الذاتي')+') © Dale Carnegie &amp; Associates، ويُستخدم بإذن من ديل كارنيجي وارتياد.')+'</p>'+(S.t.ref?'<p class="disclaimer ref" dir="ltr" lang="en">'+S.t.ref+'</p>':'');
 }
@@ -1240,6 +1241,7 @@ function result(){
   }
   h+=actions(sum)+'</div>';
   run.innerHTML=h;top();
+  if(window.SR)SR.onResult(run.querySelector(".panel"),{id:t.id,title:t.title,name:S.name,org:S.org,head:S.head||"",summary:sum});
 }
 
 /* ================= EVENTS ================= */
