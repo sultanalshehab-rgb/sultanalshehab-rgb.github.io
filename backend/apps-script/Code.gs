@@ -71,6 +71,7 @@ function save_(d) {
 
 function email_(d) {
   var m = clean_(d);
+  m.noCta = d.no_cta === true;
   var to = String(d.email || '').trim().toLowerCase().slice(0, 120);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(to)) return { ok: false, msg: 'اكتب بريداً إلكترونياً صحيحاً.' };
   if (!m.name || !m.title) return { ok: false, msg: 'بيانات ناقصة' };
@@ -214,7 +215,7 @@ function plain_(m) {
   return 'مرحباً ' + m.name + '،\n\nشكراً لإكمالك اختبار (' + m.title + ') في موقعي.\n' +
     (m.headline ? 'نتيجتك باختصار: ' + m.headline + '\n' : '') +
     'تجد تقريرك الكامل باسمك مرفقاً بصيغة PDF.\n\n' +
-    'إذا حاب تحوّل نتيجتك إلى خطة واضحة، احجز جلسة كوتشنج: ' + BOOK + '\n\n' +
+    (m.noCta ? '\n' : 'إذا حاب تحوّل نتيجتك إلى خطة واضحة، احجز جلسة كوتشنج: ' + BOOK + '\n\n') +
     'سلطان الشهاب\nمستشار قيادي وكوتش تنفيذي\n' + SITE;
 }
 
@@ -230,8 +231,8 @@ function html_(m) {
       '<p style="margin:0 0 12px">مرحباً <b>' + esc_(m.name) + '</b>،</p>' +
       '<p style="margin:0 0 12px">شكراً لإكمالك اختبار <b>(' + esc_(m.title) + ')</b> في موقعي. مرفق لك تقريرك الكامل باسمك بصيغة PDF.</p>' +
       (m.headline ? '<p style="margin:0 0 16px;padding:12px 16px;background:#d5f5f0;border-radius:12px;color:#0f766e;font-weight:700">' + esc_(m.headline) + '</p>' : '') +
-      '<p style="margin:0 0 18px">إذا حاب تحوّل نتيجتك إلى خطة واضحة، نقرأها معاً في جلسة كوتشنج ونحدد خطوتك التالية.</p>' +
-      '<a href="' + BOOK + '" style="display:inline-block;background:#2dd4bf;color:#0d2436;text-decoration:none;font-weight:700;padding:11px 26px;border-radius:999px">احجز جلسة كوتشنج</a>' +
+      (m.noCta ? '' : '<p style="margin:0 0 18px">إذا حاب تحوّل نتيجتك إلى خطة واضحة، نقرأها معاً في جلسة كوتشنج ونحدد خطوتك التالية.</p>' +
+      '<a href="' + BOOK + '" style="display:inline-block;background:#2dd4bf;color:#0d2436;text-decoration:none;font-weight:700;padding:11px 26px;border-radius:999px">احجز جلسة كوتشنج</a>') +
     '</td></tr>' +
     '<tr><td style="padding:16px 26px;border-top:1px solid #dbe3ea;font-size:12px;color:#56687a;' + font + '">' +
       'وصلك هذا الإيميل لأنك طلبت تقريرك من صفحة الاختبارات في <a href="' + SITE + '/tests.html" style="color:#0f766e">موقع سلطان الشهاب</a>.</td></tr>' +

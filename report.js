@@ -101,7 +101,7 @@ function buildPages(panel,m){
   cta.innerHTML='<b>خطوتك التالية:</b> في جلسة كوتشنج مع سلطان الشهاب نقرأ نتيجتك معاً ونحولها إلى خطة واضحة. احجز من الموقع: '+SITE;
   blocks.unshift(cover);
   var dIdx=blocks.length;while(dIdx>1&&blocks[dIdx-1].classList&&blocks[dIdx-1].classList.contains("disclaimer"))dIdx--;
-  blocks.splice(dIdx,0,cta);
+  if(!m.noCta)blocks.splice(dIdx,0,cta);
   var pages=[],n=0,pg,body;
   function newPage(){n++;pg=pageShell(m,n);stage.appendChild(pg);body=pg.querySelector(".sr-body");pages.push(pg)}
   newPage();
@@ -151,6 +151,7 @@ function card(){
 function onResult(panel,meta){
   CUR={panel:panel,meta:meta,rec:null,pdf:null};
   meta.headline=headline(panel,meta);
+  meta.noCta=panel.classList.contains("skin-jung"); // licensed CC BY-NC-SA: no booking promotion
   if(!SR_API)return;
   var me=CUR;
   me.saving=api({action:"save",test_id:meta.id,test_title:meta.title,name:meta.name,org:meta.org||"",headline:meta.headline,summary:meta.summary||"",scores:meta.scores?JSON.stringify(meta.scores):"",page:location.href.slice(0,300)})
@@ -174,7 +175,7 @@ document.addEventListener("click",function(e){
     busy(b,true,"جارٍ الإرسال...");msg("نجهّز تقريرك ونرسله...");
     Promise.all([makePdf(),me.saving||Promise.resolve(null)]).then(function(r){
       var p=r[0],rec=r[1]||{};
-      return api({action:"email",id:rec.id||"",tok:rec.tok||"",email:em,consent:ok,hp:hp,
+      return api({action:"email",id:rec.id||"",tok:rec.tok||"",email:em,consent:ok,hp:hp,no_cta:!!m.noCta,
         test_id:m.id,test_title:m.title,name:m.name,org:m.org||"",headline:m.headline,summary:m.summary||"",scores:m.scores?JSON.stringify(m.scores):"",
         pdf:p.b64,filename:p.name});
     }).then(function(r){
