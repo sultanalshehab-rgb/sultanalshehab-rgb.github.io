@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sultan Alshehab: leadership consultant, executive coach and certified trainer. Career, leadership and life coaching, training programmes, and learning journeys for organisations.">
+<link rel="alternate" hreflang="ar" href="https://sultanalshehab-rgb.github.io/">
+<link rel="alternate" hreflang="en" href="https://sultanalshehab-rgb.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://sultanalshehab-rgb.github.io/">
+<title>Sultan Alshehab | Coaching &amp; Training</title>
+
+<style>
+@font-face{font-family:'Dubai';font-weight:300;font-style:normal;font-display:swap;src:url('../fonts/Dubai-Light.woff2') format('woff2'),url('../fonts/Dubai-Light.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:400;font-style:normal;font-display:swap;src:url('../fonts/Dubai-Regular.woff2') format('woff2'),url('../fonts/Dubai-Regular.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:500;font-style:normal;font-display:swap;src:url('../fonts/Dubai-Medium.woff2') format('woff2'),url('../fonts/Dubai-Medium.woff') format('woff')}
+@font-face{font-family:'Dubai';font-weight:700;font-style:normal;font-display:swap;src:url('../fonts/Dubai-Bold.woff2') format('woff2'),url('../fonts/Dubai-Bold.woff') format('woff')}
+</style>
+<style>
+/* Layout: dark navy hero with an arch portrait and Sadu-woven borders; light body sections; a navy journey band; gold CTA */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --ink:#10283a; --muted:#56687a; --line:#dbe3ea;
+  --navy:#0d2436; --navy-2:#153650; --on-navy:#eef3f7; --on-navy-muted:#a9bccb;
+  --gold:#2dd4bf; --gold-soft:#d5f5f0; --gold-ink:#0f766e; --sadu:#a8402c; --teal:#2f7f86;
+  --display:"Dubai","Segoe UI",Tahoma,sans-serif;
+  --body:"Dubai","Segoe UI",Tahoma,sans-serif;
+  --script:"Dubai","Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
+  --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a1925; --surface:#11273a; --ink:#e7eef4; --muted:#9fb3c3; --line:#203a50;
+  --navy:#071521; --navy-2:#0f2a40; --gold-soft:#123b3a; --gold-ink:#2dd4bf; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.8}
+h1,h2,h3{font-family:var(--display);line-height:1.3;text-wrap:balance;margin:0;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.in{max-width:1120px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-size:.85rem;font-weight:600;color:var(--gold-ink);letter-spacing:.02em;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Sadu weave strip: the Saudi tent-weaving triangles */
+.wave{display:block;width:100%;height:clamp(46px,7vw,90px);color:var(--navy);background:var(--below,var(--bg));margin-top:-1px}
+.wave.up{transform:scaleY(-1);margin-top:0;margin-bottom:-1px}
+.wave svg{display:block;width:100%;height:100%}
+.wave .w2{fill:var(--gold);opacity:.35}
+.wave .ln{fill:none;stroke:var(--gold);stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-linecap:round}
+
+/* NAV */
+.top{background:var(--navy);color:var(--on-navy);position:sticky;top:env(safe-area-inset-top,0px);z-index:20;border-bottom:1px solid #ffffff14}
+.top .in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:14px}
+.brand{font-family:var(--display);font-size:1.2rem;font-weight:700;display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand i{width:30px;height:30px;border-radius:50% 50% 6px 6px;background:var(--gold);display:inline-block}
+.top ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 22px;font-size:.95rem;color:var(--on-navy-muted)}
+.top ul a{text-decoration:none}
+.top ul a:hover{color:var(--gold)}
+.top .book{background:var(--gold);color:#0d2436;padding:8px 18px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.92rem}
+
+/* HERO */
+.hero{background:radial-gradient(1200px 500px at 85% 0%,var(--navy-2),transparent 60%),var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;padding-block:64px 72px;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);margin-top:14px}
+.rot{color:var(--gold);display:inline-block;transition:opacity .35s,transform .35s}
+.rot.out{opacity:0;transform:translateY(10px)}
+.hero .lead{margin-top:20px;color:var(--on-navy-muted);max-width:33em;font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:#0d2436;box-shadow:0 10px 30px #2dd4bf40}
+.btn.ghost{border:1.5px solid #ffffff55;color:var(--on-navy)}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.creds span{font-size:.8rem;border:1px solid #ffffff26;border-radius:999px;padding:3px 12px;color:var(--on-navy-muted)}
+
+.portrait{position:relative;justify-self:center;width:min(100%,380px);animation:rise .9s ease-out both}
+.arch{aspect-ratio:4/5.4;border-radius:999px 999px 18px 18px;overflow:hidden;background:#fff;border:6px solid var(--gold);position:relative;z-index:1}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.ring{position:absolute;inset:-26px -26px auto auto;width:150px;height:150px;border-radius:50%;border:2px dashed var(--gold);opacity:.6;animation:spin 40s linear infinite}
+.dots{position:absolute;bottom:-18px;inset-inline-start:-34px;width:130px;height:130px;background:radial-gradient(var(--teal) 2px,transparent 2.5px) 0 0/16px 16px;opacity:.7}
+.badge{position:absolute;z-index:2;background:var(--surface);color:var(--ink);border-radius:14px;padding:10px 16px;box-shadow:0 14px 34px #0005;font-size:.82rem;line-height:1.45;animation:float 6s ease-in-out infinite}
+.badge b{font-family:var(--display);font-size:1.45rem;color:var(--gold);display:block}
+.b1{inset-inline-end:-30px;top:22%}
+.b2{inset-inline-start:-34px;bottom:16%;animation-delay:-3s}
+.shape{position:absolute;border-radius:50%;filter:blur(2px);opacity:.18}
+.s1{width:420px;height:420px;background:var(--gold);inset-inline-start:-160px;bottom:-220px}
+.s2{width:160px;height:160px;background:var(--teal);inset-inline-end:42%;top:-60px}
+
+@keyframes rise{from{transform:translateY(30px)}to{transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* LOGO MARQUEE */
+.trust{background:var(--surface);border-bottom:1px solid var(--line);padding-block:26px;overflow:hidden}
+.trust p{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.marquee{direction:ltr;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:18px;width:max-content;animation:slide 45s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.logo{background:#fff;border:1px solid var(--line);border-radius:12px;height:84px;width:170px;display:grid;place-items:center;padding:10px 14px;flex:none}
+.logo img{max-height:60px;max-width:100%;object-fit:contain}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-block:56px 8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;inset-inline-end:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:var(--gold-soft)}
+.stat b{font-family:var(--display);font-size:clamp(2rem,4vw,2.8rem);display:block;color:var(--ink);position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:.95rem;position:relative;z-index:1}
+
+section{padding-block:72px}
+.head{display:grid;gap:10px;margin-bottom:34px;max-width:42em}
+.head h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+.head p{color:var(--muted)}
+
+/* SERVICES */
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.svc{--c:var(--gold);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px 26px;display:grid;gap:12px;align-content:start;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 22px 50px #10283a1f}
+.svc::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--c)}
+.svc.c2{--c:var(--teal)} .svc.c3{--c:var(--sadu)}
+.ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
+.ico svg{width:30px;height:30px}
+.svc h3{font-size:1.35rem}
+.svc .for{font-size:.86rem;color:var(--c);font-weight:600}
+.svc ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;color:var(--muted);font-size:.95rem}
+.svc li{display:flex;gap:8px}
+.svc li::before{content:"✓";color:var(--c);font-weight:700}
+.svc a{margin-top:8px;font-weight:600;color:var(--c);text-decoration:none}
+
+/* QUOTE BANNER */
+.quote{background:linear-gradient(120deg,var(--gold-soft),var(--surface));border-block:1px solid var(--line);padding-block:56px;text-align:center;position:relative;overflow:hidden}
+.quote blockquote{margin:0 auto;max-width:28em;font-family:var(--script);font-weight:700;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.6;color:var(--ink)}
+.quote cite{display:block;margin-top:10px;font-style:normal;color:var(--muted);font-size:.95rem}
+.quote::before,.quote::after{content:"";position:absolute;width:180px;height:180px;border:2px solid var(--gold);border-radius:50%;opacity:.35}
+.quote::before{inset-inline-start:-60px;top:-60px}
+.quote::after{inset-inline-end:-50px;bottom:-80px}
+
+/* PROGRAMS */
+.progs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.prog{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:8px;align-content:start;transition:border-color .2s}
+.prog:hover{border-color:var(--gold)}
+.prog .tag{justify-self:start;font-size:.78rem;padding:2px 12px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.prog h3{font-size:1.1rem}
+.prog p{color:var(--muted);font-size:.94rem}
+.prog .n{font-family:var(--display);color:var(--gold-ink);font-size:.9rem;font-weight:600}
+
+/* JOURNEY BAND */
+.journey{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.journey .head p{color:var(--on-navy-muted)}
+.path{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative}
+.path::before{content:"";position:absolute;top:34px;inset-inline:12% 12%;border-top:2px dashed #2dd4bf88}
+.path li{position:relative;display:grid;gap:8px;justify-items:center;text-align:center}
+.pin{width:68px;height:68px;border-radius:50%;background:var(--navy-2);border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);position:relative;z-index:1}
+.pin svg{width:30px;height:30px}
+.path strong{font-family:var(--display);font-size:1.1rem}
+.path span{color:var(--on-navy-muted);font-size:.92rem;max-width:16em}
+.orgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:48px}
+.org{border:1px solid #ffffff22;border-radius:16px;padding:22px;background:#ffffff08}
+.org h3{font-size:1.1rem;color:var(--gold)}
+.org p{color:var(--on-navy-muted);font-size:.94rem;margin-top:6px}
+.journey .btn{margin-top:34px}
+.license{margin-top:40px;display:flex;gap:16px;align-items:center;background:#ffffff0d;border:1px solid #2dd4bf66;border-radius:16px;padding:18px 22px}
+.lic-ico{flex:none;width:52px;height:52px;border-radius:14px;background:var(--gold);color:#0d2436;display:grid;place-items:center}
+.lic-ico svg{width:28px;height:28px}
+.license b{display:block;font-family:var(--display);font-size:1.05rem;color:var(--on-navy)}
+.license span{color:var(--on-navy-muted);font-size:.92rem}
+.license bdi{direction:ltr;unicode-bidi:isolate;color:var(--gold-ink);font-weight:600}
+.creds .lic{border-color:var(--gold-ink);color:var(--gold-ink)}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:start}
+.about p+p{margin-top:14px}
+.timeline{list-style:none;margin:0;padding:0;border-inline-start:2px solid var(--line);display:grid;gap:18px}
+.timeline li{padding-inline-start:20px;position:relative}
+.timeline li::before{content:"";position:absolute;inset-inline-start:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.timeline small{color:var(--gold-ink);font-weight:600;font-variant-numeric:tabular-nums}
+.timeline b{display:block;font-family:var(--display);font-weight:600}
+.timeline span{color:var(--muted);font-size:.92rem}
+.certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.certs span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:.85rem}
+
+/* CTA */
+.final{background:linear-gradient(135deg,var(--gold),#14a395);color:#0d2436;border-radius:28px;padding:48px clamp(22px,5vw,60px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:30px;align-items:center;position:relative;overflow:hidden}
+.final::after{content:"";position:absolute;inset-inline-start:-40px;bottom:-90px;width:260px;height:260px;border-radius:50%;border:30px solid #ffffff22;pointer-events:none}
+.final h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
+.final p{margin-top:10px;opacity:.85}
+.book-final{margin-top:22px;background:#10283a;color:#fff}
+.contacts{display:grid;gap:10px;position:relative;z-index:1}
+.ct{background:#ffffffd9;border-radius:14px;padding:12px 16px;display:grid;gap:2px;color:#10283a}
+.ct small{opacity:.7}
+.ct bdi{font-weight:600;direction:ltr;unicode-bidi:isolate;user-select:all;overflow-wrap:anywhere}
+.ct a{text-decoration:none}
+
+.social{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+.social a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--gold);transition:transform .2s,background .2s}
+.social a:hover{transform:translateY(-3px);background:var(--gold);color:var(--navy)}
+.social svg{width:20px;height:20px;fill:currentColor}
+.final .social{grid-column:1/-1;justify-content:flex-start;position:relative;z-index:2}
+footer{padding-block:30px 40px;color:var(--muted);font-size:.88rem;text-align:center}
+
+.wa{position:fixed;inset-inline-start:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px #0004;transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+@media (max-width:900px){
+  .hero .in,.about,.final{grid-template-columns:1fr}
+  .portrait{width:min(78%,320px);margin-top:12px}
+  .svcs,.progs,.orgs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .path{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
+  .path::before{display:none}
+  .top ul li:not(.nav-tests){display:none}
+  .top ul{margin-inline-start:auto}
+  .top .in{flex-wrap:nowrap;gap:10px}
+}
+@media (max-width:420px){
+  .brand{font-size:1rem;gap:8px}.brand i{width:24px;height:24px}
+  .top .book{padding:7px 12px;font-size:.85rem;white-space:nowrap}
+  .top .nav-tests a{padding:5px 11px;font-size:.85rem}
+  .top .nav-tests a{display:inline-block;border:1.5px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+}
+@media (max-width:600px){
+  .svcs,.progs,.orgs{grid-template-columns:1fr}
+  .b1{inset-inline-end:-12px}.b2{inset-inline-start:-12px}
+  .ring{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<style>body{margin:0}.top .nav-lang a{display:inline-block;border:1.5px solid #ffffff40;color:var(--on-navy);padding:2px 12px;border-radius:999px;font-weight:600;font-size:.85rem;line-height:1.6}
+.top .nav-lang a:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:900px){.top ul li.nav-lang{display:list-item}.top ul{flex-wrap:nowrap;gap:8px;align-items:center}.brand{white-space:nowrap}}
+@media (max-width:420px){.top .nav-lang a{padding:3px 9px;font-size:.8rem}.top .in{gap:6px;padding-inline:14px}.top ul{gap:6px}}
+@media (max-width:374px){.brand i{display:none}}
+@media (max-width:480px){.xs-hide{display:none}}
+</style>
+</head>
+<body>
+
+
+<div dir="ltr" lang="en">
+<header class="top">
+  <div class="in">
+    <a class="brand" href="#home"><i></i>Sultan Alshehab</a>
+    <ul>
+      <li><a href="#coaching">Coaching</a></li>
+      <li><a href="#programs">Programmes</a></li>
+      <li><a href="#trips">Learning Journeys</a></li>
+      <li class="nav-tests"><a href="../tests.html" hreflang="ar">Assessments</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="nav-lang"><a href="../" hreflang="ar" lang="ar">عربي</a></li>
+    </ul>
+    <a class="book" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">Book<span class="xs-hide"> a session</span></a>
+  </div>
+</header>
+
+<div class="hero" id="home">
+  <div class="shape s1"></div><div class="shape s2"></div>
+  <div class="in">
+    <div>
+      <span class="eyebrow">Leadership Consultant · Executive Coach · Certified Trainer</span>
+      <h1>Together we build<br><span class="rot" id="rot">your career path</span><br>with clarity and confidence</h1>
+      <p class="lead">Leadership consultant and executive coach with 25+ years, helping you move from uncertainty to your next step. I support individuals through career, leadership and life coaching, and design training programmes and learning journeys that deliver measurable impact for organisations.</p>
+      <div class="cta">
+        <a class="btn gold" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">Book a coaching session</a>
+        <a class="btn ghost" href="#trips">For organisations</a>
+      </div>
+      <div class="creds"><span class="lic">✓ Licensed freelancer</span><span>ICF member</span><span>Dale Carnegie</span><span>Hogan</span><span>Celemi</span><span>ATD</span></div>
+    </div>
+    <div class="portrait">
+      <div class="ring"></div><div class="dots"></div>
+      <div class="arch"><img src="../sultan.jpg" alt="Sultan Alshehab" width="400" height="600"></div>
+      <div class="badge b1"><b>25+</b>years of experience</div>
+      <div class="badge b2"><b>200+</b>coaching hours</div>
+    </div>
+  </div>
+</div>
+<div class="wave" style="--below:var(--surface)"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 0H1440V58C1250 98 1080 30 880 52S470 104 260 70 60 40 0 52Z"/><path fill="currentColor" d="M0 0H1440V40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38Z"/><path class="ln" d="M1440 40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38"/></svg></div>
+
+<div class="trust">
+  <p>Trusted by</p>
+  <div class="marquee"><div class="track"><div class="logo"><img src="../logos/financial-academy.png" alt="Financial Academy" title="Financial Academy"></div><div class="logo"><img src="../logos/stc-academy.png" alt="STC Academy" title="STC Academy"></div><div class="logo"><img src="../logos/saudi-energy.png" alt="Saudi Energy" title="Saudi Energy"></div><div class="logo"><img src="../logos/saib.png" alt="Saudi Investment Bank" title="Saudi Investment Bank"></div><div class="logo"><img src="../logos/alrajhi-capital.png" alt="Al Rajhi Capital" title="Al Rajhi Capital"></div><div class="logo"><img src="../logos/bank-albilad.png" alt="Bank Albilad" title="Bank Albilad"></div><div class="logo"><img src="../logos/zatca.png" alt="Zakat, Tax and Customs Authority" title="Zakat, Tax and Customs Authority"></div><div class="logo"><img src="../logos/moh.png" alt="Ministry of Health" title="Ministry of Health"></div><div class="logo"><img src="../logos/tawakkalna.png" alt="Tawakkalna" title="Tawakkalna"></div><div class="logo"><img src="../logos/gig.png" alt="Gulf Insurance Group" title="Gulf Insurance Group"></div><div class="logo" aria-hidden="true"><img src="../logos/financial-academy.png" alt="" title="Financial Academy"></div><div class="logo" aria-hidden="true"><img src="../logos/stc-academy.png" alt="" title="STC Academy"></div><div class="logo" aria-hidden="true"><img src="../logos/saudi-energy.png" alt="" title="Saudi Energy"></div><div class="logo" aria-hidden="true"><img src="../logos/saib.png" alt="" title="Saudi Investment Bank"></div><div class="logo" aria-hidden="true"><img src="../logos/alrajhi-capital.png" alt="" title="Al Rajhi Capital"></div><div class="logo" aria-hidden="true"><img src="../logos/bank-albilad.png" alt="" title="Bank Albilad"></div><div class="logo" aria-hidden="true"><img src="../logos/zatca.png" alt="" title="Zakat, Tax and Customs Authority"></div><div class="logo" aria-hidden="true"><img src="../logos/moh.png" alt="" title="Ministry of Health"></div><div class="logo" aria-hidden="true"><img src="../logos/tawakkalna.png" alt="" title="Tawakkalna"></div><div class="logo" aria-hidden="true"><img src="../logos/gig.png" alt="" title="Gulf Insurance Group"></div></div></div>
+</div>
+
+<div class="in">
+  <div class="stats">
+    <div class="stat"><b>25+</b><span>years of experience</span></div>
+    <div class="stat"><b>90+</b><span>training programmes delivered</span></div>
+    <div class="stat"><b>200+</b><span>coaching hours</span></div>
+    <div class="stat"><b>7</b><span>professional certifications</span></div>
+  </div>
+</div>
+
+<section id="coaching">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">For individuals</span>
+      <h2>Coaching that takes you from uncertainty to your next step</h2>
+      <p>Structured sessions with clear goals, in person in Riyadh or online.</p>
+    </div>
+    <div class="svcs">
+      <article class="svc">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div>
+        <span class="for">For graduates, employees and anyone in transition</span>
+        <h3>Career Coaching</h3>
+        <ul><li>Discover your strengths and work values</li><li>A career plan with measurable goals</li><li>CV, LinkedIn and interview preparation</li></ul>
+        <a href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">Book your session →</a>
+      </article>
+      <article class="svc c2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-10 4 6 3-4 5 8z"/><path d="M14 4v5"/><path d="M14 4h4l-1 1.5 1 1.5h-4"/></svg></div>
+        <span class="for">For new leaders, managers and executives</span>
+        <h3>Leadership &amp; Executive Coaching</h3>
+        <ul><li>Self-awareness and your leadership style (Hogan assessments)</li><li>Leading teams, delegation and difficult conversations</li><li>Decision making and leading change</li></ul>
+        <a href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">Book your session →</a>
+      </article>
+      <article class="svc c3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+        <span class="for">For anyone seeking balance and clarity in life</span>
+        <h3>Life Coaching</h3>
+        <ul><li>Clarify your personal values and goals</li><li>Work-life balance</li><li>Build habits and overcome obstacles</li></ul>
+        <a href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">Book your session →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <blockquote>Real growth starts with the right question and ends with a clear, practical step</blockquote>
+  <cite>Sultan Alshehab</cite>
+</div>
+
+<section id="programs">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">Corporate training</span>
+      <h2>Training programmes you apply the very next day</h2>
+      <p>Delivered with the Financial Academy, Ertyad, HRDF (Hadaf) and STC partners, and tailored to each organisation’s needs.</p>
+    </div>
+    <div class="progs">
+      <div class="prog"><span class="tag">For leaders</span><h3>Leadership Development &amp; Executive Workshops</h3><p>Leadership programmes tied to your organisation’s priorities, for new leaders and the succession bench.</p></div>
+      <div class="prog"><span class="tag">For everyone</span><h3>High-Impact Presentations</h3><p>A clear message and confident delivery in front of management and clients.</p><span class="n">Delivered 11 times</span></div>
+      <div class="prog"><span class="tag">For sales teams</span><h3>Sales Excellence</h3><p>Consultative selling skills and building client relationships.</p><span class="n">Delivered 13 times for STC partners</span></div>
+      <div class="prog"><span class="tag">For teams &amp; managers</span><h3>Celemi Cayenne Business Simulation</h3><p>An interactive simulation that shows teams how a company is run and how profit is made.</p></div>
+      <div class="prog"><span class="tag">For managers</span><h3>Key Performance Indicators (KPIs)</h3><p>Designing measurable indicators and linking them to organisational goals.</p></div>
+      <div class="prog"><span class="tag">HRDF (Hadaf)</span><h3>Hadaf-Accredited Programmes</h3><p>Professional development programmes within Human Resources Development Fund initiatives.</p><span class="n">11 programmes delivered</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="tests" style="padding-top:0">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">Self-awareness assessments</span>
+      <h2>Know yourself better in 5 minutes</h2>
+      <p>Free assessments with an instant result in your name that you can save or send me to discuss in a session. The assessments are currently available in Arabic.</p>
+    </div>
+    <div class="svcs">
+      <article class="svc">
+        <span class="for">Emotional intelligence</span>
+        <h3>Emotional Fitness Assessment</h3>
+        <ul><li>30 statements from the Self-Awareness guide</li><li>Your strengths and next steps to develop</li></ul>
+        <a href="../tests.html#eq" hreflang="ar">Start (Arabic) →</a>
+      </article>
+      <article class="svc c2">
+        <span class="for">Personality styles</span>
+        <h3>What Is Your Personality Style?</h3>
+        <ul><li>Driver, Expressive, Amiable or Analytical</li><li>How to work with each style</li></ul>
+        <a href="../tests.html#style" hreflang="ar">Start (Arabic) →</a>
+      </article>
+      <article class="svc c3">
+        <span class="for">Stress and pressure</span>
+        <h3>Your Perspective on Stress</h3>
+        <ul><li>Perspective scale and control map</li><li>Where your energy really goes</li></ul>
+        <a href="../tests.html" hreflang="ar">All assessments (Arabic) →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wave up" style="--below:var(--bg)"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 0H1440V58C1250 98 1080 30 880 52S470 104 260 70 60 40 0 52Z"/><path fill="currentColor" d="M0 0H1440V40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38Z"/><path class="ln" d="M1440 40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38"/></svg></div>
+<section class="journey" id="trips">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">For organisations</span>
+      <h2>Learning journeys with a clear contract and measurable outcomes</h2>
+      <p>I design and deliver end-to-end learning journeys for leadership teams and staff, from needs analysis to the impact report.</p>
+    </div>
+    <ol class="path">
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div><strong>Diagnose</strong><span>Understand the organisation’s needs and target group</span></li>
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 16l8-8 3 3-8 8H6z"/></svg></div><strong>Design</strong><span>A tailored technical and financial proposal with clear goals</span></li>
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><strong>Journey</strong><span>Workshops, simulations, coaching and practical application</span></li>
+      <li><div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><strong>Measure impact</strong><span>Follow-up on results and a final report</span></li>
+    </ol>
+    <div class="orgs">
+      <div class="org"><h3>Leadership Development Journeys</h3><p>An extended programme combining workshops, coaching and assessments for a whole leadership tier.</p></div>
+      <div class="org"><h3>Capability Building Programmes</h3><p>Training for sales, service and performance management teams, with simulation and practice.</p></div>
+      <div class="org"><h3>Facilitation &amp; Coaching</h3><p>Strategy workshops and coaching sessions for management teams.</p></div>
+    </div>
+    <div class="license">
+      <div class="lic-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+      <div><b>Formal contracting via a Freelance Licence</b><span>Registered as a freelancer in management consulting with the Ministry of Human Resources and Social Development · Licence no. <bdi>FL-120132852</bdi></span></div>
+    </div>
+    <a class="btn gold" href="#contact">Request a proposal</a>
+  </div>
+</section>
+<div class="wave" style="--below:var(--bg)"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 0H1440V58C1250 98 1080 30 880 52S470 104 260 70 60 40 0 52Z"/><path fill="currentColor" d="M0 0H1440V40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38Z"/><path class="ln" d="M1440 40C1240 84 1060 18 860 40S450 92 240 58 60 26 0 38"/></svg></div>
+
+<section id="about">
+  <div class="in about">
+    <div>
+      <div class="head" style="margin-bottom:20px">
+        <span class="eyebrow">About</span>
+        <h2>From sales to developing leaders</h2>
+      </div>
+      <p>I’m Sultan Alshehab, a leadership consultant, executive coach and certified trainer based in Riyadh. I started my career in sales and marketing, then spent 17 years at STC in reporting, forecasting and service improvement, before moving to STC Academy to lead knowledge management, business development and learning initiatives, and later to serve as a leadership programme delivery expert.</p>
+      <p>Since 2025 I have worked independently with public and private sector organisations. I am a member of the International Coaching Federation (ICF), a board member of the Saudi Association for Educational Technology and of Taatheer Publishing, and hold a BSc in Business Administration (Marketing) from King Saud University.</p>
+      <div class="certs"><span>Certified Trainer (TVTC)</span><span>Dale Carnegie</span><span>Hogan Assessments</span><span>Celemi</span><span>ATD</span><span>Certified KPI Professional</span><span>Advanced Coaching Certificate</span></div>
+    </div>
+    <ol class="timeline">
+      <li><small>2025 – present</small><b>Independent consultant, coach and trainer</b><span>Leadership, coaching, facilitation and capability building</span></li>
+      <li><small>2023 – 2024</small><b>Leadership Programme Delivery Expert</b><span>STC Academy</span></li>
+      <li><small>2018 – 2023</small><b>Knowledge Management, Business Development &amp; Learning</b><span>STC Academy</span></li>
+      <li><small>2001 – 2018</small><b>Reporting, Forecasting &amp; Service Management</b><span>STC</span></li>
+      <li><small>2025</small><b>Certificate of Appreciation</b><span>Young Legal Leaders Programme, 5th cohort</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="in">
+    <div class="final">
+      <div>
+        <h2>Let’s talk</h2>
+        <p>Whether you are an individual looking for your next step, or an organisation looking for a training and learning partner, I’d be glad to hear from you.</p>
+        <a class="btn book-final" href="https://airtable.com/appvS94pd4R5zDikc/shrgEllxVpJM32PHk" target="_blank" rel="noopener">Book your appointment →</a>
+      </div>
+      <div class="contacts">
+        <div class="ct"><small>Mobile / WhatsApp</small><bdi>+966 50 299 0020</bdi></div>
+        <div class="ct"><small>Email</small><bdi>sultan.alshehab@gmail.com</bdi></div>
+        <div class="ct"><small>LinkedIn</small><a href="https://linkedin.com/in/sultanalshehab"><bdi>linkedin.com/in/sultanalshehab</bdi></a></div>
+      </div>
+      <!--SOCIAL--><div class="social"><a href="https://www.linkedin.com/in/sultanalshehab" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.3 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2.02 0-2.33 1.57-2.33 3.2V21H10z"/></svg></a><a href="https://x.com/sultanalshehab" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg></a><a href="https://www.instagram.com/sultan.alshehab" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.7 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.22-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85C2.38 3.93 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33 0 7.05.07 2.7.27.27 2.69.07 7.05 0 8.33 0 8.74 0 12s0 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98C24 15.67 24 15.26 24 12s0-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67 0 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a><a href="https://www.tiktok.com/@sultan.alshehab" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 0 1-5.2 1.75 2.9 2.9 0 0 1 3.18-4.52V9.4a6.34 6.34 0 0 0-5.4 10.86 6.34 6.34 0 0 0 10.86-4.43V8.85a8.2 8.2 0 0 0 4.78 1.52V6.92a4.8 4.8 0 0 1-1-.22z"/></svg></a></div><!--/SOCIAL-->
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Sultan Alshehab · Riyadh, Saudi Arabia<br>Licensed freelancer, Freelance Licence no. <bdi>FL-120132852</bdi><!--SOCIAL--><div class="social"><a href="https://www.linkedin.com/in/sultanalshehab" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.3 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2.02 0-2.33 1.57-2.33 3.2V21H10z"/></svg></a><a href="https://x.com/sultanalshehab" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg></a><a href="https://www.instagram.com/sultan.alshehab" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.7 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.22-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85C2.38 3.93 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33 0 7.05.07 2.7.27.27 2.69.07 7.05 0 8.33 0 8.74 0 12s0 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98C24 15.67 24 15.26 24 12s0-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67 0 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a><a href="https://www.tiktok.com/@sultan.alshehab" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 0 1-5.2 1.75 2.9 2.9 0 0 1 3.18-4.52V9.4a6.34 6.34 0 0 0-5.4 10.86 6.34 6.34 0 0 0 10.86-4.43V8.85a8.2 8.2 0 0 0 4.78 1.52V6.92a4.8 4.8 0 0 1-1-.22z"/></svg></a></div><!--/SOCIAL--></footer>
+
+<a class="wa" href="https://wa.me/966502990020" aria-label="Contact on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+</div>
+
+<script>
+(function(){
+  var words=["your career path","your leadership impact","a balanced life","a stronger team"],i=0,el=document.getElementById("rot");
+  if(!el||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  setInterval(function(){
+    el.classList.add("out");
+    setTimeout(function(){i=(i+1)%words.length;el.textContent=words[i];el.classList.remove("out")},350);
+  },2600);
+})();
+</script>
+
+</body>
+</html>
